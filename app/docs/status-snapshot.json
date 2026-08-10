@@ -1,13 +1,13 @@
 {
   "schema": "kofun.docs-status/v1",
-  "repository": "hjosugi/kofun",
+  "repository": "kofun-lang/kofun",
   "source_commit": "99231696f90aebc2e50a80023bc2b0abc1d4ceea",
   "verification": {
     "workflow": "CI",
     "status": "completed",
     "conclusion": "success",
     "completed_at": "2026-08-01T20:26:16Z",
-    "url": "https://github.com/hjosugi/kofun/actions/runs/30716316625"
+    "url": "https://github.com/kofun-lang/kofun/actions/runs/30716316625"
   },
   "issues": [
     {
@@ -16,7 +16,7 @@
       "state": "closed",
       "workflow": "closed",
       "updated_at": "2026-08-01T01:53:59Z",
-      "url": "https://github.com/hjosugi/kofun/issues/650"
+      "url": "https://github.com/kofun-lang/kofun/issues/650"
     },
     {
       "number": 666,
@@ -24,7 +24,7 @@
       "state": "closed",
       "workflow": "closed",
       "updated_at": "2026-07-25T05:43:35Z",
-      "url": "https://github.com/hjosugi/kofun/issues/666"
+      "url": "https://github.com/kofun-lang/kofun/issues/666"
     },
     {
       "number": 667,
@@ -32,7 +32,7 @@
       "state": "closed",
       "workflow": "closed",
       "updated_at": "2026-08-01T01:53:57Z",
-      "url": "https://github.com/hjosugi/kofun/issues/667"
+      "url": "https://github.com/kofun-lang/kofun/issues/667"
     },
     {
       "number": 668,
@@ -40,7 +40,7 @@
       "state": "closed",
       "workflow": "closed",
       "updated_at": "2026-07-25T03:31:52Z",
-      "url": "https://github.com/hjosugi/kofun/issues/668"
+      "url": "https://github.com/kofun-lang/kofun/issues/668"
     }
   ],
   "reviewed_at": "2026-08-01T20:28:39.851Z"

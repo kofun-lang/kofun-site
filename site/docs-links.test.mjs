@@ -11,7 +11,6 @@ assert.deepEqual(
     .map((entry) => entry.slug),
   [
     "one-day-tutorial",
-    "coding-interview",
     "scientific-computing",
     "language-vision",
     "rfc-process",

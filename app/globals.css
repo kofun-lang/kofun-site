@@ -23,23 +23,41 @@
   --mono: "SFMono-Regular", "Cascadia Code", "Roboto Mono", Consolas, monospace;
   --sans: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --serif: Iowan Old Style, "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  --font-size-micro: 0.6875rem;
-  --font-size-caption: 0.75rem;
-  --font-size-ui: 0.8125rem;
-  --font-size-small: 0.875rem;
+  /* One scale, one step ratio, and a range a reader can live in.
+   *
+   * Every size below is a step of ~1.125 from --font-size-body, which is the
+   * anchor and the only value tied to the browser default. The old scale ran
+   * from 11px to 112px — a tenfold spread that made the smallest labels hard
+   * to read and the largest headings fill a screen before saying anything.
+   * This one spans 13px to 40px.
+   *
+   * The floor is 0.8125rem (13px) rather than 0.6875rem (11px): below about
+   * 12px a label stops being small and starts being unreadable, and this site
+   * used the smallest token for real content — status rows, table captions,
+   * navigation — not for decoration.
+   *
+   * The display sizes still use clamp(), because a heading should adapt to the
+   * viewport, but the top of each range is now a heading rather than a poster.
+   * Documentation is read, not looked at. */
+  --font-size-micro: 0.8125rem;
+  --font-size-caption: 0.875rem;
+  --font-size-ui: 0.875rem;
+  --font-size-small: 0.9375rem;
   --font-size-body: 1rem;
   --font-size-lead: 1.125rem;
-  --font-size-brand: 1.3125rem;
-  --font-size-title: 1.5rem;
-  --font-size-subheading: 2rem;
-  --font-size-hero: clamp(4.0625rem, 7.2vw, 7rem);
-  --font-size-section: clamp(2.75rem, 5.3vw, 4.875rem);
-  --font-size-doc-hero: clamp(3.625rem, 7.3vw, 6.5rem);
-  --font-size-doc-title: clamp(3rem, 6vw, 5.125rem);
-  --font-size-code-inline: 0.86em;
-  --line-height-display: 0.88;
-  --line-height-tight: 0.94;
-  --line-height-heading: 1.05;
+  --font-size-brand: 1.125rem;
+  --font-size-title: 1.25rem;
+  --font-size-subheading: 1.5rem;
+  --font-size-hero: clamp(2rem, 3.6vw, 2.5rem);
+  --font-size-section: clamp(1.5rem, 2.6vw, 1.875rem);
+  --font-size-doc-hero: clamp(1.75rem, 3.2vw, 2.25rem);
+  --font-size-doc-title: clamp(1.5rem, 2.6vw, 1.875rem);
+  --font-size-code-inline: 0.9em;
+  /* Display line heights below 1 only work at poster sizes. At the sizes above
+   * they clip descenders, so the tightest is now 1.1. */
+  --line-height-display: 1.1;
+  --line-height-tight: 1.15;
+  --line-height-heading: 1.25;
   --line-height-body: 1.65;
   --line-height-code: 1.7;
 
@@ -48,7 +66,7 @@
   --content-docs: 73.75rem;
   --content-article: 61.25rem;
   --page-gutter: clamp(1.25rem, 4vw, 3rem);
-  --section-space: clamp(5.375rem, 9vw, 7.875rem);
+  --section-space: clamp(3rem, 5vw, 4rem);
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -220,11 +238,8 @@ svg {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
   margin: 0 auto;
   max-width: var(--content-wide);
-  min-height: 720px;
 }
 
 .hero-copy {
@@ -232,7 +247,7 @@ svg {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 86px var(--page-gutter) 96px;
+  padding: 40px var(--page-gutter) 36px;
 }
 
 .eyebrow,
@@ -257,10 +272,10 @@ svg {
 .hero h1 {
   font-size: var(--font-size-hero);
   font-weight: 690;
-  letter-spacing: -0.075em;
+  letter-spacing: -0.02em;
   line-height: var(--line-height-display);
-  margin: 35px 0 34px;
-  max-width: 850px;
+  margin: 20px 0 18px;
+  max-width: 46ch;
 }
 
 .hero h1 em {
@@ -281,8 +296,8 @@ svg {
 .hero-actions {
   align-items: center;
   display: flex;
-  gap: 26px;
-  margin-top: 40px;
+  gap: 20px;
+  margin-top: 28px;
 }
 
 .primary-button,
@@ -329,98 +344,6 @@ svg {
 .text-button svg {
   height: 18px;
   width: 18px;
-}
-
-.hero-art {
-  align-items: center;
-  background: var(--acid);
-  border-left: 1px solid rgba(23, 25, 20, 0.14);
-  display: flex;
-  justify-content: center;
-  min-height: 720px;
-  overflow: hidden;
-  position: relative;
-}
-
-.hero-mark {
-  background: rgba(255, 255, 255, 0.28);
-  border: 1px solid rgba(23, 25, 20, 0.2);
-  border-radius: var(--radius-pill);
-  box-shadow: 0 24px 80px rgba(48, 57, 16, 0.14);
-  padding: 52px;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-mark .kofun-mark {
-  border-radius: 35px;
-  height: 212px;
-  width: 212px;
-}
-
-.orbit {
-  border: 1px solid rgba(23, 25, 20, 0.19);
-  border-radius: var(--radius-pill);
-  position: absolute;
-}
-
-.orbit::after {
-  background: var(--ink);
-  border-radius: var(--radius-pill);
-  content: "";
-  height: 9px;
-  left: 12%;
-  position: absolute;
-  top: 18%;
-  width: 9px;
-}
-
-.orbit-one {
-  height: 510px;
-  width: 510px;
-}
-
-.orbit-two {
-  height: 660px;
-  width: 660px;
-}
-
-.orbit-two::after {
-  left: auto;
-  right: 6%;
-  top: 62%;
-}
-
-.art-label {
-  color: rgba(23, 25, 20, 0.62);
-  font-family: var(--mono);
-  font-size: var(--font-size-micro);
-  line-height: 1.4;
-  position: absolute;
-  text-transform: uppercase;
-  z-index: 3;
-}
-
-.art-label span {
-  color: var(--ink);
-  display: block;
-  font-size: var(--font-size-caption);
-  font-weight: 800;
-}
-
-.label-one {
-  left: 8%;
-  top: 18%;
-}
-
-.label-two {
-  bottom: 13%;
-  left: 13%;
-}
-
-.label-three {
-  right: 9%;
-  top: 24%;
 }
 
 .signal-strip {
@@ -473,7 +396,7 @@ svg {
 .quickstart h2 {
   font-size: var(--font-size-section);
   font-weight: 650;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.02em;
   line-height: var(--line-height-tight);
   margin: 0;
   text-wrap: balance;
@@ -1122,28 +1045,10 @@ footer {
     grid-template-columns: 1fr 0.8fr;
   }
 
-  .hero-art {
-    min-height: 640px;
-  }
 
-  .hero-mark {
-    padding: 35px;
-  }
 
-  .hero-mark .kofun-mark {
-    height: 165px;
-    width: 165px;
-  }
 
-  .orbit-one {
-    height: 400px;
-    width: 400px;
-  }
 
-  .orbit-two {
-    height: 520px;
-    width: 520px;
-  }
 
   .playground-grid {
     grid-template-columns: minmax(0, 1.25fr) minmax(270px, 0.75fr);
@@ -1162,8 +1067,6 @@ footer {
 
 @media (max-width: 840px) {
   :root {
-    --font-size-hero: clamp(3.625rem, 18vw, 5.125rem);
-    --font-size-section: clamp(2.625rem, 13vw, 3.875rem);
   }
 
   .nav {
@@ -1208,11 +1111,6 @@ footer {
     flex-direction: column;
   }
 
-  .hero-art {
-    border-left: 0;
-    border-top: 1px solid rgba(23, 25, 20, 0.14);
-    min-height: 520px;
-  }
 
   .signal-strip {
     justify-content: flex-start;
@@ -1487,7 +1385,7 @@ footer {
 .docs-overview-hero h1 {
   font-size: var(--font-size-doc-hero);
   font-weight: 680;
-  letter-spacing: -0.075em;
+  letter-spacing: -0.02em;
   line-height: var(--line-height-display);
   margin: 24px 0 31px;
   text-wrap: balance;
@@ -1738,7 +1636,7 @@ footer {
 .markdown-document-meta h1 {
   font-size: var(--font-size-doc-title);
   font-weight: 670;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.02em;
   line-height: var(--line-height-tight);
   margin: 19px 0 22px;
   text-wrap: balance;
@@ -2047,8 +1945,6 @@ footer {
 
 @media (max-width: 580px) {
   :root {
-    --font-size-doc-hero: clamp(3rem, 13.5vw, 4rem);
-    --font-size-doc-title: 3rem;
   }
 
   .docs-overview {

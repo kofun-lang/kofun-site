@@ -316,7 +316,7 @@ test("reconciliation adds every repository issue", () => {
     },
   ];
   const plan = buildReconciliationPlan({
-    repository: "hjosugi/kofun",
+    repository: "kofun-lang/kofun",
     fields,
     projectItems: [],
     issues,
@@ -398,15 +398,15 @@ test("Actions apply refuses repository GITHUB_TOKEN without PROJECTS_TOKEN", () 
 test("remote guard accepts only this exact GitHub repository", () => {
   assert.equal(
     verifyRepositoryRemote(
-      "hjosugi/kofun",
-      "git@github.com:hjosugi/kofun.git",
+      "kofun-lang/kofun",
+      "git@github.com:kofun-lang/kofun.git",
     ),
-    "hjosugi/kofun",
+    "kofun-lang/kofun",
   );
   assert.throws(
     () =>
       verifyRepositoryRemote(
-        "hjosugi/kofun",
+        "kofun-lang/kofun",
         "https://github.com/hjosugi/another.git",
       ),
     /Remote-write guard/,

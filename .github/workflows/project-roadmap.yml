@@ -70,7 +70,7 @@ jobs:
           {
             echo "### Project synchronization safety"
             echo
-            echo "- Repository: \`hjosugi/kofun\`"
+            echo "- Repository: \`kofun-lang/kofun\`"
             echo "- Project: \`Kofun Delivery Roadmap\`"
             echo "- Event: \`${{ github.event_name }}\`"
             echo "- Manual apply requested: \`${{ inputs.apply || false }}\`"

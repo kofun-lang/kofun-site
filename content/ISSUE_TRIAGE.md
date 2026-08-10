@@ -14,14 +14,14 @@ The issue tracker and the generated backlog serve different purposes:
 | Source | Authority |
 |---|---|
 | Executable gates and current source | What the compiler actually supports |
-| [`MVP_IMPLEMENTED.md`](https://github.com/hjosugi/kofun/blob/main/docs/MVP_IMPLEMENTED.md) | Concise status of active, verified capabilities |
-| [`README.md`](https://github.com/hjosugi/kofun/blob/main/README.md) | Current user-facing bootstrap status and commands |
-| [`ROADMAP.md`](https://github.com/hjosugi/kofun/blob/main/docs/ROADMAP.md) | Milestone outcomes and exit criteria |
+| [`MVP_IMPLEMENTED.md`](https://github.com/kofun-lang/kofun/blob/main/docs/MVP_IMPLEMENTED.md) | Concise status of active, verified capabilities |
+| [`README.md`](https://github.com/kofun-lang/kofun/blob/main/README.md) | Current user-facing bootstrap status and commands |
+| [`ROADMAP.md`](https://github.com/kofun-lang/kofun/blob/main/docs/ROADMAP.md) | Milestone outcomes and exit criteria |
 | Design and specification documents under `docs/` and `spec/` | Intended contracts and target design |
 | GitHub issues | Work selection, discussion, and completion evidence |
-| [`rfcs/index.json`](https://github.com/hjosugi/kofun/blob/main/rfcs/index.json) | Durable public semantic decisions, and whether each is implemented |
-| [`release/claims.json`](https://github.com/hjosugi/kofun/blob/main/release/claims.json) | Published capability claims joined to their gates |
-| [`backlog/`](https://github.com/hjosugi/kofun-site/blob/main/backlog/README.md) in `hjosugi/kofun-site` | Generated long-range work catalogue |
+| [`rfcs/index.json`](https://github.com/kofun-lang/kofun/blob/main/rfcs/index.json) | Durable public semantic decisions, and whether each is implemented |
+| [`release/claims.json`](https://github.com/kofun-lang/kofun/blob/main/release/claims.json) | Published capability claims joined to their gates |
+| [`backlog/`](https://github.com/kofun-lang/kofun-site/blob/main/backlog/README.md) in `kofun-lang/kofun-site` | Generated long-range work catalogue |
 
 Issues own work state; the RFC ledger owns decisions. An issue can be closed
 because the work is done, abandoned, or superseded, so its state says nothing
@@ -35,7 +35,7 @@ not evidence that a feature works. Check the current source and an executable
 gate before changing an implementation-status claim.
 
 The 13,500 generated backlog rows are not the GitHub work queue. They live in
-[`hjosugi/kofun-site`](https://github.com/hjosugi/kofun-site/blob/main/backlog/README.md)
+[`kofun-lang/kofun-site`](https://github.com/kofun-lang/kofun-site/blob/main/backlog/README.md)
 because no gate here reads them; issues stay in this repository. Do not create
 one GitHub issue per row by default. When a GitHub issue corresponds to a
 generated row, preserve the `KOFUN-XXXXX` ID and fingerprint in the issue body.
@@ -102,7 +102,7 @@ implement the accepted contract in `implementation`.
 ### Area
 
 Choose one primary area from the 27-area table in
-[`backlog/README.md`](https://github.com/hjosugi/kofun-site/blob/main/backlog/README.md).
+[`backlog/README.md`](https://github.com/kofun-lang/kofun-site/blob/main/backlog/README.md).
 Use the owning subsystem, not every subsystem that may be touched. Mention
 secondary areas under **Related**.
 
@@ -206,7 +206,7 @@ keep sections that are not applicable and explain why.
 - State: needs-detail
 - Tracker role: curated/planning
 - Kind: bug/implementation/spec-design/research/test-quality/documentation/maintenance/planning
-- Area: one primary area from the backlog README in hjosugi/kofun-site
+- Area: one primary area from the backlog README in kofun-lang/kofun-site
 - Priority: P0/P1/P2/P3
 - Milestone: M0-spec/M1-bootstrap/M2-alpha/M3-beta/M4-1.0
 - Size: S/M/L

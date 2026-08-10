@@ -2,7 +2,7 @@ import Link from "next/link";
 import KofunMark from "./kofun-mark";
 import Playground from "./playground";
 
-const githubUrl = "https://github.com/hjosugi/kofun";
+const githubUrl = "https://github.com/kofun-lang/kofun";
 const siteBasePath = process.env.KOFUN_BASE_PATH ?? "";
 
 function ArrowIcon() {
@@ -95,29 +95,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div
-          className="hero-art"
-          aria-label="Kofun language mark"
-          role="img"
-        >
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
-          <div className="hero-mark">
-            <KofunMark />
-          </div>
-          <div className="art-label label-one">
-            <span>read</span>
-            non-owning view
-          </div>
-          <div className="art-label label-two">
-            <span>edit</span>
-            exclusive view
-          </div>
-          <div className="art-label label-three">
-            <span>take</span>
-            ownership transfer
-          </div>
-        </div>
       </section>
 
       <div className="signal-strip" aria-label="Current Kofun checkpoints">

@@ -8,7 +8,7 @@ deployment.
 
 > This site-owned document is long-range design guidance, not an active
 > capability claim. The current executable boundary is recorded in the
-> [implemented-status matrix](https://hjosugi.github.io/kofun/docs/implemented-status/).
+> [implemented-status matrix](https://kofun-lang.github.io/kofun/docs/implemented-status/).
 
 Target areas:
 

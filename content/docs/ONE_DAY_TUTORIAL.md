@@ -6,7 +6,7 @@ application and interview algorithms in eight hours.
 > This is a site-owned learning path, not an implementation-status claim.
 > Some sections describe the intended language surface and are not accepted by
 > the active compiler yet. Check the current
-> [implemented-status matrix](https://hjosugi.github.io/kofun/docs/implemented-status/)
+> [implemented-status matrix](https://kofun-lang.github.io/kofun/docs/implemented-status/)
 > before relying on an example as executable syntax.
 
 ## Hour 1: Run and values
@@ -201,7 +201,7 @@ The active compiler instead rejects that source with `E2S02`; it does not
 compute a counterexample or emit evidence. The accepted future design uses a
 contextual `law Family { ... }`, a named implementation, and a separate
 `check laws Name { ... }` request. It is an advanced assurance feature rather
-than first-day executable syntax. See [Law system](https://github.com/hjosugi/kofun/blob/main/docs/LAW_SYSTEM.md).
+than first-day executable syntax. See [Law system](https://github.com/kofun-lang/kofun/blob/main/docs/LAW_SYSTEM.md).
 
 ## First-day cheat sheet
 

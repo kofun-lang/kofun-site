@@ -2,7 +2,7 @@
 
 Kofun records public semantic decisions in a ledger, so that an accepted
 proposal is never mistaken for shipped behaviour. The ledger is
-[`rfcs/index.json`](https://github.com/hjosugi/kofun/blob/main/rfcs/index.json); `task rfc-registry` checks it and
+[`rfcs/index.json`](https://github.com/kofun-lang/kofun/blob/main/rfcs/index.json); `task rfc-registry` checks it and
 `task verify` runs that check.
 
 This process is deliberately small. It is meant to be usable by one maintainer,
@@ -12,12 +12,12 @@ mode, not because a template asked for it.
 ## What it is not
 
 Issues remain the work tracker.
-[`ISSUE_TRIAGE.md`](https://github.com/hjosugi/kofun-site/blob/main/content/ISSUE_TRIAGE.md)
-in `hjosugi/kofun-site` owns workflow state, sizing, dependencies, and
+[`ISSUE_TRIAGE.md`](https://github.com/kofun-lang/kofun-site/blob/main/content/ISSUE_TRIAGE.md)
+in `kofun-lang/kofun-site` owns workflow state, sizing, dependencies, and
 scheduling. Nothing here replaces
 that, and an RFC is not a prerequisite for ordinary work.
 
-Capability claims remain in [`release/claims.json`](https://github.com/hjosugi/kofun/blob/main/release/claims.json).
+Capability claims remain in [`release/claims.json`](https://github.com/kofun-lang/kofun/blob/main/release/claims.json).
 The ledger points at claims rather than restating them: a decision may be
 recorded as `implemented` only if the capability manifest already records the
 claims it names as `implemented` or `checkpoint`. See
@@ -165,7 +165,7 @@ The ledger records **that** a decision was made and what evidence bounds it. It
 does not hold the semantics.
 
 Normative text lives in `spec/` and `docs/`, stays editable, and is named by
-each decision's `normative_spec`. [`docs/DESIGN_DECISIONS.md`](https://github.com/hjosugi/kofun/blob/main/docs/DESIGN_DECISIONS.md)
+each decision's `normative_spec`. [`docs/DESIGN_DECISIONS.md`](https://github.com/kofun-lang/kofun/blob/main/docs/DESIGN_DECISIONS.md)
 remains the readable narrative of the decisions and carries amendment markers.
 Neither duplicates the other: if the ledger restated semantics, there would be
 two editable sources and one of them would go stale.
@@ -219,7 +219,7 @@ forgotten.
 
 ## Adding a decision
 
-1. Copy [`rfcs/TEMPLATE.md`](https://github.com/hjosugi/kofun/blob/main/rfcs/TEMPLATE.md) to `rfcs/NNNN-<slug>.md`.
+1. Copy [`rfcs/TEMPLATE.md`](https://github.com/kofun-lang/kofun/blob/main/rfcs/TEMPLATE.md) to `rfcs/NNNN-<slug>.md`.
 2. Open it for review; keep it open for the review period.
 3. Add the row to `rfcs/index.json` with `state: proposed`.
 4. On a decision, set the state and dates. If `accepted`, stop — do not add an

@@ -69,7 +69,7 @@ export default function DocsNav({ active }: { active?: string }) {
       <div className="docs-snapshot">
         <span>Observed language main</span>
         <a
-          href={`https://github.com/hjosugi/kofun/commit/${snapshot.commit}`}
+          href={`https://github.com/kofun-lang/kofun/commit/${snapshot.commit}`}
         >
           {snapshot.shortCommit}
         </a>

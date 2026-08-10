@@ -80,14 +80,6 @@ export const docs: DocEntry[] = [
     section: "Guides",
   },
   {
-    slug: "coding-interview",
-    title: "Coding interview profile",
-    summary: "The intended algorithm-focused profile, including the implemented subset and planned tooling.",
-    source: "content/docs/CODING_INTERVIEW.md",
-    repository: "site",
-    section: "Guides",
-  },
-  {
     slug: "scientific-computing",
     title: "Scientific computing",
     summary: "Long-range array, numerical computing, interoperability, and tooling design.",

@@ -4,7 +4,7 @@ This directory contains **13,500 discrete implementation issues**.
 Each area has 25 concrete subjects. Each subject has a 20-step lifecycle from requirements to release acceptance.
 Every row has a stable ID, priority, milestone, acceptance criterion, validation method, dependency, and content fingerprint.
 
-The generated backlog is intentionally broader than the bootstrap implementation. [`docs/MVP_IMPLEMENTED.md`](https://github.com/hjosugi/kofun/blob/main/docs/MVP_IMPLEMENTED.md) in the language repository records what currently works.
+The generated backlog is intentionally broader than the bootstrap implementation. [`docs/MVP_IMPLEMENTED.md`](https://github.com/kofun-lang/kofun/blob/main/docs/MVP_IMPLEMENTED.md) in the language repository records what currently works.
 
 ## Counts
 

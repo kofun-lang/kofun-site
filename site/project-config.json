@@ -1,35 +1,56 @@
 {
   "schemaVersion": 1,
   "owner": "hjosugi",
-  "repository": "hjosugi/kofun",
+  "repositoryOwner": "kofun-lang",
+  "repository": "kofun-lang/kofun",
   "issueScope": "all",
   "title": "Kofun Delivery Roadmap",
   "snapshotPath": "site/plan-snapshot.json",
   "project": {
     "visibility": "PUBLIC",
     "description": "All kofun issues in one Project, with delivery fields synchronized for the open curated execution scope.",
-    "readme": "## Operating model\n\n- Every open and closed issue from `hjosugi/kofun` is registered.\n- Three collision-safe writer lanes: A, B, and C.\n- One dedicated Review lane for integration and CI.\n- Dates and agent slots are assigned only to the open `curated` execution scope.\n- Planning umbrellas remain visible without being treated as implementation work.\n- Start and target dates are forecasts, not promises; blocked and deferred work may have no dates.- This board is where delivery planning lives; the public site does not publish a schedule.\n\n[Read the generated delivery plan](https://github.com/hjosugi/kofun-site/blob/main/content/DELIVERY_PLAN.md) · [Browse the issues](https://github.com/hjosugi/kofun/issues)",
+    "readme": "## Operating model\n\n- Every open and closed issue from `kofun-lang/kofun` is registered.\n- Three collision-safe writer lanes: A, B, and C.\n- One dedicated Review lane for integration and CI.\n- Dates and agent slots are assigned only to the open `curated` execution scope.\n- Planning umbrellas remain visible without being treated as implementation work.\n- Start and target dates are forecasts, not promises; blocked and deferred work may have no dates.- This board is where delivery planning lives; the public site does not publish a schedule.\n\n[Read the generated delivery plan](https://github.com/kofun-lang/kofun-site/blob/main/content/DELIVERY_PLAN.md) · [Browse the issues](https://github.com/kofun-lang/kofun/issues)",
     "fields": [
       {
         "name": "Status",
         "type": "SINGLE_SELECT",
         "existing": true,
-        "options": ["Todo", "In Progress", "Done"]
+        "options": [
+          "Todo",
+          "In Progress",
+          "Done"
+        ]
       },
       {
         "name": "Priority",
         "type": "SINGLE_SELECT",
-        "options": ["P0", "P1", "P2", "P3"]
+        "options": [
+          "P0",
+          "P1",
+          "P2",
+          "P3"
+        ]
       },
       {
         "name": "Size",
         "type": "SINGLE_SELECT",
-        "options": ["XS", "S", "M", "L", "XL"]
+        "options": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
       },
       {
         "name": "Agent Slot",
         "type": "SINGLE_SELECT",
-        "options": ["A", "B", "C", "Review"]
+        "options": [
+          "A",
+          "B",
+          "C",
+          "Review"
+        ]
       },
       {
         "name": "Start Date",

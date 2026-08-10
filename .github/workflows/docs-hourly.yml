@@ -23,7 +23,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  LANGUAGE_REPOSITORY: hjosugi/kofun
+  LANGUAGE_REPOSITORY: kofun-lang/kofun
 
 jobs:
   synchronize:
@@ -131,7 +131,7 @@ jobs:
             kofun
           git commit -m "Update delivery planning snapshots"
           git push origin HEAD:main
-      # Pages serves https://hjosugi.github.io/kofun/ from the language
+      # Pages serves https://kofun-lang.github.io/kofun/ from the language
       # repository's gh-pages branch, so publishing is a cross-repository write.
       # It authenticates with a deploy key rather than a personal access token:
       # the key grants write to exactly one repository and nothing else, where a
@@ -197,7 +197,7 @@ jobs:
           # Pages API reports, which has the side benefit of needing no
           # credentials at all. `.kofun-site-commit` is written beside the
           # export, so serving it proves the new tree is live.
-          marker="https://hjosugi.github.io/kofun/.kofun-site-commit"
+          marker="https://kofun-lang.github.io/kofun/.kofun-site-commit"
           for attempt in $(seq 1 60)
           do
             served=$(curl --fail --silent "$marker" 2>/dev/null | tr -d '\r\n' || true)
@@ -213,8 +213,8 @@ jobs:
       - name: Check production site
         run: |
           curl --fail --retry 3 --silent --show-error \
-            --output /dev/null https://hjosugi.github.io/kofun/
+            --output /dev/null https://kofun-lang.github.io/kofun/
           curl --fail --retry 3 --silent --show-error \
-            --output /dev/null https://hjosugi.github.io/kofun/docs/
+            --output /dev/null https://kofun-lang.github.io/kofun/docs/
           curl --fail --retry 3 --silent --show-error \
-            --output /dev/null https://hjosugi.github.io/kofun/tour/
+            --output /dev/null https://kofun-lang.github.io/kofun/tour/

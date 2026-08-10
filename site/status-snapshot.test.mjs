@@ -9,7 +9,7 @@ const snapshot = JSON.parse(
 );
 
 assert.equal(snapshot.schema, "kofun.docs-status/v1");
-assert.equal(snapshot.repository, "hjosugi/kofun");
+assert.equal(snapshot.repository, "kofun-lang/kofun");
 assert.match(snapshot.source_commit, /^[0-9a-f]{40}$/);
 assert.equal(snapshot.verification.workflow, "CI");
 assert.ok(
@@ -30,7 +30,7 @@ assert.ok(
       snapshot.verification.conclusion.length > 0),
   "verification conclusion must be null or a non-empty string",
 );
-assert.match(snapshot.verification.url, /^https:\/\/github\.com\/hjosugi\/kofun\//);
+assert.match(snapshot.verification.url, /^https:\/\/github\.com\/kofun-lang\/kofun\//);
 
 if (snapshot.verification.status === "completed") {
   assert.ok(snapshot.verification.conclusion, "completed CI needs a conclusion");

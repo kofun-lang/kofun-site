@@ -9,7 +9,7 @@ Its distinguishing product position is: **the language where you state an
 algebraic law and the compiler hands you a counterexample.** The measured
 implementation status for that position and for the wider systems-language
 goals lives in the
-[implemented-status matrix](https://github.com/hjosugi/kofun/blob/main/docs/MVP_IMPLEMENTED.md). Target design in this
+[implemented-status matrix](https://github.com/kofun-lang/kofun/blob/main/docs/MVP_IMPLEMENTED.md). Target design in this
 document must not be read as implemented behavior.
 
 Rust made memory safety without a GC practical, through ownership and
@@ -37,42 +37,42 @@ Kofun is not scheduled as five independent language-research programmes. The
 current decisions are:
 
 - keep the direct, self-hosted native backend and preserve an interface for an
-  optional second backend; do not adopt MLIR ([#554](https://github.com/hjosugi/kofun/issues/554)).
+  optional second backend; do not adopt MLIR ([#554](https://github.com/kofun-lang/kofun/issues/554)).
   The measured costs behind that are recorded in
-  [Compiler architecture](https://github.com/hjosugi/kofun/blob/main/docs/COMPILER_ARCHITECTURE.md#backend-strategy)
+  [Compiler architecture](https://github.com/kofun-lang/kofun/blob/main/docs/COMPILER_ARCHITECTURE.md#backend-strategy)
 - keep `read` / `edit` / `take`; if concurrency is introduced, begin with
   scoped parallelism that reuses ownership exclusivity
-  ([#555](https://github.com/hjosugi/kofun/issues/555)). What that promises,
+  ([#555](https://github.com/kofun-lang/kofun/issues/555)). What that promises,
   and what it deliberately does not, is recorded in
-  [Memory model](https://github.com/hjosugi/kofun/blob/main/docs/MEMORY_MODEL.md#12-concurrency-stance)
+  [Memory model](https://github.com/kofun-lang/kofun/blob/main/docs/MEMORY_MODEL.md#12-concurrency-stance)
 - introduce a pure/impure boundary before considering effect rows or handlers
-  ([#556](https://github.com/hjosugi/kofun/issues/556)); see below
+  ([#556](https://github.com/kofun-lang/kofun/issues/556)); see below
 - reject full dependent types and investigate refinement types only after the
   ordinary type checker is complete
-  ([#557](https://github.com/hjosugi/kofun/issues/557),
-  [#558](https://github.com/hjosugi/kofun/issues/558)). The measured
+  ([#557](https://github.com/kofun-lang/kofun/issues/557),
+  [#558](https://github.com/kofun-lang/kofun/issues/558)). The measured
   verification costs behind that, and the tenfold-inflated `$87M` figure the
   authors themselves retracted, are recorded in
-  [Law system](https://github.com/hjosugi/kofun/blob/main/docs/LAW_SYSTEM.md#what-the-level-above-proven-finite-would-cost)
+  [Law system](https://github.com/kofun-lang/kofun/blob/main/docs/LAW_SYSTEM.md#what-the-level-above-proven-finite-would-cost)
 
 These decisions are subordinate to the current compiler path. The bounded
 user-defined call slice now runs under C11 and direct x86-64/AArch64
-([#549](https://github.com/hjosugi/kofun/issues/549)). The first self-hosting
+([#549](https://github.com/kofun-lang/kofun/issues/549)). The first self-hosting
 profile deliberately keeps its current string-scanning representation, so
-heterogeneous records — accepted in [`spec/records-v1.md`](https://github.com/hjosugi/kofun/blob/main/spec/records-v1.md)
+heterogeneous records — accepted in [`spec/records-v1.md`](https://github.com/kofun-lang/kofun/blob/main/spec/records-v1.md)
 and still awaiting the lowering tracked by
-[#783](https://github.com/hjosugi/kofun/issues/783) — remain important but do
+[#783](https://github.com/kofun-lang/kofun/issues/783) — remain important but do
 not block the C11 fixed point. Syntax usability and
 lawful composition are reviewed in
-[#624](https://github.com/hjosugi/kofun/issues/624) through
-[#626](https://github.com/hjosugi/kofun/issues/626). Reactive programming stays
+[#624](https://github.com/kofun-lang/kofun/issues/624) through
+[#626](https://github.com/kofun-lang/kofun/issues/626). Reactive programming stays
 a small typed `Stream`/`Signal` library protocol with explicit demand and
-ownership ([#627](https://github.com/hjosugi/kofun/issues/627)), not a new
+ownership ([#627](https://github.com/kofun-lang/kofun/issues/627)), not a new
 syntax family. None of this expands the P0 compiler profile.
 
 ### Effects: a two-point lattice first, and one-shot continuations
 
-Recorded from [#556](https://github.com/hjosugi/kofun/issues/556). The roadmap
+Recorded from [#556](https://github.com/kofun-lang/kofun/issues/556). The roadmap
 lists effects after the bootstrap milestones; this states which design that
 means and how it interacts with ownership, so the two are not decided
 separately.
@@ -152,7 +152,7 @@ they are needed.
 - reject double consumption of an owned resource
 - reject mutable aliases
 - prevent data races with types and runtime contracts — data-race freedom, not
-  race-condition freedom ([Memory model §12](https://github.com/hjosugi/kofun/blob/main/docs/MEMORY_MODEL.md#12-concurrency-stance))
+  race-condition freedom ([Memory model §12](https://github.com/kofun-lang/kofun/blob/main/docs/MEMORY_MODEL.md#12-concurrency-stance))
 - turn unsupported backend behavior into an explicit compile error
 
 ### Functional core, practical shell
@@ -211,8 +211,6 @@ Specify not only the syntax but the experience on failure.
 - people who want Rust's safety but less lifetime ceremony in application code
 - people who want to cover scientific computing and systems integration in one
   language
-- people who want to use the same language for coding interviews and production
-  code
 - people who enjoy type-level programming and metaprogramming
 
 ## Success criteria

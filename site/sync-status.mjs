@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import process from "node:process";
 
-const repository = "hjosugi/kofun";
+const repository = "kofun-lang/kofun";
 const trackedIssues = [650, 666, 667, 668];
 const snapshotCommitSubject = "Update issue progress snapshot";
 const verificationWorkflow = "ci.yml";

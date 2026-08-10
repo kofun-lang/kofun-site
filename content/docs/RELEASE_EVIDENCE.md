@@ -3,7 +3,7 @@
 Kofun publishes bounded capability claims. This document describes the one
 machine-checked join between those claims and the evidence that bounds them.
 
-The manifest does not replace [`docs/MVP_IMPLEMENTED.md`](https://github.com/hjosugi/kofun/blob/main/docs/MVP_IMPLEMENTED.md),
+The manifest does not replace [`docs/MVP_IMPLEMENTED.md`](https://github.com/kofun-lang/kofun/blob/main/docs/MVP_IMPLEMENTED.md),
 `tests/conformance/capabilities.tsv`, the diagnostic registry, or any other
 subsystem artifact. Each of those remains authoritative for its own domain. The
 manifest connects them, and fails when published wording outruns executable
@@ -13,11 +13,11 @@ evidence.
 
 | File | Role |
 |---|---|
-| [`spec/release-claim.schema.json`](https://github.com/hjosugi/kofun/blob/main/spec/release-claim.schema.json) | Versioned schema. Constrains shape. |
-| [`release/claims.json`](https://github.com/hjosugi/kofun/blob/main/release/claims.json) | Canonical manifest. The only editable source. |
-| [`tests/release/validate-claims.mjs`](https://github.com/hjosugi/kofun/blob/main/tests/release/validate-claims.mjs) | Checker and pack generator. |
-| [`tests/release/make-invalid.mjs`](https://github.com/hjosugi/kofun/blob/main/tests/release/make-invalid.mjs) | Negative-mutation fixtures. |
-| [`tests/release/check-claims.sh`](https://github.com/hjosugi/kofun/blob/main/tests/release/check-claims.sh) | The gate. |
+| [`spec/release-claim.schema.json`](https://github.com/kofun-lang/kofun/blob/main/spec/release-claim.schema.json) | Versioned schema. Constrains shape. |
+| [`release/claims.json`](https://github.com/kofun-lang/kofun/blob/main/release/claims.json) | Canonical manifest. The only editable source. |
+| [`tests/release/validate-claims.mjs`](https://github.com/kofun-lang/kofun/blob/main/tests/release/validate-claims.mjs) | Checker and pack generator. |
+| [`tests/release/make-invalid.mjs`](https://github.com/kofun-lang/kofun/blob/main/tests/release/make-invalid.mjs) | Negative-mutation fixtures. |
+| [`tests/release/check-claims.sh`](https://github.com/kofun-lang/kofun/blob/main/tests/release/check-claims.sh) | The gate. |
 | `artifacts/release-evidence/` | Generated pack. Committed, never hand-edited. |
 
 ## The two lanes

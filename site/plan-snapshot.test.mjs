@@ -17,7 +17,7 @@ function issue(number, options = {}) {
   return {
     number,
     title: options.title ?? `Issue ${number}`,
-    html_url: `https://github.com/hjosugi/kofun/issues/${number}`,
+    html_url: `https://github.com/kofun-lang/kofun/issues/${number}`,
     state: options.state ?? "open",
     state_reason: options.stateReason ?? null,
     labels: labels.map((name) => ({ name })),
@@ -199,7 +199,7 @@ assert.ok(!semanticallyEqual(snapshot, changed));
 const markdown = renderDeliveryPlan(snapshot);
 assert.match(markdown, /^# Delivery plan/m);
 assert.match(markdown, /three writer lanes plus one review\/integration lane/i);
-assert.match(markdown, /\[#618\]\(https:\/\/github\.com\/hjosugi\/kofun\/issues\/618\)/);
+assert.match(markdown, /\[#618\]\(https:\/\/github\.com\/kofun-lang\/kofun\/issues\/618\)/);
 assert.match(markdown, /Open planning umbrellas \| 1/);
 assert.match(markdown, /not_planned/);
 assert.deepEqual(
@@ -220,7 +220,7 @@ assert.equal(
 );
 assert.deepEqual(parseArgs(["--check", "--as-of", "2026-07-26"]), {
   check: true,
-  repository: "hjosugi/kofun",
+  repository: "kofun-lang/kofun",
   asOf: "2026-07-26",
   input: null,
   output: new URL("../site/plan-snapshot.json", import.meta.url).pathname,
@@ -231,7 +231,7 @@ const apiItems = Array.from({ length: 101 }, (_, index) => issue(index + 1000));
 apiItems.splice(37, 0, issue(999, { pullRequest: true }));
 const requests = [];
 const fetched = await fetchAllIssues({
-  repository: "hjosugi/kofun",
+  repository: "kofun-lang/kofun",
   token: "test-token",
   fetchImpl: async (url, init) => {
     requests.push({ url, init });

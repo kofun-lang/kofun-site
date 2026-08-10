@@ -12,7 +12,6 @@ const required = [
   "docs/getting-started/index.html",
   "docs/repository-guide/index.html",
   "docs/one-day-tutorial/index.html",
-  "docs/coding-interview/index.html",
   "docs/scientific-computing/index.html",
   "docs/language-vision/index.html",
   "docs/contributing/index.html",
@@ -32,7 +31,6 @@ for (const path of required) {
 
 for (const [slug, source] of [
   ["one-day-tutorial", "ONE_DAY_TUTORIAL.md"],
-  ["coding-interview", "CODING_INTERVIEW.md"],
   ["scientific-computing", "SCIENTIFIC_COMPUTING.md"],
   ["language-vision", "LANGUAGE_VISION.md"],
   ["rfc-process", "RFC_PROCESS.md"],
@@ -46,7 +44,7 @@ for (const [slug, source] of [
   assert.match(
     rendered,
     new RegExp(
-      `github\\.com/hjosugi/kofun-site/blob/main/content/docs/${source.replace(".", "\\.")}`,
+      `github\\.com/kofun-lang/kofun-site/blob/main/content/docs/${source.replace(".", "\\.")}`,
     ),
   );
 }
@@ -58,7 +56,7 @@ const languageOwnedGuide = await readFile(
 assert.match(languageOwnedGuide, /kofun source/);
 assert.match(
   languageOwnedGuide,
-  /github\.com\/hjosugi\/kofun\/blob\/main\/docs\/MVP_IMPLEMENTED\.md/,
+  /github\.com\/kofun-lang\/kofun\/blob\/main\/docs\/MVP_IMPLEMENTED\.md/,
 );
 
 async function files(directory) {

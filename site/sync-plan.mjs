@@ -3,7 +3,7 @@ import { dirname, resolve } from "node:path";
 import process from "node:process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
-export const DEFAULT_REPOSITORY = "hjosugi/kofun";
+export const DEFAULT_REPOSITORY = "kofun-lang/kofun";
 export const DEFAULT_TIME_ZONE = "Asia/Tokyo";
 export const SNAPSHOT_SCHEMA = "kofun.delivery-plan/v1";
 export const WORKFLOW_LABELS = [

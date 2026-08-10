@@ -52,8 +52,8 @@ export default function DocsHome() {
         <header className="docs-topbar">
           <Link href="/">← Project home</Link>
           <div>
-            <a href="https://github.com/hjosugi/kofun">GitHub</a>
-            <a href="https://github.com/hjosugi/kofun/issues">Issues</a>
+            <a href="https://github.com/kofun-lang/kofun">GitHub</a>
+            <a href="https://github.com/kofun-lang/kofun/issues">Issues</a>
           </div>
         </header>
 
@@ -67,7 +67,7 @@ export default function DocsHome() {
               without guessing which source or test owns the behavior. The
               tracker snapshot observes main commit{" "}
               <a
-                href={`https://github.com/hjosugi/kofun/commit/${snapshot.commit}`}
+                href={`https://github.com/kofun-lang/kofun/commit/${snapshot.commit}`}
               >
                 {snapshot.shortCommit}
               </a>

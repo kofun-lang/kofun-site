@@ -308,9 +308,15 @@ export function validateConfig(config) {
   if (!/^[A-Za-z0-9-]+$/.test(config.owner ?? "")) {
     fail("project-config.json has an invalid owner");
   }
-  if (config.repository !== `${config.owner}/kofun`) {
+  // `owner` addresses the user-level Project; the repository sits in an
+  // organization, so the guard has to check the repository's own owner.
+  const repositoryOwner = config.repositoryOwner ?? config.owner;
+  if (!/^[A-Za-z0-9-]+$/.test(repositoryOwner)) {
+    fail("project-config.json has an invalid repositoryOwner");
+  }
+  if (config.repository !== `${repositoryOwner}/kofun`) {
     fail(
-      `Remote-write guard: repository must be ${config.owner}/kofun, got ${config.repository}`,
+      `Remote-write guard: repository must be ${repositoryOwner}/kofun, got ${config.repository}`,
     );
   }
   if (config.title !== "Kofun Delivery Roadmap") {
