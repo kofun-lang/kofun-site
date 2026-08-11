@@ -1,5 +1,11 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import KofunMark from "./kofun-mark";
+import {
+  homepageCapabilityClaims,
+  homepageCheckpoints,
+  kofunVersion,
+} from "./kofun-release";
 import Playground from "./playground";
 
 const githubUrl = "https://github.com/kofun-lang/kofun";
@@ -27,15 +33,15 @@ function GithubIcon() {
 const principles = [
   {
     number: "01",
-    title: "Ownership you can read",
-    body: "The design uses read, edit, and take where resources matter. Its general checker is still open; active ownership slices are documented separately.",
-    code: "fn upload(take file: File)",
+    title: "Ownership in checked slices",
+    body: `Borrowed List moves and ${homepageCapabilityClaims.ownership.public_wording} run as bounded checkpoints. The ${homepageCapabilityClaims.ownershipBoundary.public_wording} remains open.`,
+    code: "fn consume(take values: List[Int])",
   },
   {
     number: "02",
-    title: "Functional, not ceremonial",
-    body: "Immutable data, typed lambdas, and pipelines are the default. Local mutation remains available for algorithms.",
-    code: "values |> filter(keep) |> sum()",
+    title: "Useful types, executable now",
+    body: `Bounded C11 profiles execute functions, ${homepageCapabilityClaims.lists.public_wording}, records, enum matching, and ${homepageCapabilityClaims.decimal.public_wording}.`,
+    code: "fn total(values: List[Int]) -> Int",
   },
   {
     number: "03",
@@ -73,7 +79,7 @@ export default function Home() {
         <div className="hero-copy">
           <div className="eyebrow">
             <span />
-            A programming language in active construction
+            Kofun {kofunVersion} · research compiler
           </div>
           <h1>
             Clear code.
@@ -81,9 +87,10 @@ export default function Home() {
             <em>Native ground.</em>
           </h1>
           <p>
-            Kofun explores low-sigil ownership and functional composition while
-            building a checked bootstrap and direct native checkpoints. Every
-            active compiler claim stays tied to executable evidence.
+            Kofun explores low-sigil ownership and functional composition with
+            a Kofun-written seed, a three-generation fixed point for its frozen
+            profile, and bounded C11, ELF64, and wasm32 checkpoints. Every
+            active compiler claim is tied to executable evidence.
           </p>
           <div className="hero-actions">
             <Link className="primary-button" href="/docs">
@@ -98,15 +105,12 @@ export default function Home() {
       </section>
 
       <div className="signal-strip" aria-label="Current Kofun checkpoints">
-        <span>self-host profile</span>
-        <i />
-        <span>static ELF</span>
-        <i />
-        <span>Unicode 17</span>
-        <i />
-        <span>typed HIR v1</span>
-        <i />
-        <span>C ABI</span>
+        {homepageCheckpoints.map((checkpoint, index) => (
+          <Fragment key={checkpoint.claimId}>
+            {index > 0 ? <i /> : null}
+            <span title={checkpoint.status}>{checkpoint.label}</span>
+          </Fragment>
+        ))}
       </div>
 
       <section className="principles section" id="language">
@@ -140,11 +144,12 @@ export default function Home() {
             <h2>Touch the syntax.<br />See the idea run.</h2>
           </div>
           <p>
-            Edit a program and press Run. The safe browser evaluator covers the
-            learning subset shown here; native builds and ownership checks live
-            in the repository CLI.{" "}
+            Edit a program and press Run. Every example below is also executed
+            by the repository CLI in the site gate. The browser evaluator
+            mirrors only this bounded learning subset; broader compiler checks
+            stay in the repository.{" "}
             <a className="tour-link" href={`${siteBasePath}/tour/`}>
-              Open the audited wasm32 tour →
+              Open the checked wasm32 tour →
             </a>
           </p>
         </div>
@@ -191,7 +196,7 @@ export default function Home() {
           <h2>From checkout<br />to native in seconds.</h2>
           <p>
             No package installation is required for the repository launcher.
-            A C11 compiler is required for the audited seed and host-C paths.
+            A C11 compiler is required for the checked seed and host-C paths.
           </p>
         </div>
         <div className="terminal">
@@ -202,6 +207,7 @@ export default function Home() {
           <pre>
             <span className="prompt">$</span> git clone {githubUrl}.git{"\n"}
             <span className="prompt">$</span> cd kofun{"\n"}
+            <span className="prompt">$</span> mkdir -p build{"\n"}
             <span className="prompt">$</span> ./bin/kofun run bootstrap/fixtures/answer.kofun{"\n"}
             <span className="terminal-output">42</span>{"\n\n"}
             <span className="prompt">$</span> ./bin/kofun build bootstrap/fixtures/answer.kofun \{"\n"}

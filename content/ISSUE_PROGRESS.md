@@ -4,11 +4,11 @@ Status: generated read-only snapshot for documentation synchronization.
 
 Repository: [`kofun-lang/kofun`](https://github.com/kofun-lang/kofun)
 
-Observed main commit: [`9923169`](https://github.com/kofun-lang/kofun/commit/99231696f90aebc2e50a80023bc2b0abc1d4ceea)
+Observed main commit: [`b6947cc`](https://github.com/kofun-lang/kofun/commit/b6947cc9ecc54ab7465bc4ea7166c4a960d1d04b)
 
-Implementation verification: [`CI`](https://github.com/kofun-lang/kofun/actions/runs/30716316625) is `success`, completed at `2026-08-01T20:26:16Z`.
+Implementation verification: [`CI`](https://github.com/kofun-lang/kofun/actions/runs/31441991390) is `success`, completed at `2026-08-10T23:32:27Z`.
 
-Reviewed at: `2026-08-01T20:28:39.851Z`
+Reviewed at: `2026-08-11T02:05:01.131Z`
 
 | Issue | Workflow | State | Last tracker update | Title |
 |---|---|---|---|---|

@@ -227,7 +227,9 @@ assert.deepEqual(parseArgs(["--check", "--as-of", "2026-07-26"]), {
   markdown: new URL("../content/DELIVERY_PLAN.md", import.meta.url).pathname,
 });
 
-const apiItems = Array.from({ length: 101 }, (_, index) => issue(index + 1000));
+// More than 1,000 results exercises GitHub's cursor requirement. Numeric-only
+// pagination returns 422 at page 11 for a repository this large.
+const apiItems = Array.from({ length: 1001 }, (_, index) => issue(index + 1000));
 apiItems.splice(37, 0, issue(999, { pullRequest: true }));
 const requests = [];
 const fetched = await fetchAllIssues({
@@ -236,21 +238,28 @@ const fetched = await fetchAllIssues({
   fetchImpl: async (url, init) => {
     requests.push({ url, init });
     const page = Number(new URL(url).searchParams.get("page"));
-    const items = page === 1 ? apiItems.slice(0, 100) : apiItems.slice(100);
+    const start = (page - 1) * 100;
+    const items = apiItems.slice(start, start + 100);
+    const nextPage = page + 1;
+    const link = items.length === 100
+      ? `<https://api.github.com/repos/kofun-lang/kofun/issues?` +
+        `state=all&per_page=100&page=${nextPage}&after=cursor-${page}>; rel="next"`
+      : null;
     return {
       ok: true,
       status: 200,
       statusText: "OK",
-      headers: new Headers(),
+      headers: new Headers(link ? { link } : {}),
       json: async () => items,
     };
   },
 });
-assert.equal(fetched.pages, 2);
-assert.equal(fetched.items.length, 102);
-assert.equal(requests.length, 2);
+assert.equal(fetched.pages, 11);
+assert.equal(fetched.items.length, 1002);
+assert.equal(requests.length, 11);
 assert.equal(requests[0].init.headers.Authorization, "Bearer test-token");
 assert.equal(new URL(requests[0].url).searchParams.get("per_page"), "100");
+assert.equal(new URL(requests[10].url).searchParams.get("after"), "cursor-10");
 
 console.log(
   `PASS: ${snapshot.summary.scheduled_curated} scheduled issues, ` +

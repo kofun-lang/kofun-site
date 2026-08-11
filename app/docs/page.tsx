@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { kofunVersion } from "../kofun-release";
 import DocsNav from "./docs-nav";
 import { docs, snapshot } from "./docs-manifest";
 
@@ -112,11 +113,15 @@ export default function DocsHome() {
 
           <div className="docs-honesty">
             <span>Current boundary</span>
-            <strong>Research compiler, not a production language.</strong>
+            <strong>
+              Kofun {kofunVersion}: research compiler, not a production
+              language.
+            </strong>
             <p>
-              The frozen compiler profile now reaches a runnable
-              compiler-produced compiler through the driver. The required
-              three-generation semantic fixed point remains open.
+              The frozen compiler profile has reached its three-generation
+              semantic fixed point. Full-language self-hosting, a general
+              parser and type checker, and general ownership and law checking
+              remain open.
             </p>
             <Link href="/docs/implemented-status">
               Read the capability matrix →

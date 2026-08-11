@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { kofunVersion } from "./kofun-release";
 
 const siteBasePath = process.env.KOFUN_BASE_PATH ?? "";
 
@@ -9,7 +10,8 @@ export const metadata: Metadata = {
     template: "%s · Kofun",
   },
   description:
-    "Kofun is an experimental programming language with a Kofun-written bootstrap and bounded direct x86-64/AArch64 ELF backends.",
+    `Kofun ${kofunVersion} is a research programming language with a ` +
+    "Kofun-written bootstrap, a frozen-profile fixed point, and bounded C11, ELF64, and wasm32 checkpoints.",
   keywords: [
     "Kofun",
     "programming language",
@@ -25,7 +27,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Kofun — Clear code, native ground",
     description:
-      "A research language with executable bootstrap evidence and bounded direct static ELF checkpoints.",
+      `Kofun ${kofunVersion}: executable bootstrap evidence and bounded ` +
+      "C11, direct static ELF, and wasm32 checkpoints.",
     type: "website",
   },
 };

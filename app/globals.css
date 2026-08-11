@@ -368,6 +368,10 @@ svg {
   width: 4px;
 }
 
+.signal-strip > * {
+  flex: 0 0 auto;
+}
+
 .section {
   margin: 0 auto;
   max-width: var(--content-wide);
@@ -1066,9 +1070,6 @@ footer {
 }
 
 @media (max-width: 840px) {
-  :root {
-  }
-
   .nav {
     height: 66px;
     padding: 0 var(--page-gutter);
@@ -1114,8 +1115,14 @@ footer {
 
   .signal-strip {
     justify-content: flex-start;
-    overflow: hidden;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
     white-space: nowrap;
+  }
+
+  .signal-strip::-webkit-scrollbar {
+    display: none;
   }
 
   .signal-strip i {

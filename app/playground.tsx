@@ -220,9 +220,9 @@ export default function Playground() {
           </div>
           <div className="subset-note">
             <span>Honest boundary</span>
-            This runner implements a safe learning subset in TypeScript. The
-            repository CLI remains the source of truth for ownership, laws, and
-            native ELF builds.
+            These examples are checked against the repository CLI. This runner
+            mirrors their safe learning subset in TypeScript; the compiler
+            remains the source of truth for ownership, laws, and native builds.
           </div>
         </div>
       </div>
