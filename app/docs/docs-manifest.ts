@@ -159,6 +159,13 @@ export const docs: DocEntry[] = [
     section: "Contribute",
   },
   {
+    slug: "issue-readiness",
+    title: "Issue readiness",
+    summary: "What the ready label means: one bounded artifact, a stamped current-behavior measurement, checkable criteria, and a named gate.",
+    source: "docs/ISSUE_READINESS.md",
+    section: "Contribute",
+  },
+  {
     slug: "specification",
     title: "Specification",
     summary: "Normative contracts, roadmap documents, and executable conformance evidence.",
