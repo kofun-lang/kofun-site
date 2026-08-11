@@ -68,7 +68,7 @@ type Expression =
       kind: "if";
       condition: Expression;
       thenBranch: Statement[];
-      elseBranch: Statement[] | Expression;
+      elseBranch: Statement[] | Expression | null;
       token: Token;
     };
 
@@ -422,6 +422,10 @@ class Parser {
   }
 
   private parseStatement(): Statement {
+    if (this.matchValue("if")) {
+      const value = this.parseStatementIfAfterKeyword(this.previous());
+      return { kind: "expression", value, token: value.token };
+    }
     if (this.matchValue("let")) {
       const token = this.previous();
       const mutable = this.matchValue("mut");
@@ -460,6 +464,24 @@ class Parser {
     }
     const value = this.parseExpression();
     return { kind: "expression", value, token: value.token };
+  }
+
+  private parseStatementIfAfterKeyword(token: Token): Expression {
+    const condition = this.parseExpression();
+    const thenBranch = this.parseBlock();
+    let elseBranch: Statement[] | Expression | null = null;
+    if (this.matchValue("else")) {
+      elseBranch = this.matchValue("if")
+        ? this.parseStatementIfAfterKeyword(this.previous())
+        : this.parseBlock();
+    }
+    return {
+      kind: "if",
+      condition,
+      thenBranch,
+      elseBranch,
+      token,
+    };
   }
 
   private parseExpression(minimumPrecedence = 0): Expression {
@@ -957,6 +979,7 @@ class Evaluator {
         new Environment(environment),
       );
     }
+    if (expression.elseBranch === null) return null;
     if (Array.isArray(expression.elseBranch)) {
       return this.evaluateBlock(
         expression.elseBranch,
@@ -1281,31 +1304,30 @@ export function runKofun(source: string): PlaygroundResult {
 
 export const PLAYGROUND_EXAMPLES: PlaygroundExample[] = [
   {
-    id: "pipeline",
-    name: "Pipeline",
-    description: "Immutable Lists, lambdas, map, filter, and sum.",
-    source: `fn main() {
-    let values = [1, 2, 3, 4, 5, 6]
-    let answer = values
-        |> map(fn(x: Int) => x * x)
-        |> filter(fn(x: Int) => x % 2 == 0)
-        |> sum()
+    id: "lists",
+    name: "Lists",
+    description: "Bounded List[Int] parameters, len, and checked indexing.",
+    source: `fn count(values: List[Int]) -> Int {
+    return len(values)
+}
 
-    print(answer)
+fn main() {
+    let values = [3, 5, 8, 13]
+    print(count(values))
+    print(values[-1])
 }`,
   },
   {
     id: "branches",
     name: "Functions",
-    description: "Typed parameters and expression-oriented branching.",
+    description: "Typed parameters and executable else-if chains.",
     source: `fn classify(score: Int) -> Text {
-    return if score >= 90 {
-        "excellent"
+    if score >= 90 {
+        return "excellent"
     } else if score >= 70 {
-        "good"
-    } else {
-        "keep going"
+        return "good"
     }
+    return "keep going"
 }
 
 fn main() {
@@ -1313,27 +1335,24 @@ fn main() {
 }`,
   },
   {
-    id: "science",
-    name: "Science",
-    description: "A small vector vocabulary for exploratory numerical work.",
+    id: "numbers",
+    name: "Numbers",
+    description: "Checked Int floor division and modulo.",
     source: `fn main() {
-    let x = linspace(0.0, 1.0, 5)
-    let squared = vmul(x, x)
-
-    print(mean(squared))
-    print(dot(x, squared))
+    print(-7 // 2)
+    print(-7 % 2)
 }`,
   },
   {
-    id: "fold",
-    name: "Fold",
-    description: "Runtime accumulation over a List[Int].",
-    source: `fn main() {
-    let values = 1 .. 7
-    let product = values
-        |> fold(1, fn(total: Int, value: Int) => total * value)
+    id: "text",
+    name: "Text",
+    description: "Text-returning calls and concatenation.",
+    source: `fn greet(name: Text) -> Text {
+    return "Hello, " + name
+}
 
-    print(product)
+fn main() {
+    print(greet("Kofun"))
 }`,
   },
 ];

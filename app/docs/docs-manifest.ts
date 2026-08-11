@@ -147,7 +147,7 @@ export const docs: DocEntry[] = [
   {
     slug: "self-hosting",
     title: "Self-hosting",
-    summary: "The frozen profile, typed HIR evidence, runnable compiler generation, and fixed-point boundary.",
+    summary: "The frozen profile, three-generation semantic fixed point, diverse double compilation, and independent-reproduction boundary.",
     source: "bootstrap/selfhost/README.md",
     section: "Compiler",
   },

@@ -2,14 +2,14 @@
   "schema": "kofun.delivery-plan/v1",
   "repository": "kofun-lang/kofun",
   "time_zone": "Asia/Tokyo",
-  "as_of": "2026-08-05",
-  "generated_at": "2026-08-05T13:09:16.328Z",
+  "as_of": "2026-08-11",
+  "generated_at": "2026-08-11T02:06:47.317Z",
   "source": {
-    "endpoint": "https://api.github.com/repos/hjosugi/kofun/issues",
-    "api_items": 1044,
-    "issues": 754,
-    "pull_requests_excluded": 290,
-    "pages": 11
+    "endpoint": "https://api.github.com/repos/kofun-lang/kofun/issues",
+    "api_items": 1199,
+    "issues": 821,
+    "pull_requests_excluded": 378,
+    "pages": 12
   },
   "capacity": {
     "max_agents": 4,
@@ -26,85 +26,75 @@
     "policy": "Three agents implement at most three issues concurrently; one agent owns review, integration, and CI."
   },
   "summary": {
-    "issues_total": 754,
-    "open_issues": 70,
-    "closed_issues": 684,
-    "open_curated": 58,
-    "open_planning": 11,
-    "open_unclassified": 1,
-    "scheduled_curated": 24,
-    "unscheduled_curated": 34,
+    "issues_total": 821,
+    "open_issues": 33,
+    "closed_issues": 788,
+    "open_curated": 29,
+    "open_planning": 4,
+    "open_unclassified": 0,
+    "scheduled_curated": 13,
+    "unscheduled_curated": 16,
     "open_roles": {
-      "curated": 58,
-      "planning": 11,
-      "unclassified": 1
+      "curated": 29,
+      "planning": 4
     },
     "open_workflows": {
-      "blocked": 29,
-      "deferred": 12,
-      "in-progress": 2,
-      "needs-decision": 10,
+      "blocked": 17,
+      "in-progress": 1,
       "needs-detail": 11,
-      "ready": 5,
-      "unclassified": 1
+      "ready": 4
     },
     "open_priorities": {
-      "P0": 4,
-      "P1": 29,
-      "P2": 32,
+      "P1": 12,
+      "P2": 16,
       "P3": 5
     },
     "open_sizes": {
-      "L": 27,
-      "M": 37,
-      "S": 6
+      "L": 9,
+      "M": 21,
+      "S": 3
     },
     "curated_workflows": {
-      "blocked": 25,
-      "deferred": 11,
-      "in-progress": 2,
-      "needs-decision": 9,
-      "needs-detail": 5,
-      "ready": 5,
-      "unclassified": 1
+      "blocked": 16,
+      "in-progress": 1,
+      "needs-detail": 8,
+      "ready": 4
     },
     "curated_priorities": {
-      "P0": 3,
-      "P1": 22,
-      "P2": 28,
+      "P1": 10,
+      "P2": 14,
       "P3": 5
     },
     "curated_sizes": {
-      "L": 15,
-      "M": 37,
-      "S": 6
+      "L": 5,
+      "M": 21,
+      "S": 3
     },
     "state_reasons": {
-      "completed": 217,
-      "none": 66,
-      "not_planned": 467,
-      "reopened": 4
+      "completed": 294,
+      "none": 33,
+      "not_planned": 494
     }
   },
   "throughput": {
     "window_days": 14,
-    "window_start": "2026-07-22",
-    "window_end": "2026-08-05",
-    "created_curated": 155,
-    "completed_curated": 150,
-    "closed_not_planned": 3,
-    "completion_rate_per_week": 75,
-    "arrival_rate_per_week": 77.5,
-    "net_burn_per_week": -2.5,
+    "window_start": "2026-07-28",
+    "window_end": "2026-08-11",
+    "created_curated": 140,
+    "completed_curated": 162,
+    "closed_not_planned": 21,
+    "completion_rate_per_week": 81,
+    "arrival_rate_per_week": 70,
+    "net_burn_per_week": 11,
     "note": "Completion excludes issues closed as not planned; intake uses curated issue creation dates."
   },
   "forecast": {
     "scope": "Open curated issues, excluding deferred work and blockers outside the two represented dependency chains.",
-    "scheduled_count": 24,
-    "unscheduled_count": 34,
-    "start_date": "2026-08-05",
-    "likely_finish": "2026-10-15",
-    "conservative_finish": "2026-11-03",
+    "scheduled_count": 13,
+    "unscheduled_count": 16,
+    "start_date": "2026-08-11",
+    "likely_finish": "2026-09-22",
+    "conservative_finish": "2026-10-02",
     "confidence": "low",
     "assumptions": [
       "No new issues enter the scheduled scope.",
@@ -120,8 +110,8 @@
         "label": "4-agent capacity plan",
         "writer_slots": 3,
         "reviewer_slots": 1,
-        "finish_date": "2026-10-15",
-        "calendar_days": 72,
+        "finish_date": "2026-09-22",
+        "calendar_days": 43,
         "note": "Deterministic lane simulation with one serial reviewer."
       },
       {
@@ -129,8 +119,8 @@
         "label": "Conservative +25% buffer",
         "writer_slots": 3,
         "reviewer_slots": 1,
-        "finish_date": "2026-11-03",
-        "calendar_days": 91,
+        "finish_date": "2026-10-02",
+        "calendar_days": 53,
         "note": "Allows for refinement, rework, and integration variance."
       },
       {
@@ -138,8 +128,8 @@
         "label": "Observed completion pace, intake frozen",
         "writer_slots": null,
         "reviewer_slots": null,
-        "finish_date": "2026-08-07",
-        "calendar_days": 3,
+        "finish_date": "2026-08-12",
+        "calendar_days": 2,
         "note": "Optimistic extrapolation; it freezes intake and may include retrospective tracker closure."
       },
       {
@@ -147,9 +137,9 @@
         "label": "Observed net issue burn",
         "writer_slots": null,
         "reviewer_slots": null,
-        "finish_date": null,
-        "calendar_days": null,
-        "note": "No finish date: curated intake equals or exceeds completed work in the observation window."
+        "finish_date": "2026-08-19",
+        "calendar_days": 9,
+        "note": "Projection from completed curated issues minus new curated issues; not a capacity commitment."
       }
     ]
   },
@@ -219,8 +209,8 @@
           "title": "Self-host compiler driver: args, file I/O, and compiling S to deterministic C11",
           "url": "https://github.com/kofun-lang/kofun/issues/622",
           "role": "curated",
-          "workflow": "ready",
-          "state_reason": "reopened",
+          "workflow": "closed",
+          "state_reason": "completed",
           "priority": "P0",
           "size": "M",
           "kind": "implementation",
@@ -235,16 +225,16 @@
             "ready",
             "size:M"
           ],
-          "start_date": "2026-08-05",
-          "end_date": "2026-08-11"
+          "start_date": null,
+          "end_date": null
         },
         {
           "number": 271,
           "title": "Bootstrap: produce C1/A1 and self-compile S into C2/A2",
           "url": "https://github.com/kofun-lang/kofun/issues/271",
           "role": "curated",
-          "workflow": "needs-decision",
-          "state_reason": null,
+          "workflow": "closed",
+          "state_reason": "completed",
           "priority": "P0",
           "size": "M",
           "kind": "implementation",
@@ -255,19 +245,19 @@
             "area:c-backend",
             "curated",
             "kind:implementation",
-            "needs-decision",
+            "ready",
             "size:M"
           ],
-          "start_date": "2026-08-12",
-          "end_date": "2026-08-21"
+          "start_date": null,
+          "end_date": null
         },
         {
           "number": 272,
           "title": "Bootstrap fixed point: produce C3/A3, compare three generations, close B4/B5",
           "url": "https://github.com/kofun-lang/kofun/issues/272",
           "role": "curated",
-          "workflow": "blocked",
-          "state_reason": null,
+          "workflow": "closed",
+          "state_reason": "completed",
           "priority": "P0",
           "size": "M",
           "kind": "implementation",
@@ -276,20 +266,20 @@
             "P0",
             "area:bootstrap",
             "area:c-backend",
-            "blocked",
             "curated",
             "kind:implementation",
+            "ready",
             "size:M"
           ],
-          "start_date": "2026-08-24",
-          "end_date": "2026-08-28"
+          "start_date": null,
+          "end_date": null
         },
         {
           "number": 274,
           "title": "Reproducible bootstrap B6: independent clean builder reproduces the fixed point",
           "url": "https://github.com/kofun-lang/kofun/issues/274",
           "role": "curated",
-          "workflow": "blocked",
+          "workflow": "needs-detail",
           "state_reason": null,
           "priority": "P1",
           "size": "M",
@@ -299,13 +289,13 @@
             "P1",
             "area:bootstrap",
             "area:quality",
-            "blocked",
             "curated",
             "kind:test-quality",
+            "needs-detail",
             "size:M"
           ],
-          "start_date": "2026-08-31",
-          "end_date": "2026-09-04"
+          "start_date": "2026-08-11",
+          "end_date": "2026-08-19"
         }
       ]
     },
@@ -419,8 +409,8 @@
             "needs-detail",
             "size:L"
           ],
-          "start_date": "2026-08-05",
-          "end_date": "2026-08-20"
+          "start_date": "2026-08-11",
+          "end_date": "2026-08-26"
         },
         {
           "number": 726,
@@ -447,46 +437,44 @@
   ],
   "schedule": [
     {
-      "number": 622,
-      "title": "Self-host compiler driver: args, file I/O, and compiling S to deterministic C11",
-      "url": "https://github.com/kofun-lang/kofun/issues/622",
+      "number": 274,
+      "title": "Reproducible bootstrap B6: independent clean builder reproduces the fixed point",
+      "url": "https://github.com/kofun-lang/kofun/issues/274",
       "state": "open",
-      "state_reason": "reopened",
+      "state_reason": null,
       "role": "curated",
-      "workflow": "ready",
-      "priority": "P0",
+      "workflow": "needs-detail",
+      "priority": "P1",
       "size": "M",
-      "kind": "implementation",
+      "kind": "test-quality",
       "area": "bootstrap",
       "areas": [
         "bootstrap",
-        "build-system",
-        "c-backend"
+        "quality"
       ],
       "labels": [
-        "P0",
+        "P1",
         "area:bootstrap",
-        "area:build-system",
-        "area:c-backend",
+        "area:quality",
         "curated",
-        "kind:implementation",
-        "ready",
+        "kind:test-quality",
+        "needs-detail",
         "size:M"
       ],
       "assignees": [],
-      "created_at": "2026-07-23T12:16:18Z",
-      "updated_at": "2026-08-02T07:32:44Z",
+      "created_at": "2026-07-20T00:10:06Z",
+      "updated_at": "2026-08-10T13:11:52Z",
       "closed_at": null,
       "chain_id": "self-host-fixed-point",
       "depends_on": [],
-      "writer_days": 4,
-      "confidence": "medium",
+      "writer_days": 6,
+      "confidence": "low",
       "lane": "writer-a",
-      "start_date": "2026-08-05",
-      "writer_end_date": "2026-08-10",
-      "review_start_date": "2026-08-11",
-      "review_end_date": "2026-08-11",
-      "end_date": "2026-08-11",
+      "start_date": "2026-08-11",
+      "writer_end_date": "2026-08-18",
+      "review_start_date": "2026-08-19",
+      "review_end_date": "2026-08-19",
+      "end_date": "2026-08-19",
       "schedule_status": "scheduled"
     },
     {
@@ -511,147 +499,24 @@
       ],
       "assignees": [],
       "created_at": "2026-07-26T08:12:22Z",
-      "updated_at": "2026-08-02T08:29:09Z",
+      "updated_at": "2026-08-08T16:28:25Z",
       "closed_at": null,
       "chain_id": "decimal-delivery",
       "depends_on": [],
       "writer_days": 10,
       "confidence": "low",
       "lane": "writer-b",
-      "start_date": "2026-08-05",
-      "writer_end_date": "2026-08-18",
-      "review_start_date": "2026-08-19",
-      "review_end_date": "2026-08-20",
-      "end_date": "2026-08-20",
+      "start_date": "2026-08-11",
+      "writer_end_date": "2026-08-24",
+      "review_start_date": "2026-08-25",
+      "review_end_date": "2026-08-26",
+      "end_date": "2026-08-26",
       "schedule_status": "scheduled"
     },
     {
-      "number": 955,
-      "title": "modules: spec/grammar.ebnf admits a top-level `let` that Stage 2 refuses with E2S02",
-      "url": "https://github.com/kofun-lang/kofun/issues/955",
-      "state": "open",
-      "state_reason": null,
-      "role": "curated",
-      "workflow": "in-progress",
-      "priority": "P1",
-      "size": "S",
-      "kind": "spec-design",
-      "area": "modules",
-      "areas": [
-        "modules"
-      ],
-      "labels": [
-        "P1",
-        "area:modules",
-        "curated",
-        "in-progress",
-        "kind:spec-design",
-        "size:S"
-      ],
-      "assignees": [],
-      "created_at": "2026-08-02T01:14:55Z",
-      "updated_at": "2026-08-05T13:07:34Z",
-      "closed_at": null,
-      "chain_id": null,
-      "depends_on": [],
-      "writer_days": 2,
-      "confidence": "medium",
-      "lane": "writer-c",
-      "start_date": "2026-08-05",
-      "writer_end_date": "2026-08-06",
-      "review_start_date": "2026-08-07",
-      "review_end_date": "2026-08-07",
-      "end_date": "2026-08-07",
-      "schedule_status": "scheduled"
-    },
-    {
-      "number": 1008,
-      "title": "Stage 2: execute immutable Int module constants after authority decision",
-      "url": "https://github.com/kofun-lang/kofun/issues/1008",
-      "state": "open",
-      "state_reason": null,
-      "role": "curated",
-      "workflow": "in-progress",
-      "priority": "P1",
-      "size": "M",
-      "kind": "implementation",
-      "area": "c-backend",
-      "areas": [
-        "c-backend",
-        "modules"
-      ],
-      "labels": [
-        "P1",
-        "area:c-backend",
-        "area:modules",
-        "curated",
-        "in-progress",
-        "kind:implementation",
-        "size:M"
-      ],
-      "assignees": [],
-      "created_at": "2026-08-02T03:47:46Z",
-      "updated_at": "2026-08-05T13:07:59Z",
-      "closed_at": null,
-      "chain_id": null,
-      "depends_on": [],
-      "writer_days": 4,
-      "confidence": "medium",
-      "lane": "writer-c",
-      "start_date": "2026-08-07",
-      "writer_end_date": "2026-08-12",
-      "review_start_date": "2026-08-13",
-      "review_end_date": "2026-08-13",
-      "end_date": "2026-08-13",
-      "schedule_status": "scheduled"
-    },
-    {
-      "number": 271,
-      "title": "Bootstrap: produce C1/A1 and self-compile S into C2/A2",
-      "url": "https://github.com/kofun-lang/kofun/issues/271",
-      "state": "open",
-      "state_reason": null,
-      "role": "curated",
-      "workflow": "needs-decision",
-      "priority": "P0",
-      "size": "M",
-      "kind": "implementation",
-      "area": "bootstrap",
-      "areas": [
-        "bootstrap",
-        "c-backend"
-      ],
-      "labels": [
-        "P0",
-        "area:bootstrap",
-        "area:c-backend",
-        "curated",
-        "kind:implementation",
-        "needs-decision",
-        "size:M"
-      ],
-      "assignees": [],
-      "created_at": "2026-07-20T00:10:05Z",
-      "updated_at": "2026-08-02T07:38:26Z",
-      "closed_at": null,
-      "chain_id": "self-host-fixed-point",
-      "depends_on": [
-        622
-      ],
-      "writer_days": 7,
-      "confidence": "low",
-      "lane": "writer-a",
-      "start_date": "2026-08-12",
-      "writer_end_date": "2026-08-20",
-      "review_start_date": "2026-08-21",
-      "review_end_date": "2026-08-21",
-      "end_date": "2026-08-21",
-      "schedule_status": "scheduled"
-    },
-    {
-      "number": 880,
-      "title": "Call arguments v1 slice 1: parse labels and canonical trailing lambdas",
-      "url": "https://github.com/kofun-lang/kofun/issues/880",
+      "number": 1190,
+      "title": "Call arguments v1 slice 3b: lower pipeline subjects with exactly-once source-order evaluation",
+      "url": "https://github.com/kofun-lang/kofun/issues/1190",
       "state": "open",
       "state_reason": null,
       "role": "curated",
@@ -659,12 +524,14 @@
       "priority": "P1",
       "size": "M",
       "kind": "implementation",
-      "area": "syntax",
+      "area": "codegen",
       "areas": [
+        "codegen",
         "syntax"
       ],
       "labels": [
         "P1",
+        "area:codegen",
         "area:syntax",
         "curated",
         "kind:implementation",
@@ -672,304 +539,140 @@
         "size:M"
       ],
       "assignees": [],
-      "created_at": "2026-08-01T22:13:01Z",
-      "updated_at": "2026-08-02T06:21:22Z",
+      "created_at": "2026-08-10T14:34:16Z",
+      "updated_at": "2026-08-10T14:34:16Z",
       "closed_at": null,
       "chain_id": null,
       "depends_on": [],
       "writer_days": 4,
       "confidence": "medium",
       "lane": "writer-c",
-      "start_date": "2026-08-13",
-      "writer_end_date": "2026-08-18",
-      "review_start_date": "2026-08-24",
-      "review_end_date": "2026-08-24",
-      "end_date": "2026-08-24",
+      "start_date": "2026-08-11",
+      "writer_end_date": "2026-08-14",
+      "review_start_date": "2026-08-17",
+      "review_end_date": "2026-08-17",
+      "end_date": "2026-08-17",
       "schedule_status": "scheduled"
     },
     {
-      "number": 27,
-      "title": "Sample: end-to-end JSON API service",
-      "url": "https://github.com/kofun-lang/kofun/issues/27",
+      "number": 1191,
+      "title": "Call arguments v1 slice 3c: lower the accepted trailing-lambda form and fix the lifted-lambda-body boundary",
+      "url": "https://github.com/kofun-lang/kofun/issues/1191",
       "state": "open",
       "state_reason": null,
       "role": "curated",
-      "workflow": "needs-decision",
+      "workflow": "ready",
       "priority": "P1",
       "size": "M",
       "kind": "implementation",
-      "area": "frameworks",
+      "area": "codegen",
       "areas": [
-        "frameworks"
+        "codegen",
+        "syntax"
       ],
       "labels": [
         "P1",
-        "area:frameworks",
+        "area:codegen",
+        "area:syntax",
         "curated",
         "kind:implementation",
-        "needs-decision",
+        "ready",
         "size:M"
       ],
       "assignees": [],
-      "created_at": "2026-07-19T23:20:41Z",
-      "updated_at": "2026-08-01T23:54:52Z",
+      "created_at": "2026-08-10T14:34:18Z",
+      "updated_at": "2026-08-10T14:34:18Z",
       "closed_at": null,
       "chain_id": null,
       "depends_on": [],
-      "writer_days": 7,
-      "confidence": "low",
-      "lane": "writer-c",
-      "start_date": "2026-08-19",
-      "writer_end_date": "2026-08-27",
-      "review_start_date": "2026-08-31",
-      "review_end_date": "2026-08-31",
-      "end_date": "2026-08-31",
-      "schedule_status": "scheduled"
-    },
-    {
-      "number": 555,
-      "title": "Scoped parallelism v1: specify spawn/join ownership semantics and executable model",
-      "url": "https://github.com/kofun-lang/kofun/issues/555",
-      "state": "open",
-      "state_reason": null,
-      "role": "curated",
-      "workflow": "needs-decision",
-      "priority": "P1",
-      "size": "M",
-      "kind": "spec-design",
-      "area": "concurrency",
-      "areas": [
-        "concurrency"
-      ],
-      "labels": [
-        "P1",
-        "area:concurrency",
-        "curated",
-        "kind:spec-design",
-        "needs-decision",
-        "size:M"
-      ],
-      "assignees": [],
-      "created_at": "2026-07-20T08:09:21Z",
-      "updated_at": "2026-08-02T07:56:07Z",
-      "closed_at": null,
-      "chain_id": null,
-      "depends_on": [],
-      "writer_days": 7,
-      "confidence": "low",
-      "lane": "writer-b",
-      "start_date": "2026-08-21",
-      "writer_end_date": "2026-08-31",
-      "review_start_date": "2026-09-01",
-      "review_end_date": "2026-09-01",
-      "end_date": "2026-09-01",
-      "schedule_status": "scheduled"
-    },
-    {
-      "number": 272,
-      "title": "Bootstrap fixed point: produce C3/A3, compare three generations, close B4/B5",
-      "url": "https://github.com/kofun-lang/kofun/issues/272",
-      "state": "open",
-      "state_reason": null,
-      "role": "curated",
-      "workflow": "blocked",
-      "priority": "P0",
-      "size": "M",
-      "kind": "implementation",
-      "area": "bootstrap",
-      "areas": [
-        "bootstrap",
-        "c-backend"
-      ],
-      "labels": [
-        "P0",
-        "area:bootstrap",
-        "area:c-backend",
-        "blocked",
-        "curated",
-        "kind:implementation",
-        "size:M"
-      ],
-      "assignees": [],
-      "created_at": "2026-07-20T00:10:06Z",
-      "updated_at": "2026-07-31T05:21:22Z",
-      "closed_at": null,
-      "chain_id": "self-host-fixed-point",
-      "depends_on": [
-        271
-      ],
       "writer_days": 4,
-      "confidence": "conditional",
-      "lane": "writer-a",
-      "start_date": "2026-08-24",
-      "writer_end_date": "2026-08-27",
-      "review_start_date": "2026-08-28",
-      "review_end_date": "2026-08-28",
-      "end_date": "2026-08-28",
-      "schedule_status": "conditional"
-    },
-    {
-      "number": 902,
-      "title": "bindgen-c: enforce a mechanical raw-binding import boundary",
-      "url": "https://github.com/kofun-lang/kofun/issues/902",
-      "state": "open",
-      "state_reason": null,
-      "role": "curated",
-      "workflow": "needs-decision",
-      "priority": "P1",
-      "size": "M",
-      "kind": "implementation",
-      "area": "interop",
-      "areas": [
-        "interop",
-        "modules",
-        "tooling"
-      ],
-      "labels": [
-        "P1",
-        "area:interop",
-        "area:modules",
-        "area:tooling",
-        "curated",
-        "kind:implementation",
-        "needs-decision",
-        "size:M"
-      ],
-      "assignees": [],
-      "created_at": "2026-08-01T23:43:35Z",
-      "updated_at": "2026-08-02T07:46:56Z",
-      "closed_at": null,
-      "chain_id": null,
-      "depends_on": [],
-      "writer_days": 7,
-      "confidence": "low",
+      "confidence": "medium",
       "lane": "writer-c",
-      "start_date": "2026-08-28",
-      "writer_end_date": "2026-09-07",
-      "review_start_date": "2026-09-08",
-      "review_end_date": "2026-09-08",
-      "end_date": "2026-09-08",
+      "start_date": "2026-08-17",
+      "writer_end_date": "2026-08-20",
+      "review_start_date": "2026-08-21",
+      "review_end_date": "2026-08-21",
+      "end_date": "2026-08-21",
       "schedule_status": "scheduled"
     },
     {
-      "number": 274,
-      "title": "Reproducible bootstrap B6: independent clean builder reproduces the fixed point",
-      "url": "https://github.com/kofun-lang/kofun/issues/274",
+      "number": 1202,
+      "title": "verify: reuse one Stage 2 compiler and one self-host profile scan",
+      "url": "https://github.com/kofun-lang/kofun/issues/1202",
       "state": "open",
       "state_reason": null,
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "ready",
       "priority": "P1",
       "size": "M",
-      "kind": "test-quality",
-      "area": "bootstrap",
+      "kind": "maintenance",
+      "area": "build-system",
       "areas": [
-        "bootstrap",
+        "build-system",
         "quality"
       ],
       "labels": [
         "P1",
-        "area:bootstrap",
+        "area:build-system",
         "area:quality",
-        "blocked",
         "curated",
-        "kind:test-quality",
+        "kind:maintenance",
+        "ready",
         "size:M"
       ],
       "assignees": [],
-      "created_at": "2026-07-20T00:10:06Z",
-      "updated_at": "2026-07-31T05:21:24Z",
-      "closed_at": null,
-      "chain_id": "self-host-fixed-point",
-      "depends_on": [
-        272
-      ],
-      "writer_days": 4,
-      "confidence": "conditional",
-      "lane": "writer-a",
-      "start_date": "2026-08-31",
-      "writer_end_date": "2026-09-03",
-      "review_start_date": "2026-09-04",
-      "review_end_date": "2026-09-04",
-      "end_date": "2026-09-04",
-      "schedule_status": "conditional"
-    },
-    {
-      "number": 988,
-      "title": "RFC: choose the derive v1 expansion authority and inspection contract",
-      "url": "https://github.com/kofun-lang/kofun/issues/988",
-      "state": "open",
-      "state_reason": null,
-      "role": "curated",
-      "workflow": "needs-decision",
-      "priority": "P1",
-      "size": "S",
-      "kind": "spec-design",
-      "area": "meta",
-      "areas": [
-        "meta"
-      ],
-      "labels": [
-        "P1",
-        "area:meta",
-        "curated",
-        "kind:spec-design",
-        "needs-decision",
-        "size:S"
-      ],
-      "assignees": [],
-      "created_at": "2026-08-02T02:32:23Z",
-      "updated_at": "2026-08-02T07:46:54Z",
+      "created_at": "2026-08-11T02:04:51Z",
+      "updated_at": "2026-08-11T02:05:23Z",
       "closed_at": null,
       "chain_id": null,
       "depends_on": [],
-      "writer_days": 5,
-      "confidence": "low",
-      "lane": "writer-b",
-      "start_date": "2026-09-01",
-      "writer_end_date": "2026-09-07",
-      "review_start_date": "2026-09-09",
-      "review_end_date": "2026-09-09",
-      "end_date": "2026-09-09",
+      "writer_days": 4,
+      "confidence": "medium",
+      "lane": "writer-a",
+      "start_date": "2026-08-20",
+      "writer_end_date": "2026-08-25",
+      "review_start_date": "2026-08-27",
+      "review_end_date": "2026-08-27",
+      "end_date": "2026-08-27",
       "schedule_status": "scheduled"
     },
     {
-      "number": 637,
-      "title": "Discovery query v1: project inferred types and callable operations from semantic facts",
-      "url": "https://github.com/kofun-lang/kofun/issues/637",
+      "number": 569,
+      "title": "RFC: define affine authority capabilities for environment access",
+      "url": "https://github.com/kofun-lang/kofun/issues/569",
       "state": "open",
       "state_reason": null,
       "role": "curated",
       "workflow": "needs-detail",
       "priority": "P1",
       "size": "M",
-      "kind": "implementation",
-      "area": "developer_tools",
+      "kind": "spec-design",
+      "area": "ownership",
       "areas": [
-        "developer_tools"
+        "ownership"
       ],
       "labels": [
         "P1",
-        "area:developer_tools",
+        "area:ownership",
         "curated",
-        "kind:implementation",
+        "kind:spec-design",
         "needs-detail",
         "size:M"
       ],
       "assignees": [],
-      "created_at": "2026-07-23T13:30:00Z",
-      "updated_at": "2026-08-02T07:53:53Z",
+      "created_at": "2026-07-20T21:21:33Z",
+      "updated_at": "2026-08-10T14:36:26Z",
       "closed_at": null,
       "chain_id": null,
       "depends_on": [],
       "writer_days": 6,
       "confidence": "low",
-      "lane": "writer-a",
-      "start_date": "2026-09-07",
-      "writer_end_date": "2026-09-14",
-      "review_start_date": "2026-09-15",
-      "review_end_date": "2026-09-15",
-      "end_date": "2026-09-15",
+      "lane": "writer-c",
+      "start_date": "2026-08-21",
+      "writer_end_date": "2026-08-28",
+      "review_start_date": "2026-08-31",
+      "review_end_date": "2026-08-31",
+      "end_date": "2026-08-31",
       "schedule_status": "scheduled"
     },
     {
@@ -1003,42 +706,173 @@
       ],
       "assignees": [],
       "created_at": "2026-07-26T00:10:50Z",
-      "updated_at": "2026-08-02T08:28:31Z",
+      "updated_at": "2026-08-08T16:28:25Z",
+      "closed_at": null,
+      "chain_id": null,
+      "depends_on": [],
+      "writer_days": 10,
+      "confidence": "low",
+      "lane": "writer-a",
+      "start_date": "2026-08-26",
+      "writer_end_date": "2026-09-08",
+      "review_start_date": "2026-09-09",
+      "review_end_date": "2026-09-10",
+      "end_date": "2026-09-10",
+      "schedule_status": "scheduled"
+    },
+    {
+      "number": 882,
+      "title": "Call arguments v1 slice 3: lower labelled and trailing calls without reorder or allocation",
+      "url": "https://github.com/kofun-lang/kofun/issues/882",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "needs-detail",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "codegen",
+      "areas": [
+        "codegen",
+        "syntax"
+      ],
+      "labels": [
+        "P1",
+        "area:codegen",
+        "area:syntax",
+        "curated",
+        "kind:implementation",
+        "needs-detail",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-01T22:13:03Z",
+      "updated_at": "2026-08-10T14:36:24Z",
+      "closed_at": null,
+      "chain_id": null,
+      "depends_on": [],
+      "writer_days": 6,
+      "confidence": "low",
+      "lane": "writer-b",
+      "start_date": "2026-08-27",
+      "writer_end_date": "2026-09-03",
+      "review_start_date": "2026-09-04",
+      "review_end_date": "2026-09-04",
+      "end_date": "2026-09-04",
+      "schedule_status": "scheduled"
+    },
+    {
+      "number": 902,
+      "title": "bindgen-c: enforce a mechanical raw-binding import boundary",
+      "url": "https://github.com/kofun-lang/kofun/issues/902",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "needs-detail",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "interop",
+      "areas": [
+        "interop",
+        "modules",
+        "tooling"
+      ],
+      "labels": [
+        "P1",
+        "area:interop",
+        "area:modules",
+        "area:tooling",
+        "curated",
+        "kind:implementation",
+        "needs-detail",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-01T23:43:35Z",
+      "updated_at": "2026-08-10T14:01:48Z",
+      "closed_at": null,
+      "chain_id": null,
+      "depends_on": [],
+      "writer_days": 6,
+      "confidence": "low",
+      "lane": "writer-c",
+      "start_date": "2026-08-31",
+      "writer_end_date": "2026-09-07",
+      "review_start_date": "2026-09-08",
+      "review_end_date": "2026-09-08",
+      "end_date": "2026-09-08",
+      "schedule_status": "scheduled"
+    },
+    {
+      "number": 1193,
+      "title": "RFC-0002 stage 1: compiler authority model, attenuation facts, and E350-E356",
+      "url": "https://github.com/kofun-lang/kofun/issues/1193",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "needs-detail",
+      "priority": "P1",
+      "size": "L",
+      "kind": "implementation",
+      "area": "ownership",
+      "areas": [
+        "ownership",
+        "type-system"
+      ],
+      "labels": [
+        "P1",
+        "area:ownership",
+        "area:type-system",
+        "curated",
+        "kind:implementation",
+        "needs-detail",
+        "size:L"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-10T14:35:45Z",
+      "updated_at": "2026-08-10T14:35:45Z",
       "closed_at": null,
       "chain_id": null,
       "depends_on": [],
       "writer_days": 10,
       "confidence": "low",
       "lane": "writer-b",
-      "start_date": "2026-09-08",
-      "writer_end_date": "2026-09-21",
-      "review_start_date": "2026-09-22",
-      "review_end_date": "2026-09-23",
-      "end_date": "2026-09-23",
+      "start_date": "2026-09-04",
+      "writer_end_date": "2026-09-17",
+      "review_start_date": "2026-09-18",
+      "review_end_date": "2026-09-21",
+      "end_date": "2026-09-21",
       "schedule_status": "scheduled"
     },
     {
-      "number": 281,
-      "title": "Position paper: what replacing C and Rust actually requires",
-      "url": "https://github.com/kofun-lang/kofun/issues/281",
+      "number": 1113,
+      "title": "Stage 2: merge the labelled and direct List[Int] fixed-slot call lowering",
+      "url": "https://github.com/kofun-lang/kofun/issues/1113",
       "state": "open",
       "state_reason": null,
       "role": "curated",
-      "workflow": "unclassified",
-      "priority": "P1",
+      "workflow": "in-progress",
+      "priority": "P2",
       "size": "M",
-      "kind": "documentation",
-      "area": null,
-      "areas": [],
+      "kind": "implementation",
+      "area": "c-backend",
+      "areas": [
+        "c-backend",
+        "codegen"
+      ],
       "labels": [
-        "P1",
+        "P2",
+        "area:c-backend",
+        "area:codegen",
         "curated",
-        "kind:documentation",
+        "in-progress",
+        "kind:implementation",
         "size:M"
       ],
       "assignees": [],
-      "created_at": "2026-07-20T00:14:37Z",
-      "updated_at": "2026-08-02T01:27:27Z",
+      "created_at": "2026-08-09T07:18:02Z",
+      "updated_at": "2026-08-11T00:13:55Z",
       "closed_at": null,
       "chain_id": null,
       "depends_on": [],
@@ -1053,329 +887,15 @@
       "schedule_status": "scheduled"
     },
     {
-      "number": 645,
-      "title": "Date/time core: Gregorian values, checked arithmetic, and strict RFC 3339",
-      "url": "https://github.com/kofun-lang/kofun/issues/645",
-      "state": "open",
-      "state_reason": null,
-      "role": "curated",
-      "workflow": "ready",
-      "priority": "P2",
-      "size": "M",
-      "kind": "implementation",
-      "area": "stdlib",
-      "areas": [
-        "stdlib"
-      ],
-      "labels": [
-        "P2",
-        "area:stdlib",
-        "curated",
-        "kind:implementation",
-        "ready",
-        "size:M"
-      ],
-      "assignees": [],
-      "created_at": "2026-07-23T22:17:49Z",
-      "updated_at": "2026-08-02T10:24:25Z",
-      "closed_at": null,
-      "chain_id": null,
-      "depends_on": [],
-      "writer_days": 4,
-      "confidence": "medium",
-      "lane": "writer-c",
-      "start_date": "2026-09-14",
-      "writer_end_date": "2026-09-17",
-      "review_start_date": "2026-09-18",
-      "review_end_date": "2026-09-18",
-      "end_date": "2026-09-18",
-      "schedule_status": "scheduled"
-    },
-    {
-      "number": 1033,
-      "title": "LSP visibility: filter completion and navigation by caller context",
-      "url": "https://github.com/kofun-lang/kofun/issues/1033",
-      "state": "open",
-      "state_reason": null,
-      "role": "curated",
-      "workflow": "ready",
-      "priority": "P2",
-      "size": "M",
-      "kind": "implementation",
-      "area": "tooling",
-      "areas": [
-        "tooling"
-      ],
-      "labels": [
-        "P2",
-        "area:tooling",
-        "curated",
-        "kind:implementation",
-        "ready",
-        "size:M"
-      ],
-      "assignees": [],
-      "created_at": "2026-08-02T07:49:11Z",
-      "updated_at": "2026-08-02T07:49:11Z",
-      "closed_at": null,
-      "chain_id": null,
-      "depends_on": [],
-      "writer_days": 4,
-      "confidence": "medium",
-      "lane": "writer-a",
-      "start_date": "2026-09-15",
-      "writer_end_date": "2026-09-18",
-      "review_start_date": "2026-09-21",
-      "review_end_date": "2026-09-21",
-      "end_date": "2026-09-21",
-      "schedule_status": "scheduled"
-    },
-    {
-      "number": 1035,
-      "title": "Visibility fuzz: bound malformed identities, re-export chains, and stale artifacts",
-      "url": "https://github.com/kofun-lang/kofun/issues/1035",
+      "number": 1197,
+      "title": "Stage 2: read a bounded List[Int] record field back as a List[Int] value",
+      "url": "https://github.com/kofun-lang/kofun/issues/1197",
       "state": "open",
       "state_reason": null,
       "role": "curated",
       "workflow": "ready",
       "priority": "P2",
       "size": "S",
-      "kind": "implementation",
-      "area": "tooling",
-      "areas": [
-        "tooling"
-      ],
-      "labels": [
-        "P2",
-        "area:tooling",
-        "curated",
-        "kind:implementation",
-        "ready",
-        "size:S"
-      ],
-      "assignees": [],
-      "created_at": "2026-08-02T07:49:14Z",
-      "updated_at": "2026-08-02T07:49:15Z",
-      "closed_at": null,
-      "chain_id": null,
-      "depends_on": [],
-      "writer_days": 2,
-      "confidence": "medium",
-      "lane": "writer-c",
-      "start_date": "2026-09-18",
-      "writer_end_date": "2026-09-21",
-      "review_start_date": "2026-09-24",
-      "review_end_date": "2026-09-24",
-      "end_date": "2026-09-24",
-      "schedule_status": "scheduled"
-    },
-    {
-      "number": 784,
-      "title": "ownership: an affine handle whose owned state cannot be duplicated (#644)",
-      "url": "https://github.com/kofun-lang/kofun/issues/784",
-      "state": "open",
-      "state_reason": null,
-      "role": "curated",
-      "workflow": "needs-decision",
-      "priority": "P2",
-      "size": "M",
-      "kind": "implementation",
-      "area": "ownership",
-      "areas": [
-        "ownership"
-      ],
-      "labels": [
-        "P2",
-        "area:ownership",
-        "curated",
-        "kind:implementation",
-        "needs-decision",
-        "size:M"
-      ],
-      "assignees": [],
-      "created_at": "2026-07-28T13:43:04Z",
-      "updated_at": "2026-07-31T05:22:27Z",
-      "closed_at": null,
-      "chain_id": null,
-      "depends_on": [],
-      "writer_days": 7,
-      "confidence": "low",
-      "lane": "writer-a",
-      "start_date": "2026-09-21",
-      "writer_end_date": "2026-09-29",
-      "review_start_date": "2026-09-30",
-      "review_end_date": "2026-09-30",
-      "end_date": "2026-09-30",
-      "schedule_status": "scheduled"
-    },
-    {
-      "number": 943,
-      "title": "Lambda spelling drift: Stage 2 accepts `(a, b) => e` and `x => e`, the grammar and SYNTAX.md describe neither",
-      "url": "https://github.com/kofun-lang/kofun/issues/943",
-      "state": "open",
-      "state_reason": "reopened",
-      "role": "curated",
-      "workflow": "needs-decision",
-      "priority": "P2",
-      "size": "S",
-      "kind": "spec-design",
-      "area": "syntax",
-      "areas": [
-        "syntax"
-      ],
-      "labels": [
-        "P2",
-        "area:syntax",
-        "curated",
-        "kind:spec-design",
-        "needs-decision",
-        "size:S"
-      ],
-      "assignees": [],
-      "created_at": "2026-08-02T00:22:45Z",
-      "updated_at": "2026-08-02T07:13:33Z",
-      "closed_at": null,
-      "chain_id": null,
-      "depends_on": [],
-      "writer_days": 5,
-      "confidence": "low",
-      "lane": "writer-b",
-      "start_date": "2026-09-22",
-      "writer_end_date": "2026-09-28",
-      "review_start_date": "2026-09-29",
-      "review_end_date": "2026-09-29",
-      "end_date": "2026-09-29",
-      "schedule_status": "scheduled"
-    },
-    {
-      "number": 975,
-      "title": "backlog: decide whether a planning umbrella waiting on children is `blocked`",
-      "url": "https://github.com/kofun-lang/kofun/issues/975",
-      "state": "open",
-      "state_reason": null,
-      "role": "curated",
-      "workflow": "needs-decision",
-      "priority": "P2",
-      "size": "S",
-      "kind": "spec-design",
-      "area": "quality",
-      "areas": [
-        "quality"
-      ],
-      "labels": [
-        "P2",
-        "area:quality",
-        "curated",
-        "kind:spec-design",
-        "needs-decision",
-        "size:S"
-      ],
-      "assignees": [],
-      "created_at": "2026-08-02T02:05:36Z",
-      "updated_at": "2026-08-02T07:46:53Z",
-      "closed_at": null,
-      "chain_id": null,
-      "depends_on": [],
-      "writer_days": 5,
-      "confidence": "low",
-      "lane": "writer-c",
-      "start_date": "2026-09-22",
-      "writer_end_date": "2026-09-28",
-      "review_start_date": "2026-10-01",
-      "review_end_date": "2026-10-01",
-      "end_date": "2026-10-01",
-      "schedule_status": "scheduled"
-    },
-    {
-      "number": 995,
-      "title": "Trait member override v1: inherited and default member collision contract",
-      "url": "https://github.com/kofun-lang/kofun/issues/995",
-      "state": "open",
-      "state_reason": "reopened",
-      "role": "curated",
-      "workflow": "needs-decision",
-      "priority": "P2",
-      "size": "S",
-      "kind": "spec-design",
-      "area": "modules",
-      "areas": [
-        "modules",
-        "type-system"
-      ],
-      "labels": [
-        "P2",
-        "area:modules",
-        "area:type-system",
-        "curated",
-        "kind:spec-design",
-        "needs-decision",
-        "size:S"
-      ],
-      "assignees": [],
-      "created_at": "2026-08-02T03:22:30Z",
-      "updated_at": "2026-08-02T05:00:29Z",
-      "closed_at": null,
-      "chain_id": null,
-      "depends_on": [],
-      "writer_days": 5,
-      "confidence": "low",
-      "lane": "writer-b",
-      "start_date": "2026-09-29",
-      "writer_end_date": "2026-10-05",
-      "review_start_date": "2026-10-06",
-      "review_end_date": "2026-10-06",
-      "end_date": "2026-10-06",
-      "schedule_status": "scheduled"
-    },
-    {
-      "number": 584,
-      "title": "Visibility tooling: prevent macro, LSP, and sidecar access bypasses",
-      "url": "https://github.com/kofun-lang/kofun/issues/584",
-      "state": "open",
-      "state_reason": "reopened",
-      "role": "curated",
-      "workflow": "needs-detail",
-      "priority": "P2",
-      "size": "M",
-      "kind": "implementation",
-      "area": "tooling",
-      "areas": [
-        "tooling"
-      ],
-      "labels": [
-        "P2",
-        "area:tooling",
-        "curated",
-        "kind:implementation",
-        "needs-detail",
-        "size:M"
-      ],
-      "assignees": [],
-      "created_at": "2026-07-21T13:02:42Z",
-      "updated_at": "2026-08-02T09:57:47Z",
-      "closed_at": null,
-      "chain_id": null,
-      "depends_on": [],
-      "writer_days": 6,
-      "confidence": "low",
-      "lane": "writer-c",
-      "start_date": "2026-09-29",
-      "writer_end_date": "2026-10-06",
-      "review_start_date": "2026-10-07",
-      "review_end_date": "2026-10-07",
-      "end_date": "2026-10-07",
-      "schedule_status": "scheduled"
-    },
-    {
-      "number": 868,
-      "title": "Stage 2 C11 aggregate bridge: execute records with List[Int] and Text",
-      "url": "https://github.com/kofun-lang/kofun/issues/868",
-      "state": "open",
-      "state_reason": null,
-      "role": "curated",
-      "workflow": "needs-detail",
-      "priority": "P2",
-      "size": "L",
       "kind": "implementation",
       "area": "c-backend",
       "areas": [
@@ -1388,460 +908,66 @@
         "area:stdlib",
         "curated",
         "kind:implementation",
-        "needs-detail",
-        "size:L"
+        "ready",
+        "size:S"
       ],
       "assignees": [],
-      "created_at": "2026-08-01T21:27:49Z",
-      "updated_at": "2026-08-02T11:56:10Z",
+      "created_at": "2026-08-10T15:14:42Z",
+      "updated_at": "2026-08-10T15:14:42Z",
       "closed_at": null,
       "chain_id": null,
       "depends_on": [],
-      "writer_days": 10,
-      "confidence": "low",
+      "writer_days": 2,
+      "confidence": "medium",
       "lane": "writer-a",
-      "start_date": "2026-09-30",
-      "writer_end_date": "2026-10-13",
-      "review_start_date": "2026-10-14",
-      "review_end_date": "2026-10-15",
-      "end_date": "2026-10-15",
+      "start_date": "2026-09-09",
+      "writer_end_date": "2026-09-10",
+      "review_start_date": "2026-09-11",
+      "review_end_date": "2026-09-11",
+      "end_date": "2026-09-11",
       "schedule_status": "scheduled"
-    }
-  ],
-  "unscheduled": [
-    {
-      "number": 277,
-      "title": "Freestanding target: run with no operating system",
-      "url": "https://github.com/kofun-lang/kofun/issues/277",
-      "role": "curated",
-      "workflow": "deferred",
-      "state_reason": null,
-      "priority": "P1",
-      "size": "L",
-      "kind": "implementation",
-      "area": "platforms",
-      "labels": [
-        "P1",
-        "area:platforms",
-        "curated",
-        "deferred",
-        "kind:implementation",
-        "size:L"
-      ],
-      "reason": "deferred outside the active delivery scope"
-    },
-    {
-      "number": 278,
-      "title": "ARM Cortex-M backend (thumb2)",
-      "url": "https://github.com/kofun-lang/kofun/issues/278",
-      "role": "curated",
-      "workflow": "deferred",
-      "state_reason": null,
-      "priority": "P2",
-      "size": "L",
-      "kind": "implementation",
-      "area": "codegen",
-      "labels": [
-        "P2",
-        "area:codegen",
-        "area:platforms",
-        "curated",
-        "deferred",
-        "kind:implementation",
-        "size:L"
-      ],
-      "reason": "deferred outside the active delivery scope"
-    },
-    {
-      "number": 279,
-      "title": "Memory-mapped I/O, volatile access, and interrupt handlers",
-      "url": "https://github.com/kofun-lang/kofun/issues/279",
-      "role": "curated",
-      "workflow": "deferred",
-      "state_reason": null,
-      "priority": "P2",
-      "size": "L",
-      "kind": "implementation",
-      "area": "memory",
-      "labels": [
-        "P2",
-        "area:memory",
-        "area:platforms",
-        "curated",
-        "deferred",
-        "kind:implementation",
-        "size:L"
-      ],
-      "reason": "deferred outside the active delivery scope"
-    },
-    {
-      "number": 280,
-      "title": "No-heap mode: static allocation only",
-      "url": "https://github.com/kofun-lang/kofun/issues/280",
-      "role": "curated",
-      "workflow": "deferred",
-      "state_reason": null,
-      "priority": "P2",
-      "size": "L",
-      "kind": "implementation",
-      "area": "memory",
-      "labels": [
-        "P2",
-        "area:memory",
-        "curated",
-        "deferred",
-        "kind:implementation",
-        "size:L"
-      ],
-      "reason": "deferred outside the active delivery scope"
-    },
-    {
-      "number": 314,
-      "title": "Null coalescing: execute Optional(Int) ?? Int lazily",
-      "url": "https://github.com/kofun-lang/kofun/issues/314",
-      "role": "curated",
-      "workflow": "blocked",
-      "state_reason": null,
-      "priority": "P2",
-      "size": "M",
-      "kind": "implementation",
-      "area": "inference",
-      "labels": [
-        "P2",
-        "area:inference",
-        "blocked",
-        "curated",
-        "kind:implementation",
-        "size:M"
-      ],
-      "reason": "blocked without a dependency represented by a scheduled chain"
-    },
-    {
-      "number": 424,
-      "title": "Hot reload at function granularity, via micro-partition",
-      "url": "https://github.com/kofun-lang/kofun/issues/424",
-      "role": "curated",
-      "workflow": "deferred",
-      "state_reason": null,
-      "priority": "P2",
-      "size": "L",
-      "kind": "implementation",
-      "area": "build-system",
-      "labels": [
-        "P2",
-        "area:build-system",
-        "area:native-backend",
-        "curated",
-        "deferred",
-        "kind:implementation",
-        "size:L"
-      ],
-      "reason": "deferred outside the active delivery scope"
-    },
-    {
-      "number": 533,
-      "title": "Show where ownership goes: LSP hover, inlay hints, and diagnostics",
-      "url": "https://github.com/kofun-lang/kofun/issues/533",
-      "role": "curated",
-      "workflow": "blocked",
-      "state_reason": null,
-      "priority": "P1",
-      "size": "L",
-      "kind": "implementation",
-      "area": "ownership",
-      "labels": [
-        "P1",
-        "area:ownership",
-        "area:tooling",
-        "blocked",
-        "curated",
-        "kind:implementation",
-        "size:L"
-      ],
-      "reason": "blocked without a dependency represented by a scheduled chain"
-    },
-    {
-      "number": 536,
-      "title": "ndarray: n-dimensional arrays with views, strides, and broadcasting",
-      "url": "https://github.com/kofun-lang/kofun/issues/536",
-      "role": "curated",
-      "workflow": "deferred",
-      "state_reason": null,
-      "priority": "P2",
-      "size": "L",
-      "kind": "implementation",
-      "area": "science",
-      "labels": [
-        "P2",
-        "area:science",
-        "curated",
-        "deferred",
-        "kind:implementation",
-        "size:L"
-      ],
-      "reason": "deferred outside the active delivery scope"
-    },
-    {
-      "number": 537,
-      "title": "Linear algebra: matmul, decompositions, solvers, and BLAS/LAPACK binding",
-      "url": "https://github.com/kofun-lang/kofun/issues/537",
-      "role": "curated",
-      "workflow": "deferred",
-      "state_reason": null,
-      "priority": "P2",
-      "size": "L",
-      "kind": "implementation",
-      "area": "science",
-      "labels": [
-        "P2",
-        "area:science",
-        "curated",
-        "deferred",
-        "kind:implementation",
-        "size:L"
-      ],
-      "reason": "deferred outside the active delivery scope"
-    },
-    {
-      "number": 538,
-      "title": "Signal and image processing: FFT, convolution, filtering",
-      "url": "https://github.com/kofun-lang/kofun/issues/538",
-      "role": "curated",
-      "workflow": "deferred",
-      "state_reason": null,
-      "priority": "P2",
-      "size": "L",
-      "kind": "implementation",
-      "area": "science",
-      "labels": [
-        "P2",
-        "area:science",
-        "curated",
-        "deferred",
-        "kind:implementation",
-        "size:L"
-      ],
-      "reason": "deferred outside the active delivery scope"
-    },
-    {
-      "number": 539,
-      "title": "Statistics: distributions, tests, regression, optimisation, integration",
-      "url": "https://github.com/kofun-lang/kofun/issues/539",
-      "role": "curated",
-      "workflow": "deferred",
-      "state_reason": null,
-      "priority": "P2",
-      "size": "L",
-      "kind": "implementation",
-      "area": "science",
-      "labels": [
-        "P2",
-        "area:science",
-        "curated",
-        "deferred",
-        "kind:implementation",
-        "size:L"
-      ],
-      "reason": "deferred outside the active delivery scope"
-    },
-    {
-      "number": 540,
-      "title": "Dataframes: typed columnar tables with group-by and join",
-      "url": "https://github.com/kofun-lang/kofun/issues/540",
-      "role": "curated",
-      "workflow": "deferred",
-      "state_reason": null,
-      "priority": "P2",
-      "size": "L",
-      "kind": "implementation",
-      "area": "science",
-      "labels": [
-        "P2",
-        "area:science",
-        "curated",
-        "deferred",
-        "kind:implementation",
-        "size:L"
-      ],
-      "reason": "deferred outside the active delivery scope"
-    },
-    {
-      "number": 554,
-      "title": "Stage 2: lower contiguous payload-free enum matches to C switch",
-      "url": "https://github.com/kofun-lang/kofun/issues/554",
-      "role": "curated",
-      "workflow": "blocked",
-      "state_reason": null,
-      "priority": "P1",
-      "size": "M",
-      "kind": "implementation",
-      "area": "codegen",
-      "labels": [
-        "P1",
-        "area:codegen",
-        "blocked",
-        "curated",
-        "kind:implementation",
-        "size:M"
-      ],
-      "reason": "blocked without a dependency represented by a scheduled chain"
-    },
-    {
-      "number": 569,
-      "title": "RFC: define affine authority capabilities for environment access",
-      "url": "https://github.com/kofun-lang/kofun/issues/569",
-      "role": "curated",
-      "workflow": "blocked",
-      "state_reason": null,
-      "priority": "P1",
-      "size": "M",
-      "kind": "spec-design",
-      "area": "ownership",
-      "labels": [
-        "P1",
-        "area:ownership",
-        "blocked",
-        "curated",
-        "kind:spec-design",
-        "size:M"
-      ],
-      "reason": "blocked without a dependency represented by a scheduled chain"
-    },
-    {
-      "number": 570,
-      "title": "Austral: propagate ownership kind structurally through generics and ADTs",
-      "url": "https://github.com/kofun-lang/kofun/issues/570",
-      "role": "curated",
-      "workflow": "blocked",
-      "state_reason": null,
-      "priority": "P1",
-      "size": "M",
-      "kind": "spec-design",
-      "area": "memory",
-      "labels": [
-        "P1",
-        "area:memory",
-        "area:ownership",
-        "area:type-system",
-        "blocked",
-        "curated",
-        "kind:spec-design",
-        "size:M"
-      ],
-      "reason": "blocked without a dependency represented by a scheduled chain"
-    },
-    {
-      "number": 571,
-      "title": "Austral/Nim: support zero-copy borrowed results without user-written lifetimes",
-      "url": "https://github.com/kofun-lang/kofun/issues/571",
-      "role": "curated",
-      "workflow": "blocked",
-      "state_reason": null,
-      "priority": "P1",
-      "size": "M",
-      "kind": "spec-design",
-      "area": "collections",
-      "labels": [
-        "P1",
-        "area:collections",
-        "area:ownership",
-        "area:type-system",
-        "blocked",
-        "curated",
-        "kind:spec-design",
-        "size:M"
-      ],
-      "reason": "blocked without a dependency represented by a scheduled chain"
-    },
-    {
-      "number": 573,
-      "title": "Odin: make allocator choice a scoped, effect-tracked capability",
-      "url": "https://github.com/kofun-lang/kofun/issues/573",
-      "role": "curated",
-      "workflow": "blocked",
-      "state_reason": null,
-      "priority": "P1",
-      "size": "L",
-      "kind": "planning",
-      "area": "effects",
-      "labels": [
-        "P1",
-        "area:effects",
-        "area:memory",
-        "area:ownership",
-        "area:stdlib",
-        "blocked",
-        "curated",
-        "kind:planning",
-        "size:L"
-      ],
-      "reason": "blocked without a dependency represented by a scheduled chain"
-    },
-    {
-      "number": 576,
-      "title": "Koka: reuse matched ADT constructors in place when storage is unique",
-      "url": "https://github.com/kofun-lang/kofun/issues/576",
-      "role": "curated",
-      "workflow": "blocked",
-      "state_reason": null,
-      "priority": "P2",
-      "size": "M",
-      "kind": "spec-design",
-      "area": "memory",
-      "labels": [
-        "P2",
-        "area:memory",
-        "area:optimizer",
-        "area:types",
-        "blocked",
-        "curated",
-        "kind:spec-design",
-        "size:M"
-      ],
-      "reason": "blocked without a dependency represented by a scheduled chain"
-    },
-    {
-      "number": 585,
-      "title": "Visibility stabilization: document API changes and migration",
-      "url": "https://github.com/kofun-lang/kofun/issues/585",
-      "role": "curated",
-      "workflow": "blocked",
-      "state_reason": null,
-      "priority": "P3",
-      "size": "M",
-      "kind": "documentation",
-      "area": "docs_tools",
-      "labels": [
-        "P3",
-        "area:docs_tools",
-        "blocked",
-        "curated",
-        "kind:documentation",
-        "size:M"
-      ],
-      "reason": "blocked without a dependency represented by a scheduled chain"
     },
     {
       "number": 644,
       "title": "HTTP/1.1 client core: bounded request and response state machine over scripted transport",
       "url": "https://github.com/kofun-lang/kofun/issues/644",
-      "role": "curated",
-      "workflow": "blocked",
+      "state": "open",
       "state_reason": null,
+      "role": "curated",
+      "workflow": "needs-detail",
       "priority": "P2",
       "size": "M",
       "kind": "implementation",
       "area": "stdlib",
+      "areas": [
+        "stdlib"
+      ],
       "labels": [
         "P2",
         "area:stdlib",
-        "blocked",
         "curated",
         "kind:implementation",
+        "needs-detail",
         "size:M"
       ],
-      "reason": "blocked without a dependency represented by a scheduled chain"
-    },
+      "assignees": [],
+      "created_at": "2026-07-23T22:17:15Z",
+      "updated_at": "2026-08-10T15:01:44Z",
+      "closed_at": null,
+      "chain_id": null,
+      "depends_on": [],
+      "writer_days": 6,
+      "confidence": "low",
+      "lane": "writer-a",
+      "start_date": "2026-09-11",
+      "writer_end_date": "2026-09-18",
+      "review_start_date": "2026-09-22",
+      "review_end_date": "2026-09-22",
+      "end_date": "2026-09-22",
+      "schedule_status": "scheduled"
+    }
+  ],
+  "unscheduled": [
     {
       "number": 646,
       "title": "Benchmark report v1: canonical raw-sample codec and deterministic summaries",
@@ -1862,27 +988,6 @@
         "size:M"
       ],
       "reason": "blocked without a dependency represented by a scheduled chain"
-    },
-    {
-      "number": 738,
-      "title": "Time-series forecasting research: rolling-origin backtests, uncertainty, and estimator boundaries",
-      "url": "https://github.com/kofun-lang/kofun/issues/738",
-      "role": "curated",
-      "workflow": "deferred",
-      "state_reason": null,
-      "priority": "P3",
-      "size": "M",
-      "kind": "research",
-      "area": "science",
-      "labels": [
-        "P3",
-        "area:science",
-        "curated",
-        "deferred",
-        "kind:research",
-        "size:M"
-      ],
-      "reason": "deferred outside the active delivery scope"
     },
     {
       "number": 847,
@@ -1906,46 +1011,24 @@
       "reason": "blocked without a dependency represented by a scheduled chain"
     },
     {
-      "number": 881,
-      "title": "Call arguments v1 slice 2: bind labels in HIR, type checking, and KIF identity",
-      "url": "https://github.com/kofun-lang/kofun/issues/881",
+      "number": 868,
+      "title": "Stage 2 C11 aggregate bridge: execute records with List[Int] and Text",
+      "url": "https://github.com/kofun-lang/kofun/issues/868",
       "role": "curated",
       "workflow": "blocked",
       "state_reason": null,
-      "priority": "P1",
-      "size": "M",
+      "priority": "P2",
+      "size": "L",
       "kind": "implementation",
-      "area": "syntax",
+      "area": "c-backend",
       "labels": [
-        "P1",
-        "area:syntax",
-        "area:type-system",
+        "P2",
+        "area:c-backend",
+        "area:stdlib",
         "blocked",
         "curated",
         "kind:implementation",
-        "size:M"
-      ],
-      "reason": "blocked without a dependency represented by a scheduled chain"
-    },
-    {
-      "number": 882,
-      "title": "Call arguments v1 slice 3: lower labelled and trailing calls without reorder or allocation",
-      "url": "https://github.com/kofun-lang/kofun/issues/882",
-      "role": "curated",
-      "workflow": "blocked",
-      "state_reason": null,
-      "priority": "P1",
-      "size": "M",
-      "kind": "implementation",
-      "area": "codegen",
-      "labels": [
-        "P1",
-        "area:codegen",
-        "area:syntax",
-        "blocked",
-        "curated",
-        "kind:implementation",
-        "size:M"
+        "size:L"
       ],
       "reason": "blocked without a dependency represented by a scheduled chain"
     },
@@ -2013,21 +1096,19 @@
       "reason": "blocked without a dependency represented by a scheduled chain"
     },
     {
-      "number": 915,
-      "title": "Stage 2 ensure_move v3: prove loop-local last uses instead of rejecting every loop",
-      "url": "https://github.com/kofun-lang/kofun/issues/915",
+      "number": 1161,
+      "title": "Scoped parallelism: derive task captures from checked bodies and resolved calls",
+      "url": "https://github.com/kofun-lang/kofun/issues/1161",
       "role": "curated",
       "workflow": "blocked",
       "state_reason": null,
       "priority": "P2",
       "size": "M",
       "kind": "implementation",
-      "area": "diagnostics",
+      "area": "concurrency",
       "labels": [
         "P2",
-        "area:diagnostics",
-        "area:optimizer",
-        "area:ownership",
+        "area:concurrency",
         "blocked",
         "curated",
         "kind:implementation",
@@ -2036,21 +1117,19 @@
       "reason": "blocked without a dependency represented by a scheduled chain"
     },
     {
-      "number": 922,
-      "title": "Stage 2: record the move site and attach it to the use-after-move diagnostic",
-      "url": "https://github.com/kofun-lang/kofun/issues/922",
+      "number": 1162,
+      "title": "Scoped parallelism: enforce liveness, overlap, take, and parent conflicts in the ownership checker",
+      "url": "https://github.com/kofun-lang/kofun/issues/1162",
       "role": "curated",
       "workflow": "blocked",
       "state_reason": null,
-      "priority": "P1",
+      "priority": "P2",
       "size": "M",
       "kind": "implementation",
-      "area": "diagnostics",
+      "area": "concurrency",
       "labels": [
-        "P1",
-        "area:diagnostics",
-        "area:ownership",
-        "area:tooling",
+        "P2",
+        "area:concurrency",
         "blocked",
         "curated",
         "kind:implementation",
@@ -2059,65 +1138,148 @@
       "reason": "blocked without a dependency represented by a scheduled chain"
     },
     {
-      "number": 930,
-      "title": "Allocator seed: canonical `stdlib/alloc` contract and pinned Stage 2 projection (RFC-0001 stage 1)",
-      "url": "https://github.com/kofun-lang/kofun/issues/930",
+      "number": 1163,
+      "title": "Scoped parallelism: allocate stable compiler diagnostics for the six contract classes",
+      "url": "https://github.com/kofun-lang/kofun/issues/1163",
+      "role": "curated",
+      "workflow": "blocked",
+      "state_reason": null,
+      "priority": "P2",
+      "size": "S",
+      "kind": "implementation",
+      "area": "concurrency",
+      "labels": [
+        "P2",
+        "area:concurrency",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:S"
+      ],
+      "reason": "blocked without a dependency represented by a scheduled chain"
+    },
+    {
+      "number": 1164,
+      "title": "Scoped parallelism: bounded scheduler, scope-exit drain, panic precedence, and cancellation",
+      "url": "https://github.com/kofun-lang/kofun/issues/1164",
+      "role": "curated",
+      "workflow": "blocked",
+      "state_reason": null,
+      "priority": "P2",
+      "size": "M",
+      "kind": "implementation",
+      "area": "concurrency",
+      "labels": [
+        "P2",
+        "area:concurrency",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:M"
+      ],
+      "reason": "blocked without a dependency represented by a scheduled chain"
+    },
+    {
+      "number": 1166,
+      "title": "Scoped parallelism: lower par/spawn/join in each backend",
+      "url": "https://github.com/kofun-lang/kofun/issues/1166",
+      "role": "curated",
+      "workflow": "blocked",
+      "state_reason": null,
+      "priority": "P2",
+      "size": "M",
+      "kind": "implementation",
+      "area": "concurrency",
+      "labels": [
+        "P2",
+        "area:concurrency",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:M"
+      ],
+      "reason": "blocked without a dependency represented by a scheduled chain"
+    },
+    {
+      "number": 1167,
+      "title": "Scoped parallelism: capability and release evidence for executing targets",
+      "url": "https://github.com/kofun-lang/kofun/issues/1167",
+      "role": "curated",
+      "workflow": "blocked",
+      "state_reason": null,
+      "priority": "P2",
+      "size": "S",
+      "kind": "implementation",
+      "area": "concurrency",
+      "labels": [
+        "P2",
+        "area:concurrency",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:S"
+      ],
+      "reason": "blocked without a dependency represented by a scheduled chain"
+    },
+    {
+      "number": 1192,
+      "title": "Call arguments v1 slice 3d: direct-native and Wasm labelled-call lowering with backend differential evidence",
+      "url": "https://github.com/kofun-lang/kofun/issues/1192",
       "role": "curated",
       "workflow": "blocked",
       "state_reason": null,
       "priority": "P1",
       "size": "M",
       "kind": "implementation",
-      "area": "effects",
+      "area": "codegen",
       "labels": [
         "P1",
-        "area:effects",
-        "area:memory",
+        "area:codegen",
+        "area:native-backend",
+        "area:syntax",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:M"
+      ],
+      "reason": "blocked without a dependency represented by a scheduled chain"
+    },
+    {
+      "number": 1194,
+      "title": "RFC-0002 stage 2: environment runtime and standard library with a deterministic test provider",
+      "url": "https://github.com/kofun-lang/kofun/issues/1194",
+      "role": "curated",
+      "workflow": "blocked",
+      "state_reason": null,
+      "priority": "P2",
+      "size": "L",
+      "kind": "implementation",
+      "area": "ownership",
+      "labels": [
+        "P2",
+        "area:ownership",
         "area:stdlib",
         "blocked",
         "curated",
         "kind:implementation",
-        "size:M"
+        "size:L"
       ],
       "reason": "blocked without a dependency represented by a scheduled chain"
     },
     {
-      "number": 942,
-      "title": "Member-scope duplicates: methods, associated values, and inherited or default members",
-      "url": "https://github.com/kofun-lang/kofun/issues/942",
+      "number": 1195,
+      "title": "RFC-0002 stage 3: package audit metadata schema and generated capability docs",
+      "url": "https://github.com/kofun-lang/kofun/issues/1195",
       "role": "curated",
       "workflow": "blocked",
       "state_reason": null,
-      "priority": "P2",
+      "priority": "P3",
       "size": "M",
       "kind": "implementation",
-      "area": "diagnostics",
+      "area": "docs_tools",
       "labels": [
-        "P2",
-        "area:diagnostics",
-        "area:modules",
-        "blocked",
-        "curated",
-        "kind:implementation",
-        "size:M"
-      ],
-      "reason": "blocked without a dependency represented by a scheduled chain"
-    },
-    {
-      "number": 946,
-      "title": "The production frontend has no move analysis, so E2S122/E2S123 never reach an editor",
-      "url": "https://github.com/kofun-lang/kofun/issues/946",
-      "role": "curated",
-      "workflow": "blocked",
-      "state_reason": null,
-      "priority": "P2",
-      "size": "M",
-      "kind": "implementation",
-      "area": "diagnostics",
-      "labels": [
-        "P2",
-        "area:diagnostics",
-        "area:ownership",
+        "P3",
+        "area:docs_tools",
         "area:tooling",
         "blocked",
         "curated",
@@ -2127,21 +1289,20 @@
       "reason": "blocked without a dependency represented by a scheduled chain"
     },
     {
-      "number": 1032,
-      "title": "Self-host driver diagnostics: give A1's refusal a code and a span",
-      "url": "https://github.com/kofun-lang/kofun/issues/1032",
+      "number": 1196,
+      "title": "RFC-0002 stage 4: trusted adapter entitlement ABI and default FFI rejection",
+      "url": "https://github.com/kofun-lang/kofun/issues/1196",
       "role": "curated",
       "workflow": "blocked",
       "state_reason": null,
-      "priority": "P2",
+      "priority": "P3",
       "size": "M",
       "kind": "implementation",
-      "area": "bootstrap",
+      "area": "interop",
       "labels": [
-        "P2",
-        "area:bootstrap",
-        "area:c-backend",
-        "area:diagnostics",
+        "P3",
+        "area:interop",
+        "area:ownership",
         "blocked",
         "curated",
         "kind:implementation",
@@ -2152,153 +1313,127 @@
   ],
   "calendar": [
     {
-      "week_start": "2026-08-03",
-      "week_end": "2026-08-09",
-      "active_issue_numbers": [
-        622,
-        725,
-        955,
-        1008
-      ],
-      "starting_issue_numbers": [
-        622,
-        725,
-        955,
-        1008
-      ],
-      "finishing_issue_numbers": [
-        955
-      ],
-      "review_issue_numbers": [
-        955
-      ],
-      "planned_writer_days": 9,
-      "writer_capacity_days": 15
-    },
-    {
       "week_start": "2026-08-10",
       "week_end": "2026-08-16",
       "active_issue_numbers": [
-        271,
-        622,
+        274,
         725,
-        880,
-        1008
+        1190
       ],
       "starting_issue_numbers": [
-        271,
-        880
+        274,
+        725,
+        1190
       ],
-      "finishing_issue_numbers": [
-        622,
-        1008
-      ],
-      "review_issue_numbers": [
-        622,
-        1008
-      ],
-      "planned_writer_days": 14,
+      "finishing_issue_numbers": [],
+      "review_issue_numbers": [],
+      "planned_writer_days": 12,
       "writer_capacity_days": 15
     },
     {
       "week_start": "2026-08-17",
       "week_end": "2026-08-23",
       "active_issue_numbers": [
-        27,
-        271,
-        555,
+        274,
+        569,
         725,
-        880
+        1190,
+        1191,
+        1202
       ],
       "starting_issue_numbers": [
-        27,
-        555
+        569,
+        1191,
+        1202
       ],
       "finishing_issue_numbers": [
-        271,
-        725
+        274,
+        1190,
+        1191
       ],
       "review_issue_numbers": [
-        271,
-        725
+        274,
+        1190,
+        1191
       ],
-      "planned_writer_days": 12,
+      "planned_writer_days": 14,
       "writer_capacity_days": 15
     },
     {
       "week_start": "2026-08-24",
       "week_end": "2026-08-30",
       "active_issue_numbers": [
-        27,
-        272,
-        555,
-        880,
-        902
+        569,
+        710,
+        725,
+        882,
+        1202
       ],
       "starting_issue_numbers": [
-        272,
-        902
+        710,
+        882
       ],
       "finishing_issue_numbers": [
-        272,
-        880
+        725,
+        1202
       ],
       "review_issue_numbers": [
-        272,
-        880
+        725,
+        1202
       ],
-      "planned_writer_days": 14,
+      "planned_writer_days": 13,
       "writer_capacity_days": 15
     },
     {
       "week_start": "2026-08-31",
       "week_end": "2026-09-06",
       "active_issue_numbers": [
-        27,
-        274,
-        555,
+        569,
+        710,
+        882,
         902,
-        988
+        1193
       ],
       "starting_issue_numbers": [
-        274,
-        988
+        902,
+        1193
       ],
       "finishing_issue_numbers": [
-        27,
-        274,
-        555
+        569,
+        882
       ],
       "review_issue_numbers": [
-        27,
-        274,
-        555
+        569,
+        882
       ],
-      "planned_writer_days": 14,
+      "planned_writer_days": 15,
       "writer_capacity_days": 15
     },
     {
       "week_start": "2026-09-07",
       "week_end": "2026-09-13",
       "active_issue_numbers": [
-        281,
-        637,
+        644,
         710,
         902,
-        988
+        1113,
+        1193,
+        1197
       ],
       "starting_issue_numbers": [
-        281,
-        637,
-        710
+        644,
+        1113,
+        1197
       ],
       "finishing_issue_numbers": [
+        710,
         902,
-        988
+        1197
       ],
       "review_issue_numbers": [
+        710,
         902,
-        988
+        1197
       ],
       "planned_writer_days": 15,
       "writer_capacity_days": 15
@@ -2307,123 +1442,38 @@
       "week_start": "2026-09-14",
       "week_end": "2026-09-20",
       "active_issue_numbers": [
-        281,
-        637,
-        645,
-        710,
-        1033,
-        1035
+        644,
+        1113,
+        1193
       ],
-      "starting_issue_numbers": [
-        645,
-        1033,
-        1035
-      ],
+      "starting_issue_numbers": [],
       "finishing_issue_numbers": [
-        281,
-        637,
-        645
+        1113
       ],
       "review_issue_numbers": [
-        281,
-        637,
-        645
+        1113,
+        1193
       ],
-      "planned_writer_days": 15,
+      "planned_writer_days": 9,
       "writer_capacity_days": 15
     },
     {
       "week_start": "2026-09-21",
       "week_end": "2026-09-27",
       "active_issue_numbers": [
-        710,
-        784,
-        943,
-        975,
-        1033,
-        1035
-      ],
-      "starting_issue_numbers": [
-        784,
-        943,
-        975
-      ],
-      "finishing_issue_numbers": [
-        710,
-        1033,
-        1035
-      ],
-      "review_issue_numbers": [
-        710,
-        1033,
-        1035
-      ],
-      "planned_writer_days": 15,
-      "writer_capacity_days": 15
-    },
-    {
-      "week_start": "2026-09-28",
-      "week_end": "2026-10-04",
-      "active_issue_numbers": [
-        584,
-        784,
-        868,
-        943,
-        975,
-        995
-      ],
-      "starting_issue_numbers": [
-        584,
-        868,
-        995
-      ],
-      "finishing_issue_numbers": [
-        784,
-        943,
-        975
-      ],
-      "review_issue_numbers": [
-        784,
-        943,
-        975
-      ],
-      "planned_writer_days": 15,
-      "writer_capacity_days": 15
-    },
-    {
-      "week_start": "2026-10-05",
-      "week_end": "2026-10-11",
-      "active_issue_numbers": [
-        584,
-        868,
-        995
+        644,
+        1193
       ],
       "starting_issue_numbers": [],
       "finishing_issue_numbers": [
-        584,
-        995
+        644,
+        1193
       ],
       "review_issue_numbers": [
-        584,
-        995
+        644,
+        1193
       ],
-      "planned_writer_days": 8,
-      "writer_capacity_days": 15
-    },
-    {
-      "week_start": "2026-10-12",
-      "week_end": "2026-10-18",
-      "active_issue_numbers": [
-        868
-      ],
-      "starting_issue_numbers": [],
-      "finishing_issue_numbers": [
-        868
-      ],
-      "review_issue_numbers": [
-        868
-      ],
-      "planned_writer_days": 2,
+      "planned_writer_days": 0,
       "writer_capacity_days": 15
     }
   ],
@@ -3065,7 +2115,7 @@
       "state": "open",
       "state_reason": null,
       "role": "planning",
-      "workflow": "blocked",
+      "workflow": "needs-detail",
       "priority": "P2",
       "size": "L",
       "kind": "planning",
@@ -3076,24 +2126,24 @@
       "labels": [
         "P2",
         "area:platforms",
-        "blocked",
         "kind:planning",
+        "needs-detail",
         "planning",
         "size:L"
       ],
       "assignees": [],
       "created_at": "2026-07-19T23:20:38Z",
-      "updated_at": "2026-08-02T11:51:42Z",
+      "updated_at": "2026-08-08T16:04:43Z",
       "closed_at": null
     },
     {
       "number": 27,
       "title": "Sample: end-to-end JSON API service",
       "url": "https://github.com/kofun-lang/kofun/issues/27",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "needs-decision",
+      "workflow": "closed",
       "priority": "P1",
       "size": "M",
       "kind": "implementation",
@@ -3111,8 +2161,8 @@
       ],
       "assignees": [],
       "created_at": "2026-07-19T23:20:41Z",
-      "updated_at": "2026-08-01T23:54:52Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:24:55Z",
+      "closed_at": "2026-08-08T11:24:55Z"
     },
     {
       "number": 28,
@@ -3189,7 +2239,7 @@
       ],
       "assignees": [],
       "created_at": "2026-07-19T23:20:50Z",
-      "updated_at": "2026-08-02T07:42:57Z",
+      "updated_at": "2026-08-08T16:04:39Z",
       "closed_at": null
     },
     {
@@ -3217,17 +2267,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-19T23:20:53Z",
-      "updated_at": "2026-08-02T07:43:04Z",
+      "updated_at": "2026-08-09T10:54:30Z",
       "closed_at": null
     },
     {
       "number": 32,
       "title": "Stage 2 fixed point: Kofun compiles Kofun",
       "url": "https://github.com/kofun-lang/kofun/issues/32",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "planning",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P0",
       "size": "L",
       "kind": "planning",
@@ -3245,8 +2295,8 @@
       ],
       "assignees": [],
       "created_at": "2026-07-19T23:20:56Z",
-      "updated_at": "2026-08-02T07:39:03Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T23:03:16Z",
+      "closed_at": "2026-08-08T23:03:16Z"
     },
     {
       "number": 33,
@@ -9005,10 +8055,10 @@
       "number": 271,
       "title": "Bootstrap: produce C1/A1 and self-compile S into C2/A2",
       "url": "https://github.com/kofun-lang/kofun/issues/271",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "needs-decision",
+      "workflow": "closed",
       "priority": "P0",
       "size": "M",
       "kind": "implementation",
@@ -9023,22 +8073,22 @@
         "area:c-backend",
         "curated",
         "kind:implementation",
-        "needs-decision",
+        "ready",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-07-20T00:10:05Z",
-      "updated_at": "2026-08-02T07:38:26Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T22:48:38Z",
+      "closed_at": "2026-08-08T22:48:23Z"
     },
     {
       "number": 272,
       "title": "Bootstrap fixed point: produce C3/A3, compare three generations, close B4/B5",
       "url": "https://github.com/kofun-lang/kofun/issues/272",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P0",
       "size": "M",
       "kind": "implementation",
@@ -9051,15 +8101,15 @@
         "P0",
         "area:bootstrap",
         "area:c-backend",
-        "blocked",
         "curated",
         "kind:implementation",
+        "ready",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-07-20T00:10:06Z",
-      "updated_at": "2026-07-31T05:21:22Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T23:02:35Z",
+      "closed_at": "2026-08-08T23:02:09Z"
     },
     {
       "number": 273,
@@ -9092,7 +8142,7 @@
       "state": "open",
       "state_reason": null,
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "needs-detail",
       "priority": "P1",
       "size": "M",
       "kind": "test-quality",
@@ -9105,14 +8155,14 @@
         "P1",
         "area:bootstrap",
         "area:quality",
-        "blocked",
         "curated",
         "kind:test-quality",
+        "needs-detail",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-07-20T00:10:06Z",
-      "updated_at": "2026-07-31T05:21:24Z",
+      "updated_at": "2026-08-10T13:11:52Z",
       "closed_at": null
     },
     {
@@ -9147,10 +8197,10 @@
       "number": 276,
       "title": "Reduce boilerplate: derive, and generated members",
       "url": "https://github.com/kofun-lang/kofun/issues/276",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "planning",
-      "workflow": "needs-decision",
+      "workflow": "closed",
       "priority": "P1",
       "size": "L",
       "kind": "planning",
@@ -9168,17 +8218,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T00:14:25Z",
-      "updated_at": "2026-08-02T02:33:31Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:31:55Z",
+      "closed_at": "2026-08-08T11:31:55Z"
     },
     {
       "number": 277,
       "title": "Freestanding target: run with no operating system",
       "url": "https://github.com/kofun-lang/kofun/issues/277",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "deferred",
+      "workflow": "closed",
       "priority": "P1",
       "size": "L",
       "kind": "implementation",
@@ -9196,17 +8246,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T00:14:27Z",
-      "updated_at": "2026-07-31T05:21:28Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:13:17Z",
+      "closed_at": "2026-08-08T11:13:17Z"
     },
     {
       "number": 278,
       "title": "ARM Cortex-M backend (thumb2)",
       "url": "https://github.com/kofun-lang/kofun/issues/278",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "deferred",
+      "workflow": "closed",
       "priority": "P2",
       "size": "L",
       "kind": "implementation",
@@ -9226,17 +8276,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T00:14:30Z",
-      "updated_at": "2026-07-31T05:21:29Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:13:21Z",
+      "closed_at": "2026-08-08T11:13:21Z"
     },
     {
       "number": 279,
       "title": "Memory-mapped I/O, volatile access, and interrupt handlers",
       "url": "https://github.com/kofun-lang/kofun/issues/279",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "deferred",
+      "workflow": "closed",
       "priority": "P2",
       "size": "L",
       "kind": "implementation",
@@ -9256,17 +8306,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T00:14:33Z",
-      "updated_at": "2026-07-31T05:21:30Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:13:25Z",
+      "closed_at": "2026-08-08T11:13:25Z"
     },
     {
       "number": 280,
       "title": "No-heap mode: static allocation only",
       "url": "https://github.com/kofun-lang/kofun/issues/280",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "deferred",
+      "workflow": "closed",
       "priority": "P2",
       "size": "L",
       "kind": "implementation",
@@ -9284,17 +8334,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T00:14:35Z",
-      "updated_at": "2026-07-31T05:21:31Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:13:28Z",
+      "closed_at": "2026-08-08T11:13:28Z"
     },
     {
       "number": 281,
       "title": "Position paper: what replacing C and Rust actually requires",
       "url": "https://github.com/kofun-lang/kofun/issues/281",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "unclassified",
+      "workflow": "closed",
       "priority": "P1",
       "size": "M",
       "kind": "documentation",
@@ -9308,8 +8358,8 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T00:14:37Z",
-      "updated_at": "2026-08-02T01:27:27Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:25:03Z",
+      "closed_at": "2026-08-08T11:25:03Z"
     },
     {
       "number": 283,
@@ -9475,10 +8525,10 @@
       "number": 289,
       "title": "Forward references: track declaration scopes, imports, and initialization",
       "url": "https://github.com/kofun-lang/kofun/issues/289",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "planning",
-      "workflow": "needs-detail",
+      "workflow": "closed",
       "priority": "P1",
       "size": "L",
       "kind": "planning",
@@ -9496,8 +8546,8 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T00:16:59Z",
-      "updated_at": "2026-08-05T12:40:26Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:25:44Z",
+      "closed_at": "2026-08-08T11:25:44Z"
     },
     {
       "number": 290,
@@ -9698,10 +8748,10 @@
       "number": 298,
       "title": "Duplicate definitions: track namespace and binding-domain rules",
       "url": "https://github.com/kofun-lang/kofun/issues/298",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "planning",
-      "workflow": "needs-detail",
+      "workflow": "closed",
       "priority": "P1",
       "size": "L",
       "kind": "planning",
@@ -9721,8 +8771,8 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T00:17:03Z",
-      "updated_at": "2026-08-02T09:04:41Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:33:41Z",
+      "closed_at": "2026-08-08T11:33:41Z"
     },
     {
       "number": 299,
@@ -10100,10 +9150,10 @@
       "number": 314,
       "title": "Null coalescing: execute Optional(Int) ?? Int lazily",
       "url": "https://github.com/kofun-lang/kofun/issues/314",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P2",
       "size": "M",
       "kind": "implementation",
@@ -10114,15 +9164,15 @@
       "labels": [
         "P2",
         "area:inference",
-        "blocked",
         "curated",
         "kind:implementation",
+        "ready",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-07-20T00:17:11Z",
-      "updated_at": "2026-08-02T02:57:53Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T13:50:53Z",
+      "closed_at": "2026-08-08T13:50:53Z"
     },
     {
       "number": 315,
@@ -12735,10 +11785,10 @@
       "number": 424,
       "title": "Hot reload at function granularity, via micro-partition",
       "url": "https://github.com/kofun-lang/kofun/issues/424",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "deferred",
+      "workflow": "closed",
       "priority": "P2",
       "size": "L",
       "kind": "implementation",
@@ -12758,8 +11808,8 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T00:20:26Z",
-      "updated_at": "2026-07-31T05:23:42Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:16:05Z",
+      "closed_at": "2026-08-08T11:16:05Z"
     },
     {
       "number": 425,
@@ -15309,10 +14359,10 @@
       "number": 532,
       "title": "Scientific computing: arrays, linear algebra, statistics, dataframes, plotting",
       "url": "https://github.com/kofun-lang/kofun/issues/532",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "planning",
-      "workflow": "deferred",
+      "workflow": "closed",
       "priority": "P2",
       "size": "L",
       "kind": "planning",
@@ -15330,17 +14380,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T02:15:01Z",
-      "updated_at": "2026-07-31T05:24:25Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:27:39Z",
+      "closed_at": "2026-08-08T11:27:39Z"
     },
     {
       "number": 533,
       "title": "Show where ownership goes: LSP hover, inlay hints, and diagnostics",
       "url": "https://github.com/kofun-lang/kofun/issues/533",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P1",
       "size": "L",
       "kind": "implementation",
@@ -15353,15 +14403,15 @@
         "P1",
         "area:ownership",
         "area:tooling",
-        "blocked",
         "curated",
         "kind:implementation",
+        "ready",
         "size:L"
       ],
       "assignees": [],
       "created_at": "2026-07-20T02:15:05Z",
-      "updated_at": "2026-08-01T23:51:19Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T07:38:04Z",
+      "closed_at": "2026-08-08T07:36:26Z"
     },
     {
       "number": 534,
@@ -15417,10 +14467,10 @@
       "number": 536,
       "title": "ndarray: n-dimensional arrays with views, strides, and broadcasting",
       "url": "https://github.com/kofun-lang/kofun/issues/536",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "deferred",
+      "workflow": "closed",
       "priority": "P2",
       "size": "L",
       "kind": "implementation",
@@ -15438,17 +14488,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T02:16:58Z",
-      "updated_at": "2026-07-31T05:21:10Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:27:40Z",
+      "closed_at": "2026-08-08T11:27:40Z"
     },
     {
       "number": 537,
       "title": "Linear algebra: matmul, decompositions, solvers, and BLAS/LAPACK binding",
       "url": "https://github.com/kofun-lang/kofun/issues/537",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "deferred",
+      "workflow": "closed",
       "priority": "P2",
       "size": "L",
       "kind": "implementation",
@@ -15466,17 +14516,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T02:17:02Z",
-      "updated_at": "2026-07-31T05:21:11Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:27:41Z",
+      "closed_at": "2026-08-08T11:27:41Z"
     },
     {
       "number": 538,
       "title": "Signal and image processing: FFT, convolution, filtering",
       "url": "https://github.com/kofun-lang/kofun/issues/538",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "deferred",
+      "workflow": "closed",
       "priority": "P2",
       "size": "L",
       "kind": "implementation",
@@ -15494,17 +14544,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T02:17:07Z",
-      "updated_at": "2026-07-31T05:21:14Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:24:56Z",
+      "closed_at": "2026-08-08T11:24:56Z"
     },
     {
       "number": 539,
       "title": "Statistics: distributions, tests, regression, optimisation, integration",
       "url": "https://github.com/kofun-lang/kofun/issues/539",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "deferred",
+      "workflow": "closed",
       "priority": "P2",
       "size": "L",
       "kind": "implementation",
@@ -15522,17 +14572,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T02:17:11Z",
-      "updated_at": "2026-07-31T05:21:15Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:24:57Z",
+      "closed_at": "2026-08-08T11:24:57Z"
     },
     {
       "number": 540,
       "title": "Dataframes: typed columnar tables with group-by and join",
       "url": "https://github.com/kofun-lang/kofun/issues/540",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "deferred",
+      "workflow": "closed",
       "priority": "P2",
       "size": "L",
       "kind": "implementation",
@@ -15550,8 +14600,8 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T02:17:15Z",
-      "updated_at": "2026-07-31T05:21:16Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:24:58Z",
+      "closed_at": "2026-08-08T11:24:58Z"
     },
     {
       "number": 541,
@@ -15610,10 +14660,10 @@
       "number": 543,
       "title": "Optional types: define representation, narrowing, matching, and propagation",
       "url": "https://github.com/kofun-lang/kofun/issues/543",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "planning",
-      "workflow": "needs-detail",
+      "workflow": "closed",
       "priority": "P2",
       "size": "L",
       "kind": "planning",
@@ -15631,8 +14681,8 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T03:44:32Z",
-      "updated_at": "2026-08-02T07:43:14Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:25:37Z",
+      "closed_at": "2026-08-08T11:25:37Z"
     },
     {
       "number": 545,
@@ -15888,10 +14938,10 @@
       "number": 554,
       "title": "Stage 2: lower contiguous payload-free enum matches to C switch",
       "url": "https://github.com/kofun-lang/kofun/issues/554",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P1",
       "size": "M",
       "kind": "implementation",
@@ -15902,24 +14952,24 @@
       "labels": [
         "P1",
         "area:codegen",
-        "blocked",
         "curated",
         "kind:implementation",
+        "needs-decision",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-07-20T08:09:18Z",
-      "updated_at": "2026-08-02T02:05:15Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:53:00Z",
+      "closed_at": "2026-08-08T11:53:00Z"
     },
     {
       "number": 555,
       "title": "Scoped parallelism v1: specify spawn/join ownership semantics and executable model",
       "url": "https://github.com/kofun-lang/kofun/issues/555",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "needs-decision",
+      "workflow": "closed",
       "priority": "P1",
       "size": "M",
       "kind": "spec-design",
@@ -15932,13 +14982,13 @@
         "area:concurrency",
         "curated",
         "kind:spec-design",
-        "needs-decision",
+        "ready",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-07-20T08:09:21Z",
-      "updated_at": "2026-08-02T07:56:07Z",
-      "closed_at": null
+      "updated_at": "2026-08-09T23:53:05Z",
+      "closed_at": "2026-08-09T23:52:57Z"
     },
     {
       "number": 556,
@@ -16031,7 +15081,7 @@
       "state": "open",
       "state_reason": null,
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "needs-detail",
       "priority": "P1",
       "size": "M",
       "kind": "spec-design",
@@ -16042,24 +15092,24 @@
       "labels": [
         "P1",
         "area:ownership",
-        "blocked",
         "curated",
         "kind:spec-design",
+        "needs-detail",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-07-20T21:21:33Z",
-      "updated_at": "2026-08-02T02:08:51Z",
+      "updated_at": "2026-08-10T14:36:26Z",
       "closed_at": null
     },
     {
       "number": 570,
       "title": "Austral: propagate ownership kind structurally through generics and ADTs",
       "url": "https://github.com/kofun-lang/kofun/issues/570",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P1",
       "size": "M",
       "kind": "spec-design",
@@ -16081,17 +15131,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T21:21:34Z",
-      "updated_at": "2026-08-02T02:03:58Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:23:15Z",
+      "closed_at": "2026-08-08T11:23:15Z"
     },
     {
       "number": 571,
       "title": "Austral/Nim: support zero-copy borrowed results without user-written lifetimes",
       "url": "https://github.com/kofun-lang/kofun/issues/571",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P1",
       "size": "M",
       "kind": "spec-design",
@@ -16113,17 +15163,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T21:21:35Z",
-      "updated_at": "2026-08-02T01:22:57Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:23:18Z",
+      "closed_at": "2026-08-08T11:23:18Z"
     },
     {
       "number": 572,
       "title": "Nim: infer last-use moves and add a compile-time move assertion",
       "url": "https://github.com/kofun-lang/kofun/issues/572",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "planning",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P2",
       "size": "L",
       "kind": "planning",
@@ -16145,17 +15195,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T21:21:35Z",
-      "updated_at": "2026-08-01T23:53:19Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:23:21Z",
+      "closed_at": "2026-08-08T11:23:21Z"
     },
     {
       "number": 573,
       "title": "Odin: make allocator choice a scoped, effect-tracked capability",
       "url": "https://github.com/kofun-lang/kofun/issues/573",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P1",
       "size": "L",
       "kind": "planning",
@@ -16179,17 +15229,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T21:25:01Z",
-      "updated_at": "2026-08-02T00:09:03Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:29:10Z",
+      "closed_at": "2026-08-08T11:29:10Z"
     },
     {
       "number": 574,
       "title": "V: generate audited C bindings from Clang AST before attempting source translation",
       "url": "https://github.com/kofun-lang/kofun/issues/574",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "unclassified",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P1",
       "size": "L",
       "kind": "planning",
@@ -16210,8 +15260,8 @@
       ],
       "assignees": [],
       "created_at": "2026-07-20T21:25:02Z",
-      "updated_at": "2026-08-01T23:53:51Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:29:08Z",
+      "closed_at": "2026-08-08T11:29:08Z"
     },
     {
       "number": 575,
@@ -16248,10 +15298,10 @@
       "number": 576,
       "title": "Koka: reuse matched ADT constructors in place when storage is unique",
       "url": "https://github.com/kofun-lang/kofun/issues/576",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P2",
       "size": "M",
       "kind": "spec-design",
@@ -16266,15 +15316,15 @@
         "area:memory",
         "area:optimizer",
         "area:types",
-        "blocked",
         "curated",
         "kind:spec-design",
+        "needs-detail",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-07-20T21:26:21Z",
-      "updated_at": "2026-08-02T05:29:06Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:29:09Z",
+      "closed_at": "2026-08-08T11:29:09Z"
     },
     {
       "number": 578,
@@ -16361,10 +15411,10 @@
       "number": 584,
       "title": "Visibility tooling: prevent macro, LSP, and sidecar access bypasses",
       "url": "https://github.com/kofun-lang/kofun/issues/584",
-      "state": "open",
-      "state_reason": "reopened",
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "needs-detail",
+      "workflow": "closed",
       "priority": "P2",
       "size": "M",
       "kind": "implementation",
@@ -16382,17 +15432,17 @@
       ],
       "assignees": [],
       "created_at": "2026-07-21T13:02:42Z",
-      "updated_at": "2026-08-02T09:57:47Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T06:30:58Z",
+      "closed_at": "2026-08-08T06:30:58Z"
     },
     {
       "number": 585,
       "title": "Visibility stabilization: document API changes and migration",
       "url": "https://github.com/kofun-lang/kofun/issues/585",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P3",
       "size": "M",
       "kind": "documentation",
@@ -16403,15 +15453,15 @@
       "labels": [
         "P3",
         "area:docs_tools",
-        "blocked",
         "curated",
         "kind:documentation",
+        "needs-detail",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-07-21T13:02:43Z",
-      "updated_at": "2026-08-02T09:15:29Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:24:59Z",
+      "closed_at": "2026-08-08T11:24:59Z"
     },
     {
       "number": 595,
@@ -16892,10 +15942,10 @@
       "number": 622,
       "title": "Self-host compiler driver: args, file I/O, and compiling S to deterministic C11",
       "url": "https://github.com/kofun-lang/kofun/issues/622",
-      "state": "open",
-      "state_reason": "reopened",
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "ready",
+      "workflow": "closed",
       "priority": "P0",
       "size": "M",
       "kind": "implementation",
@@ -16917,8 +15967,8 @@
       ],
       "assignees": [],
       "created_at": "2026-07-23T12:16:18Z",
-      "updated_at": "2026-08-02T07:32:44Z",
-      "closed_at": null
+      "updated_at": "2026-08-07T22:47:44Z",
+      "closed_at": "2026-08-07T22:47:44Z"
     },
     {
       "number": 623,
@@ -16952,10 +16002,10 @@
       "number": 624,
       "title": "Language UX: simple functional syntax with explicit ownership and lawful composition",
       "url": "https://github.com/kofun-lang/kofun/issues/624",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "planning",
-      "workflow": "needs-detail",
+      "workflow": "closed",
       "priority": "P1",
       "size": "L",
       "kind": "planning",
@@ -16977,8 +16027,8 @@
       ],
       "assignees": [],
       "created_at": "2026-07-23T12:17:09Z",
-      "updated_at": "2026-08-02T07:43:19Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:25:40Z",
+      "closed_at": "2026-08-08T11:25:40Z"
     },
     {
       "number": 625,
@@ -17191,10 +16241,10 @@
       "number": 637,
       "title": "Discovery query v1: project inferred types and callable operations from semantic facts",
       "url": "https://github.com/kofun-lang/kofun/issues/637",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "needs-detail",
+      "workflow": "closed",
       "priority": "P1",
       "size": "M",
       "kind": "implementation",
@@ -17207,13 +16257,13 @@
         "area:developer_tools",
         "curated",
         "kind:implementation",
-        "needs-detail",
+        "ready",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-07-23T13:30:00Z",
-      "updated_at": "2026-08-02T07:53:53Z",
-      "closed_at": null
+      "updated_at": "2026-08-10T06:10:19Z",
+      "closed_at": "2026-08-10T00:05:25Z"
     },
     {
       "number": 638,
@@ -17309,7 +16359,7 @@
       "state": "open",
       "state_reason": null,
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "needs-detail",
       "priority": "P2",
       "size": "M",
       "kind": "implementation",
@@ -17320,24 +16370,24 @@
       "labels": [
         "P2",
         "area:stdlib",
-        "blocked",
         "curated",
         "kind:implementation",
+        "needs-detail",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-07-23T22:17:15Z",
-      "updated_at": "2026-08-01T22:04:57Z",
+      "updated_at": "2026-08-10T15:01:44Z",
       "closed_at": null
     },
     {
       "number": 645,
       "title": "Date/time core: Gregorian values, checked arithmetic, and strict RFC 3339",
       "url": "https://github.com/kofun-lang/kofun/issues/645",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "ready",
+      "workflow": "closed",
       "priority": "P2",
       "size": "M",
       "kind": "implementation",
@@ -17355,8 +16405,8 @@
       ],
       "assignees": [],
       "created_at": "2026-07-23T22:17:49Z",
-      "updated_at": "2026-08-02T10:24:25Z",
-      "closed_at": null
+      "updated_at": "2026-08-07T12:48:34Z",
+      "closed_at": "2026-08-07T10:57:39Z"
     },
     {
       "number": 646,
@@ -17383,7 +16433,7 @@
       ],
       "assignees": [],
       "created_at": "2026-07-23T22:19:36Z",
-      "updated_at": "2026-08-01T22:04:57Z",
+      "updated_at": "2026-08-10T13:19:10Z",
       "closed_at": null
     },
     {
@@ -17885,7 +16935,7 @@
       ],
       "assignees": [],
       "created_at": "2026-07-26T00:10:50Z",
-      "updated_at": "2026-08-02T08:28:31Z",
+      "updated_at": "2026-08-08T16:28:25Z",
       "closed_at": null
     },
     {
@@ -18047,7 +17097,7 @@
       ],
       "assignees": [],
       "created_at": "2026-07-26T08:12:22Z",
-      "updated_at": "2026-08-02T08:29:09Z",
+      "updated_at": "2026-08-08T16:28:25Z",
       "closed_at": null
     },
     {
@@ -18162,10 +17212,10 @@
       "number": 738,
       "title": "Time-series forecasting research: rolling-origin backtests, uncertainty, and estimator boundaries",
       "url": "https://github.com/kofun-lang/kofun/issues/738",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "not_planned",
       "role": "curated",
-      "workflow": "deferred",
+      "workflow": "closed",
       "priority": "P3",
       "size": "M",
       "kind": "research",
@@ -18183,8 +17233,8 @@
       ],
       "assignees": [],
       "created_at": "2026-07-26T13:56:47Z",
-      "updated_at": "2026-07-31T05:22:19Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T11:22:04Z",
+      "closed_at": "2026-08-08T11:22:04Z"
     },
     {
       "number": 739,
@@ -18774,10 +17824,10 @@
       "number": 784,
       "title": "ownership: an affine handle whose owned state cannot be duplicated (#644)",
       "url": "https://github.com/kofun-lang/kofun/issues/784",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "needs-decision",
+      "workflow": "closed",
       "priority": "P2",
       "size": "M",
       "kind": "implementation",
@@ -18790,13 +17840,13 @@
         "area:ownership",
         "curated",
         "kind:implementation",
-        "needs-decision",
+        "ready",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-07-28T13:43:04Z",
-      "updated_at": "2026-07-31T05:22:27Z",
-      "closed_at": null
+      "updated_at": "2026-08-10T15:02:28Z",
+      "closed_at": "2026-08-10T15:02:28Z"
     },
     {
       "number": 791,
@@ -19289,7 +18339,7 @@
       ],
       "assignees": [],
       "created_at": "2026-08-01T11:02:43Z",
-      "updated_at": "2026-08-01T22:04:58Z",
+      "updated_at": "2026-08-10T13:19:08Z",
       "closed_at": null
     },
     {
@@ -19464,7 +18514,7 @@
       "state": "open",
       "state_reason": null,
       "role": "curated",
-      "workflow": "needs-detail",
+      "workflow": "blocked",
       "priority": "P2",
       "size": "L",
       "kind": "implementation",
@@ -19477,14 +18527,14 @@
         "P2",
         "area:c-backend",
         "area:stdlib",
+        "blocked",
         "curated",
         "kind:implementation",
-        "needs-detail",
         "size:L"
       ],
       "assignees": [],
       "created_at": "2026-08-01T21:27:49Z",
-      "updated_at": "2026-08-02T11:56:10Z",
+      "updated_at": "2026-08-10T13:16:53Z",
       "closed_at": null
     },
     {
@@ -19520,10 +18570,10 @@
       "number": 880,
       "title": "Call arguments v1 slice 1: parse labels and canonical trailing lambdas",
       "url": "https://github.com/kofun-lang/kofun/issues/880",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "ready",
+      "workflow": "closed",
       "priority": "P1",
       "size": "M",
       "kind": "implementation",
@@ -19541,17 +18591,17 @@
       ],
       "assignees": [],
       "created_at": "2026-08-01T22:13:01Z",
-      "updated_at": "2026-08-02T06:21:22Z",
-      "closed_at": null
+      "updated_at": "2026-08-07T14:30:30Z",
+      "closed_at": "2026-08-07T14:30:30Z"
     },
     {
       "number": 881,
       "title": "Call arguments v1 slice 2: bind labels in HIR, type checking, and KIF identity",
       "url": "https://github.com/kofun-lang/kofun/issues/881",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P1",
       "size": "M",
       "kind": "implementation",
@@ -19564,15 +18614,15 @@
         "P1",
         "area:syntax",
         "area:type-system",
-        "blocked",
         "curated",
         "kind:implementation",
+        "ready",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-08-01T22:13:02Z",
-      "updated_at": "2026-08-01T22:13:02Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T10:27:08Z",
+      "closed_at": "2026-08-08T10:26:46Z"
     },
     {
       "number": 882,
@@ -19581,7 +18631,7 @@
       "state": "open",
       "state_reason": null,
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "needs-detail",
       "priority": "P1",
       "size": "M",
       "kind": "implementation",
@@ -19594,14 +18644,14 @@
         "P1",
         "area:codegen",
         "area:syntax",
-        "blocked",
         "curated",
         "kind:implementation",
+        "needs-detail",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-08-01T22:13:03Z",
-      "updated_at": "2026-08-01T22:13:03Z",
+      "updated_at": "2026-08-10T14:36:24Z",
       "closed_at": null
     },
     {
@@ -19629,7 +18679,7 @@
       ],
       "assignees": [],
       "created_at": "2026-08-01T22:13:04Z",
-      "updated_at": "2026-08-01T22:13:04Z",
+      "updated_at": "2026-08-08T09:37:36Z",
       "closed_at": null
     },
     {
@@ -19657,7 +18707,7 @@
       ],
       "assignees": [],
       "created_at": "2026-08-01T22:13:05Z",
-      "updated_at": "2026-08-01T22:13:05Z",
+      "updated_at": "2026-08-08T08:58:46Z",
       "closed_at": null
     },
     {
@@ -19685,7 +18735,7 @@
       ],
       "assignees": [],
       "created_at": "2026-08-01T22:13:06Z",
-      "updated_at": "2026-08-02T05:24:25Z",
+      "updated_at": "2026-08-08T16:30:42Z",
       "closed_at": null
     },
     {
@@ -19908,7 +18958,7 @@
       "state": "open",
       "state_reason": null,
       "role": "curated",
-      "workflow": "needs-decision",
+      "workflow": "needs-detail",
       "priority": "P1",
       "size": "M",
       "kind": "implementation",
@@ -19925,12 +18975,12 @@
         "area:tooling",
         "curated",
         "kind:implementation",
-        "needs-decision",
+        "needs-detail",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-08-01T23:43:35Z",
-      "updated_at": "2026-08-02T07:46:56Z",
+      "updated_at": "2026-08-10T14:01:48Z",
       "closed_at": null
     },
     {
@@ -20210,10 +19260,10 @@
       "number": 915,
       "title": "Stage 2 ensure_move v3: prove loop-local last uses instead of rejecting every loop",
       "url": "https://github.com/kofun-lang/kofun/issues/915",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P2",
       "size": "M",
       "kind": "implementation",
@@ -20228,15 +19278,15 @@
         "area:diagnostics",
         "area:optimizer",
         "area:ownership",
-        "blocked",
         "curated",
         "kind:implementation",
+        "needs-detail",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-08-01T23:48:28Z",
-      "updated_at": "2026-08-02T04:46:28Z",
-      "closed_at": null
+      "updated_at": "2026-08-10T06:14:36Z",
+      "closed_at": "2026-08-10T06:14:34Z"
     },
     {
       "number": 916,
@@ -20317,13 +19367,12 @@
         "area:c-backend",
         "area:stdlib",
         "curated",
-        "in-progress",
         "kind:implementation",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-08-01T23:49:15Z",
-      "updated_at": "2026-08-05T12:04:16Z",
+      "updated_at": "2026-08-06T00:43:37Z",
       "closed_at": "2026-08-05T12:04:16Z"
     },
     {
@@ -20386,14 +19435,14 @@
     },
     {
       "number": 922,
-      "title": "Stage 2: record the move site and attach it to the use-after-move diagnostic",
+      "title": "LSP: surface Stage 2 move sites in diagnostics and hover",
       "url": "https://github.com/kofun-lang/kofun/issues/922",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P1",
-      "size": "M",
+      "size": "S",
       "kind": "implementation",
       "area": "diagnostics",
       "areas": [
@@ -20406,15 +19455,15 @@
         "area:diagnostics",
         "area:ownership",
         "area:tooling",
-        "blocked",
         "curated",
         "kind:implementation",
-        "size:M"
+        "ready",
+        "size:S"
       ],
       "assignees": [],
       "created_at": "2026-08-01T23:49:45Z",
-      "updated_at": "2026-08-02T02:04:31Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T07:33:27Z",
+      "closed_at": "2026-08-08T07:33:15Z"
     },
     {
       "number": 923,
@@ -20476,10 +19525,10 @@
       "number": 930,
       "title": "Allocator seed: canonical `stdlib/alloc` contract and pinned Stage 2 projection (RFC-0001 stage 1)",
       "url": "https://github.com/kofun-lang/kofun/issues/930",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P1",
       "size": "M",
       "kind": "implementation",
@@ -20494,24 +19543,24 @@
         "area:effects",
         "area:memory",
         "area:stdlib",
-        "blocked",
         "curated",
         "kind:implementation",
+        "ready",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-08-02T00:02:48Z",
-      "updated_at": "2026-08-02T00:02:48Z",
-      "closed_at": null
+      "updated_at": "2026-08-09T12:49:54Z",
+      "closed_at": "2026-08-09T12:49:33Z"
     },
     {
       "number": 942,
       "title": "Member-scope duplicates: methods, associated values, and inherited or default members",
       "url": "https://github.com/kofun-lang/kofun/issues/942",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P2",
       "size": "M",
       "kind": "implementation",
@@ -20524,24 +19573,24 @@
         "P2",
         "area:diagnostics",
         "area:modules",
-        "blocked",
         "curated",
         "kind:implementation",
+        "ready",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-08-02T00:21:57Z",
-      "updated_at": "2026-08-02T04:42:54Z",
-      "closed_at": null
+      "updated_at": "2026-08-09T12:04:41Z",
+      "closed_at": "2026-08-09T11:57:48Z"
     },
     {
       "number": 943,
       "title": "Lambda spelling drift: Stage 2 accepts `(a, b) => e` and `x => e`, the grammar and SYNTAX.md describe neither",
       "url": "https://github.com/kofun-lang/kofun/issues/943",
-      "state": "open",
-      "state_reason": "reopened",
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "needs-decision",
+      "workflow": "closed",
       "priority": "P2",
       "size": "S",
       "kind": "spec-design",
@@ -20559,17 +19608,17 @@
       ],
       "assignees": [],
       "created_at": "2026-08-02T00:22:45Z",
-      "updated_at": "2026-08-02T07:13:33Z",
-      "closed_at": null
+      "updated_at": "2026-08-07T22:49:48Z",
+      "closed_at": "2026-08-07T22:49:48Z"
     },
     {
       "number": 946,
       "title": "The production frontend has no move analysis, so E2S122/E2S123 never reach an editor",
       "url": "https://github.com/kofun-lang/kofun/issues/946",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P2",
       "size": "M",
       "kind": "implementation",
@@ -20584,15 +19633,15 @@
         "area:diagnostics",
         "area:ownership",
         "area:tooling",
-        "blocked",
         "curated",
         "kind:implementation",
+        "ready",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-08-02T00:36:05Z",
-      "updated_at": "2026-08-02T03:23:32Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T02:40:59Z",
+      "closed_at": "2026-08-08T02:40:59Z"
     },
     {
       "number": 947,
@@ -20656,10 +19705,10 @@
       "number": 955,
       "title": "modules: spec/grammar.ebnf admits a top-level `let` that Stage 2 refuses with E2S02",
       "url": "https://github.com/kofun-lang/kofun/issues/955",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "in-progress",
+      "workflow": "closed",
       "priority": "P1",
       "size": "S",
       "kind": "spec-design",
@@ -20677,8 +19726,8 @@
       ],
       "assignees": [],
       "created_at": "2026-08-02T01:14:55Z",
-      "updated_at": "2026-08-05T13:07:34Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T01:36:08Z",
+      "closed_at": "2026-08-08T01:36:08Z"
     },
     {
       "number": 961,
@@ -20742,10 +19791,10 @@
       "number": 975,
       "title": "backlog: decide whether a planning umbrella waiting on children is `blocked`",
       "url": "https://github.com/kofun-lang/kofun/issues/975",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "needs-decision",
+      "workflow": "closed",
       "priority": "P2",
       "size": "S",
       "kind": "spec-design",
@@ -20763,8 +19812,8 @@
       ],
       "assignees": [],
       "created_at": "2026-08-02T02:05:36Z",
-      "updated_at": "2026-08-02T07:46:53Z",
-      "closed_at": null
+      "updated_at": "2026-08-07T22:57:25Z",
+      "closed_at": "2026-08-07T22:57:25Z"
     },
     {
       "number": 979,
@@ -20826,10 +19875,10 @@
       "number": 988,
       "title": "RFC: choose the derive v1 expansion authority and inspection contract",
       "url": "https://github.com/kofun-lang/kofun/issues/988",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "needs-decision",
+      "workflow": "closed",
       "priority": "P1",
       "size": "S",
       "kind": "spec-design",
@@ -20842,13 +19891,13 @@
         "area:meta",
         "curated",
         "kind:spec-design",
-        "needs-decision",
+        "ready",
         "size:S"
       ],
       "assignees": [],
       "created_at": "2026-08-02T02:32:23Z",
-      "updated_at": "2026-08-02T07:46:54Z",
-      "closed_at": null
+      "updated_at": "2026-08-09T12:04:42Z",
+      "closed_at": "2026-08-09T11:58:00Z"
     },
     {
       "number": 990,
@@ -20936,10 +19985,10 @@
       "number": 995,
       "title": "Trait member override v1: inherited and default member collision contract",
       "url": "https://github.com/kofun-lang/kofun/issues/995",
-      "state": "open",
-      "state_reason": "reopened",
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "needs-decision",
+      "workflow": "closed",
       "priority": "P2",
       "size": "S",
       "kind": "spec-design",
@@ -20954,13 +20003,13 @@
         "area:type-system",
         "curated",
         "kind:spec-design",
-        "needs-decision",
+        "ready",
         "size:S"
       ],
       "assignees": [],
       "created_at": "2026-08-02T03:22:30Z",
-      "updated_at": "2026-08-02T05:00:29Z",
-      "closed_at": null
+      "updated_at": "2026-08-09T11:13:45Z",
+      "closed_at": "2026-08-09T11:13:45Z"
     },
     {
       "number": 996,
@@ -21224,10 +20273,10 @@
       "number": 1008,
       "title": "Stage 2: execute immutable Int module constants after authority decision",
       "url": "https://github.com/kofun-lang/kofun/issues/1008",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "in-progress",
+      "workflow": "closed",
       "priority": "P1",
       "size": "M",
       "kind": "implementation",
@@ -21247,8 +20296,8 @@
       ],
       "assignees": [],
       "created_at": "2026-08-02T03:47:46Z",
-      "updated_at": "2026-08-05T13:07:59Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T01:37:32Z",
+      "closed_at": "2026-08-08T01:37:32Z"
     },
     {
       "number": 1016,
@@ -21413,10 +20462,10 @@
       "number": 1032,
       "title": "Self-host driver diagnostics: give A1's refusal a code and a span",
       "url": "https://github.com/kofun-lang/kofun/issues/1032",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "blocked",
+      "workflow": "closed",
       "priority": "P2",
       "size": "M",
       "kind": "implementation",
@@ -21431,24 +20480,24 @@
         "area:bootstrap",
         "area:c-backend",
         "area:diagnostics",
-        "blocked",
         "curated",
         "kind:implementation",
+        "ready",
         "size:M"
       ],
       "assignees": [],
       "created_at": "2026-08-02T07:31:02Z",
-      "updated_at": "2026-08-02T07:56:44Z",
-      "closed_at": null
+      "updated_at": "2026-08-08T13:50:44Z",
+      "closed_at": "2026-08-08T13:50:44Z"
     },
     {
       "number": 1033,
       "title": "LSP visibility: filter completion and navigation by caller context",
       "url": "https://github.com/kofun-lang/kofun/issues/1033",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "ready",
+      "workflow": "closed",
       "priority": "P2",
       "size": "M",
       "kind": "implementation",
@@ -21466,8 +20515,8 @@
       ],
       "assignees": [],
       "created_at": "2026-08-02T07:49:11Z",
-      "updated_at": "2026-08-02T07:49:11Z",
-      "closed_at": null
+      "updated_at": "2026-08-07T14:30:50Z",
+      "closed_at": "2026-08-07T14:30:50Z"
     },
     {
       "number": 1034,
@@ -21500,10 +20549,10 @@
       "number": 1035,
       "title": "Visibility fuzz: bound malformed identities, re-export chains, and stale artifacts",
       "url": "https://github.com/kofun-lang/kofun/issues/1035",
-      "state": "open",
-      "state_reason": null,
+      "state": "closed",
+      "state_reason": "completed",
       "role": "curated",
-      "workflow": "ready",
+      "workflow": "closed",
       "priority": "P2",
       "size": "S",
       "kind": "implementation",
@@ -21521,8 +20570,8 @@
       ],
       "assignees": [],
       "created_at": "2026-08-02T07:49:14Z",
-      "updated_at": "2026-08-02T07:49:15Z",
-      "closed_at": null
+      "updated_at": "2026-08-07T23:22:00Z",
+      "closed_at": "2026-08-07T23:22:00Z"
     },
     {
       "number": 1038,
@@ -21552,6 +20601,1830 @@
       "created_at": "2026-08-02T08:08:31Z",
       "updated_at": "2026-08-02T11:55:17Z",
       "closed_at": "2026-08-02T11:54:26Z"
+    },
+    {
+      "number": 1048,
+      "title": "backlog: 20 of 71 open issues carry a state the gate cannot read",
+      "url": "https://github.com/kofun-lang/kofun/issues/1048",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "S",
+      "kind": "test-quality",
+      "area": "quality",
+      "areas": [
+        "quality"
+      ],
+      "labels": [
+        "P2",
+        "area:quality",
+        "kind:test-quality",
+        "needs-decision",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-06T03:37:39Z",
+      "updated_at": "2026-08-07T09:14:33Z",
+      "closed_at": "2026-08-07T09:14:33Z"
+    },
+    {
+      "number": 1057,
+      "title": "backlog: pay down the eighteen transcribable unreadable-state rows",
+      "url": "https://github.com/kofun-lang/kofun/issues/1057",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "S",
+      "kind": "test-quality",
+      "area": "quality",
+      "areas": [
+        "quality"
+      ],
+      "labels": [
+        "P2",
+        "area:quality",
+        "curated",
+        "kind:test-quality",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-07T11:00:53Z",
+      "updated_at": "2026-08-07T11:38:23Z",
+      "closed_at": "2026-08-07T11:38:23Z"
+    },
+    {
+      "number": 1060,
+      "title": "backlog: 24 of 28 blocked issues name their blockers where the gate cannot read them",
+      "url": "https://github.com/kofun-lang/kofun/issues/1060",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "S",
+      "kind": "test-quality",
+      "area": "quality",
+      "areas": [
+        "quality"
+      ],
+      "labels": [
+        "P2",
+        "area:quality",
+        "curated",
+        "kind:test-quality",
+        "needs-decision",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-07T11:46:18Z",
+      "updated_at": "2026-08-07T13:01:01Z",
+      "closed_at": "2026-08-07T13:01:01Z"
+    },
+    {
+      "number": 1062,
+      "title": "backlog: the agent-claim protocol is gated but unused, so both claim rules pass over an empty set",
+      "url": "https://github.com/kofun-lang/kofun/issues/1062",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "S",
+      "kind": "test-quality",
+      "area": "quality",
+      "areas": [
+        "quality"
+      ],
+      "labels": [
+        "P2",
+        "area:quality",
+        "curated",
+        "kind:test-quality",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-07T12:49:11Z",
+      "updated_at": "2026-08-07T14:04:50Z",
+      "closed_at": "2026-08-07T14:03:45Z"
+    },
+    {
+      "number": 1064,
+      "title": "backlog: docs/ISSUE_READINESS.md no longer states the rules check.mjs enforces",
+      "url": "https://github.com/kofun-lang/kofun/issues/1064",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "S",
+      "kind": "documentation",
+      "area": "quality",
+      "areas": [
+        "quality"
+      ],
+      "labels": [
+        "P2",
+        "area:quality",
+        "curated",
+        "kind:documentation",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-07T14:16:07Z",
+      "updated_at": "2026-08-07T15:22:13Z",
+      "closed_at": "2026-08-07T15:22:08Z"
+    },
+    {
+      "number": 1066,
+      "title": "AGENTS.md never mentions the backlog contract, which is why every agent claim is wrong or missing",
+      "url": "https://github.com/kofun-lang/kofun/issues/1066",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "S",
+      "kind": "documentation",
+      "area": "quality",
+      "areas": [
+        "quality"
+      ],
+      "labels": [
+        "P2",
+        "area:quality",
+        "curated",
+        "kind:documentation",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-07T14:20:09Z",
+      "updated_at": "2026-08-07T14:50:47Z",
+      "closed_at": "2026-08-07T14:50:30Z"
+    },
+    {
+      "number": 1068,
+      "title": "backlog: three rows are recorded as blocker drift when their bodies name a non-issue blocker correctly",
+      "url": "https://github.com/kofun-lang/kofun/issues/1068",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "S",
+      "kind": "test-quality",
+      "area": "quality",
+      "areas": [
+        "quality"
+      ],
+      "labels": [
+        "P2",
+        "area:quality",
+        "curated",
+        "kind:test-quality",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-07T14:27:13Z",
+      "updated_at": "2026-08-07T15:23:22Z",
+      "closed_at": "2026-08-07T15:23:16Z"
+    },
+    {
+      "number": 1077,
+      "title": "Stage 0 generated/meta access: pin unsupported producers fail closed",
+      "url": "https://github.com/kofun-lang/kofun/issues/1077",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "S",
+      "kind": "test-quality",
+      "area": "meta",
+      "areas": [
+        "meta",
+        "tooling"
+      ],
+      "labels": [
+        "P2",
+        "area:meta",
+        "area:tooling",
+        "curated",
+        "kind:test-quality",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T04:23:54Z",
+      "updated_at": "2026-08-08T06:17:18Z",
+      "closed_at": "2026-08-08T06:16:52Z"
+    },
+    {
+      "number": 1079,
+      "title": "Decimal scale profile gate: distinguish const-generic identity from Fixed semantics",
+      "url": "https://github.com/kofun-lang/kofun/issues/1079",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "S",
+      "kind": "test-quality",
+      "area": "stdlib",
+      "areas": [
+        "stdlib",
+        "type-system"
+      ],
+      "labels": [
+        "P2",
+        "area:stdlib",
+        "area:type-system",
+        "curated",
+        "kind:test-quality",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T05:26:13Z",
+      "updated_at": "2026-08-08T06:41:35Z",
+      "closed_at": "2026-08-08T06:41:21Z"
+    },
+    {
+      "number": 1080,
+      "title": "Discovery query: bridge live Stage 2 semantic facts into the v1 provider",
+      "url": "https://github.com/kofun-lang/kofun/issues/1080",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "developer_tools",
+      "areas": [
+        "developer_tools"
+      ],
+      "labels": [
+        "P1",
+        "area:developer_tools",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T05:26:28Z",
+      "updated_at": "2026-08-08T06:42:34Z",
+      "closed_at": "2026-08-08T06:42:23Z"
+    },
+    {
+      "number": 1081,
+      "title": "LSP visibility: require selective-import reachability for foreign symbols",
+      "url": "https://github.com/kofun-lang/kofun/issues/1081",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "M",
+      "kind": "implementation",
+      "area": "tooling",
+      "areas": [
+        "tooling"
+      ],
+      "labels": [
+        "P2",
+        "area:tooling",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T05:30:06Z",
+      "updated_at": "2026-08-08T06:23:35Z",
+      "closed_at": "2026-08-08T06:23:25Z"
+    },
+    {
+      "number": 1086,
+      "title": "LSP selective imports: require a valid caller module header",
+      "url": "https://github.com/kofun-lang/kofun/issues/1086",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "S",
+      "kind": "implementation",
+      "area": "tooling",
+      "areas": [
+        "tooling"
+      ],
+      "labels": [
+        "P2",
+        "area:tooling",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T06:25:30Z",
+      "updated_at": "2026-08-08T06:47:08Z",
+      "closed_at": "2026-08-08T06:47:08Z"
+    },
+    {
+      "number": 1088,
+      "title": "Module constants: pin a later declaration referenced by an earlier function",
+      "url": "https://github.com/kofun-lang/kofun/issues/1088",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "S",
+      "kind": "implementation",
+      "area": "modules",
+      "areas": [
+        "modules"
+      ],
+      "labels": [
+        "P1",
+        "area:modules",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T07:05:20Z",
+      "updated_at": "2026-08-08T07:32:14Z",
+      "closed_at": "2026-08-08T07:32:14Z"
+    },
+    {
+      "number": 1089,
+      "title": "Docs: refresh the Optional syntax current-status boundary after #924",
+      "url": "https://github.com/kofun-lang/kofun/issues/1089",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "S",
+      "kind": "documentation",
+      "area": "inference",
+      "areas": [
+        "inference",
+        "syntax"
+      ],
+      "labels": [
+        "P2",
+        "area:inference",
+        "area:syntax",
+        "curated",
+        "documentation",
+        "kind:documentation",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T07:06:12Z",
+      "updated_at": "2026-08-08T07:32:19Z",
+      "closed_at": "2026-08-08T07:32:19Z"
+    },
+    {
+      "number": 1094,
+      "title": "Discovery: carry current-file nominal TypeId onto resolved reference expressions",
+      "url": "https://github.com/kofun-lang/kofun/issues/1094",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "S",
+      "kind": "implementation",
+      "area": "developer_tools",
+      "areas": [
+        "developer_tools"
+      ],
+      "labels": [
+        "P1",
+        "area:developer_tools",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T11:44:33Z",
+      "updated_at": "2026-08-08T12:28:13Z",
+      "closed_at": "2026-08-08T12:28:01Z"
+    },
+    {
+      "number": 1097,
+      "title": "C11: lower all-Int labelled calls through source-order temporaries",
+      "url": "https://github.com/kofun-lang/kofun/issues/1097",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "codegen",
+      "areas": [
+        "codegen",
+        "syntax"
+      ],
+      "labels": [
+        "P1",
+        "area:codegen",
+        "area:syntax",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T14:10:07Z",
+      "updated_at": "2026-08-08T16:02:29Z",
+      "closed_at": "2026-08-08T16:01:54Z"
+    },
+    {
+      "number": 1098,
+      "title": "WASI command profile v1: pin capability authority and executable contract",
+      "url": "https://github.com/kofun-lang/kofun/issues/1098",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "M",
+      "kind": "spec-design",
+      "area": "platforms",
+      "areas": [
+        "platforms"
+      ],
+      "labels": [
+        "P2",
+        "area:platforms",
+        "curated",
+        "kind:spec-design",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T14:11:40Z",
+      "updated_at": "2026-08-08T16:02:31Z",
+      "closed_at": "2026-08-08T16:01:57Z"
+    },
+    {
+      "number": 1099,
+      "title": "Nested ADT usefulness v1: specialize one resolved payload column",
+      "url": "https://github.com/kofun-lang/kofun/issues/1099",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "type-system",
+      "areas": [
+        "type-system"
+      ],
+      "labels": [
+        "P1",
+        "area:type-system",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T14:12:00Z",
+      "updated_at": "2026-08-08T16:02:32Z",
+      "closed_at": "2026-08-08T16:01:59Z"
+    },
+    {
+      "number": 1100,
+      "title": "Discovery: validate current-file unary Int constructor operation facts",
+      "url": "https://github.com/kofun-lang/kofun/issues/1100",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "S",
+      "kind": "implementation",
+      "area": "developer_tools",
+      "areas": [
+        "developer_tools"
+      ],
+      "labels": [
+        "P1",
+        "area:developer_tools",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T14:12:59Z",
+      "updated_at": "2026-08-08T16:02:33Z",
+      "closed_at": "2026-08-08T16:02:02Z"
+    },
+    {
+      "number": 1101,
+      "title": "Verify: isolate the const-generics diagnostic adapter work directory",
+      "url": "https://github.com/kofun-lang/kofun/issues/1101",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "S",
+      "kind": "implementation",
+      "area": "diagnostics",
+      "areas": [
+        "diagnostics",
+        "tooling"
+      ],
+      "labels": [
+        "P1",
+        "area:diagnostics",
+        "area:tooling",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T15:24:18Z",
+      "updated_at": "2026-08-08T16:02:34Z",
+      "closed_at": "2026-08-08T16:02:05Z"
+    },
+    {
+      "number": 1102,
+      "title": "Docs: distinguish const-generic identity from Decimal-backed Fixed semantics",
+      "url": "https://github.com/kofun-lang/kofun/issues/1102",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "S",
+      "kind": "documentation",
+      "area": "type-system",
+      "areas": [
+        "type-system"
+      ],
+      "labels": [
+        "P1",
+        "area:type-system",
+        "curated",
+        "kind:documentation",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T16:24:25Z",
+      "updated_at": "2026-08-08T22:24:58Z",
+      "closed_at": "2026-08-08T22:24:58Z"
+    },
+    {
+      "number": 1103,
+      "title": "Stage 2 C11: pass and return bounded List[Int] values",
+      "url": "https://github.com/kofun-lang/kofun/issues/1103",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "M",
+      "kind": "implementation",
+      "area": "c-backend",
+      "areas": [
+        "c-backend",
+        "stdlib"
+      ],
+      "labels": [
+        "P2",
+        "area:c-backend",
+        "area:stdlib",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T16:24:46Z",
+      "updated_at": "2026-08-08T22:25:00Z",
+      "closed_at": "2026-08-08T22:25:00Z"
+    },
+    {
+      "number": 1104,
+      "title": "Traits C11: execute one-method Equal[Int] through an explicit dictionary",
+      "url": "https://github.com/kofun-lang/kofun/issues/1104",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "S",
+      "kind": "implementation",
+      "area": "type-system",
+      "areas": [
+        "type-system"
+      ],
+      "labels": [
+        "P1",
+        "area:type-system",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-08T16:25:24Z",
+      "updated_at": "2026-08-08T22:25:02Z",
+      "closed_at": "2026-08-08T22:25:02Z"
+    },
+    {
+      "number": 1107,
+      "title": "Stage 2 C11: lower labelled calls with Text and List[Int] carriers",
+      "url": "https://github.com/kofun-lang/kofun/issues/1107",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "c-backend",
+      "areas": [
+        "c-backend",
+        "codegen"
+      ],
+      "labels": [
+        "P1",
+        "area:c-backend",
+        "area:codegen",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T02:01:19Z",
+      "updated_at": "2026-08-09T04:00:44Z",
+      "closed_at": "2026-08-09T04:00:05Z"
+    },
+    {
+      "number": 1108,
+      "title": "release-claims: join executable claim states to the bootstrap manifest gates they describe",
+      "url": "https://github.com/kofun-lang/kofun/issues/1108",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "S",
+      "kind": "test-quality",
+      "area": "quality",
+      "areas": [
+        "quality"
+      ],
+      "labels": [
+        "P2",
+        "area:quality",
+        "curated",
+        "kind:test-quality",
+        "needs-detail",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T02:14:24Z",
+      "updated_at": "2026-08-10T00:06:28Z",
+      "closed_at": "2026-08-09T23:22:27Z"
+    },
+    {
+      "number": 1112,
+      "title": "selfhost gates: adopt the shared generation library and the Stage 2 builder",
+      "url": "https://github.com/kofun-lang/kofun/issues/1112",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "M",
+      "kind": "implementation",
+      "area": "bootstrap",
+      "areas": [
+        "bootstrap",
+        "quality"
+      ],
+      "labels": [
+        "P2",
+        "area:bootstrap",
+        "area:quality",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T07:17:27Z",
+      "updated_at": "2026-08-09T11:03:48Z",
+      "closed_at": "2026-08-09T11:03:48Z"
+    },
+    {
+      "number": 1113,
+      "title": "Stage 2: merge the labelled and direct List[Int] fixed-slot call lowering",
+      "url": "https://github.com/kofun-lang/kofun/issues/1113",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "in-progress",
+      "priority": "P2",
+      "size": "M",
+      "kind": "implementation",
+      "area": "c-backend",
+      "areas": [
+        "c-backend",
+        "codegen"
+      ],
+      "labels": [
+        "P2",
+        "area:c-backend",
+        "area:codegen",
+        "curated",
+        "in-progress",
+        "kind:implementation",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T07:18:02Z",
+      "updated_at": "2026-08-11T00:13:55Z",
+      "closed_at": null
+    },
+    {
+      "number": 1114,
+      "title": "B6 slice 1: declare every reproduction input and fail closed on drift",
+      "url": "https://github.com/kofun-lang/kofun/issues/1114",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "bootstrap",
+      "areas": [
+        "bootstrap",
+        "quality"
+      ],
+      "labels": [
+        "P1",
+        "area:bootstrap",
+        "area:quality",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T07:20:11Z",
+      "updated_at": "2026-08-09T12:04:44Z",
+      "closed_at": "2026-08-09T11:57:55Z"
+    },
+    {
+      "number": 1115,
+      "title": "rfc-registry: refuse a decision dated in the future",
+      "url": "https://github.com/kofun-lang/kofun/issues/1115",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "S",
+      "kind": "test-quality",
+      "area": "meta",
+      "areas": [
+        "meta",
+        "quality"
+      ],
+      "labels": [
+        "P2",
+        "area:meta",
+        "area:quality",
+        "curated",
+        "kind:test-quality",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T08:56:06Z",
+      "updated_at": "2026-08-09T10:16:21Z",
+      "closed_at": "2026-08-09T10:16:21Z"
+    },
+    {
+      "number": 1117,
+      "title": "Traits: let a trait declare two members and an implementation supply both",
+      "url": "https://github.com/kofun-lang/kofun/issues/1117",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "type-system",
+      "areas": [
+        "type-system"
+      ],
+      "labels": [
+        "P1",
+        "area:type-system",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T10:01:15Z",
+      "updated_at": "2026-08-09T11:33:52Z",
+      "closed_at": "2026-08-09T10:52:32Z"
+    },
+    {
+      "number": 1119,
+      "title": "M4 tracker: the ten 1.0 deliverables and six exit criteria",
+      "url": "https://github.com/kofun-lang/kofun/issues/1119",
+      "state": "open",
+      "state_reason": null,
+      "role": "planning",
+      "workflow": "blocked",
+      "priority": "P2",
+      "size": "L",
+      "kind": "planning",
+      "area": "quality",
+      "areas": [
+        "quality"
+      ],
+      "labels": [
+        "P2",
+        "area:quality",
+        "blocked",
+        "kind:planning",
+        "planning",
+        "size:L"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T10:40:01Z",
+      "updated_at": "2026-08-10T13:12:06Z",
+      "closed_at": null
+    },
+    {
+      "number": 1121,
+      "title": "Traits C11: execute a two-slot dictionary",
+      "url": "https://github.com/kofun-lang/kofun/issues/1121",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "c-backend",
+      "areas": [
+        "c-backend",
+        "type-system"
+      ],
+      "labels": [
+        "P1",
+        "area:c-backend",
+        "area:type-system",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T10:54:12Z",
+      "updated_at": "2026-08-09T22:30:59Z",
+      "closed_at": "2026-08-09T22:30:59Z"
+    },
+    {
+      "number": 1127,
+      "title": "Executable slice: mutable List[Int] bindings block every in-place algorithm (E2S157)",
+      "url": "https://github.com/kofun-lang/kofun/issues/1127",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": "codegen",
+      "areas": [
+        "codegen"
+      ],
+      "labels": [
+        "area:codegen",
+        "ready"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T11:53:54Z",
+      "updated_at": "2026-08-09T21:04:50Z",
+      "closed_at": "2026-08-09T21:04:28Z"
+    },
+    {
+      "number": 1128,
+      "title": "Executable slice: iterative while over an indexed List[Int] (E2S10) — binary search does not run",
+      "url": "https://github.com/kofun-lang/kofun/issues/1128",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": "codegen",
+      "areas": [
+        "codegen"
+      ],
+      "labels": [
+        "area:codegen",
+        "ready"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T11:53:55Z",
+      "updated_at": "2026-08-10T00:10:50Z",
+      "closed_at": "2026-08-10T00:10:41Z"
+    },
+    {
+      "number": 1129,
+      "title": "kotest reports byte offsets into the generated unit, not the source file",
+      "url": "https://github.com/kofun-lang/kofun/issues/1129",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": "developer_tools",
+      "areas": [
+        "developer_tools"
+      ],
+      "labels": [
+        "area:developer_tools",
+        "ready"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T11:53:56Z",
+      "updated_at": "2026-08-10T00:06:29Z",
+      "closed_at": "2026-08-09T23:00:40Z"
+    },
+    {
+      "number": 1130,
+      "title": "Type-level programming v2: accept Turing-complete type computation, bounded by fuel rather than structure",
+      "url": "https://github.com/kofun-lang/kofun/issues/1130",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": "type-system",
+      "areas": [
+        "type-system"
+      ],
+      "labels": [
+        "area:type-system",
+        "needs-decision"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T11:55:26Z",
+      "updated_at": "2026-08-10T00:04:34Z",
+      "closed_at": "2026-08-09T23:01:25Z"
+    },
+    {
+      "number": 1133,
+      "title": "Type-level kinds v1: Nat, Symbol, and Bool as type-level data",
+      "url": "https://github.com/kofun-lang/kofun/issues/1133",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": "type-system",
+      "areas": [
+        "type-system"
+      ],
+      "labels": [
+        "area:type-system",
+        "needs-decision"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T12:36:42Z",
+      "updated_at": "2026-08-10T00:04:36Z",
+      "closed_at": "2026-08-09T23:01:26Z"
+    },
+    {
+      "number": 1136,
+      "title": "Reproducible bootstrap B7: diverse double compilation of the fixed point",
+      "url": "https://github.com/kofun-lang/kofun/issues/1136",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": null,
+      "areas": [],
+      "labels": [
+        "ready"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T15:10:12Z",
+      "updated_at": "2026-08-09T22:27:46Z",
+      "closed_at": "2026-08-09T22:27:46Z"
+    },
+    {
+      "number": 1138,
+      "title": "The bootstrap C artifacts are called \"audited\" while an audited bootstrap chain is an open 1.0 deliverable",
+      "url": "https://github.com/kofun-lang/kofun/issues/1138",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": null,
+      "areas": [],
+      "labels": [
+        "needs-decision"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T15:44:43Z",
+      "updated_at": "2026-08-10T00:06:30Z",
+      "closed_at": "2026-08-09T23:12:50Z"
+    },
+    {
+      "number": 1139,
+      "title": "The native-functions regression gate is fully implemented and invoked by nothing",
+      "url": "https://github.com/kofun-lang/kofun/issues/1139",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": null,
+      "areas": [],
+      "labels": [
+        "needs-decision"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T15:58:54Z",
+      "updated_at": "2026-08-09T23:49:11Z",
+      "closed_at": "2026-08-09T23:49:11Z"
+    },
+    {
+      "number": 1140,
+      "title": "Two self-descriptions the repository does not enforce: a skip counter that cannot move, and a grammar described as full-language",
+      "url": "https://github.com/kofun-lang/kofun/issues/1140",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": null,
+      "areas": [],
+      "labels": [
+        "ready"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T15:59:46Z",
+      "updated_at": "2026-08-09T22:27:51Z",
+      "closed_at": "2026-08-09T22:27:51Z"
+    },
+    {
+      "number": 1143,
+      "title": "The B6 acquisition manifest is accurate and insufficient: 59 files declared, 70 needed",
+      "url": "https://github.com/kofun-lang/kofun/issues/1143",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": null,
+      "areas": [],
+      "labels": [
+        "ready"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T16:44:04Z",
+      "updated_at": "2026-08-09T22:40:40Z",
+      "closed_at": "2026-08-09T22:40:40Z"
+    },
+    {
+      "number": 1146,
+      "title": "Gate isolation: traits diagnostics adapter races the direct traits task",
+      "url": "https://github.com/kofun-lang/kofun/issues/1146",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": "tooling",
+      "areas": [
+        "tooling"
+      ],
+      "labels": [
+        "area:tooling",
+        "ready"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T20:27:58Z",
+      "updated_at": "2026-08-09T21:04:50Z",
+      "closed_at": "2026-08-09T21:04:29Z"
+    },
+    {
+      "number": 1156,
+      "title": "The \"audited\" correction stopped at four surfaces; 27 usages remain outside the gate",
+      "url": "https://github.com/kofun-lang/kofun/issues/1156",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": null,
+      "areas": [],
+      "labels": [
+        "needs-decision"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T23:03:08Z",
+      "updated_at": "2026-08-10T00:50:11Z",
+      "closed_at": "2026-08-10T00:50:11Z"
+    },
+    {
+      "number": 1158,
+      "title": "An index expression compared in a condition types the comparison as the index (E2S157)",
+      "url": "https://github.com/kofun-lang/kofun/issues/1158",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": null,
+      "areas": [],
+      "labels": [],
+      "assignees": [],
+      "created_at": "2026-08-09T23:33:00Z",
+      "updated_at": "2026-08-10T00:27:28Z",
+      "closed_at": "2026-08-10T00:27:17Z"
+    },
+    {
+      "number": 1160,
+      "title": "Scoped parallelism: parse `par`/`spawn`/`join` into HIR identities",
+      "url": "https://github.com/kofun-lang/kofun/issues/1160",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "concurrency",
+      "areas": [
+        "concurrency"
+      ],
+      "labels": [
+        "P1",
+        "area:concurrency",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T23:48:49Z",
+      "updated_at": "2026-08-11T02:06:40Z",
+      "closed_at": "2026-08-11T02:06:40Z"
+    },
+    {
+      "number": 1161,
+      "title": "Scoped parallelism: derive task captures from checked bodies and resolved calls",
+      "url": "https://github.com/kofun-lang/kofun/issues/1161",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "blocked",
+      "priority": "P2",
+      "size": "M",
+      "kind": "implementation",
+      "area": "concurrency",
+      "areas": [
+        "concurrency"
+      ],
+      "labels": [
+        "P2",
+        "area:concurrency",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T23:49:16Z",
+      "updated_at": "2026-08-09T23:57:14Z",
+      "closed_at": null
+    },
+    {
+      "number": 1162,
+      "title": "Scoped parallelism: enforce liveness, overlap, take, and parent conflicts in the ownership checker",
+      "url": "https://github.com/kofun-lang/kofun/issues/1162",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "blocked",
+      "priority": "P2",
+      "size": "M",
+      "kind": "implementation",
+      "area": "concurrency",
+      "areas": [
+        "concurrency"
+      ],
+      "labels": [
+        "P2",
+        "area:concurrency",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T23:49:47Z",
+      "updated_at": "2026-08-09T23:57:16Z",
+      "closed_at": null
+    },
+    {
+      "number": 1163,
+      "title": "Scoped parallelism: allocate stable compiler diagnostics for the six contract classes",
+      "url": "https://github.com/kofun-lang/kofun/issues/1163",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "blocked",
+      "priority": "P2",
+      "size": "S",
+      "kind": "implementation",
+      "area": "concurrency",
+      "areas": [
+        "concurrency"
+      ],
+      "labels": [
+        "P2",
+        "area:concurrency",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T23:50:16Z",
+      "updated_at": "2026-08-09T23:57:18Z",
+      "closed_at": null
+    },
+    {
+      "number": 1164,
+      "title": "Scoped parallelism: bounded scheduler, scope-exit drain, panic precedence, and cancellation",
+      "url": "https://github.com/kofun-lang/kofun/issues/1164",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "blocked",
+      "priority": "P2",
+      "size": "M",
+      "kind": "implementation",
+      "area": "concurrency",
+      "areas": [
+        "concurrency"
+      ],
+      "labels": [
+        "P2",
+        "area:concurrency",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T23:50:43Z",
+      "updated_at": "2026-08-09T23:57:20Z",
+      "closed_at": null
+    },
+    {
+      "number": 1166,
+      "title": "Scoped parallelism: lower par/spawn/join in each backend",
+      "url": "https://github.com/kofun-lang/kofun/issues/1166",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "blocked",
+      "priority": "P2",
+      "size": "M",
+      "kind": "implementation",
+      "area": "concurrency",
+      "areas": [
+        "concurrency"
+      ],
+      "labels": [
+        "P2",
+        "area:concurrency",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T23:51:19Z",
+      "updated_at": "2026-08-09T23:57:21Z",
+      "closed_at": null
+    },
+    {
+      "number": 1167,
+      "title": "Scoped parallelism: capability and release evidence for executing targets",
+      "url": "https://github.com/kofun-lang/kofun/issues/1167",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "blocked",
+      "priority": "P2",
+      "size": "S",
+      "kind": "implementation",
+      "area": "concurrency",
+      "areas": [
+        "concurrency"
+      ],
+      "labels": [
+        "P2",
+        "area:concurrency",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-09T23:51:21Z",
+      "updated_at": "2026-08-09T23:57:23Z",
+      "closed_at": null
+    },
+    {
+      "number": 1170,
+      "title": "The audited-claim gate cannot see structured metadata, where the claim carries the most authority",
+      "url": "https://github.com/kofun-lang/kofun/issues/1170",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": null,
+      "areas": [],
+      "labels": [],
+      "assignees": [],
+      "created_at": "2026-08-10T00:01:10Z",
+      "updated_at": "2026-08-10T05:13:37Z",
+      "closed_at": "2026-08-10T05:13:35Z"
+    },
+    {
+      "number": 1171,
+      "title": "kotest says \"unit kept at\" a path it then deletes",
+      "url": "https://github.com/kofun-lang/kofun/issues/1171",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": null,
+      "areas": [],
+      "labels": [],
+      "assignees": [],
+      "created_at": "2026-08-10T00:04:43Z",
+      "updated_at": "2026-08-10T05:00:34Z",
+      "closed_at": "2026-08-10T05:00:33Z"
+    },
+    {
+      "number": 1174,
+      "title": "Executable slice: chained `else if` is refused, so every multi-way branch must be hand-nested",
+      "url": "https://github.com/kofun-lang/kofun/issues/1174",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "unclassified",
+      "workflow": "closed",
+      "priority": null,
+      "size": null,
+      "kind": null,
+      "area": null,
+      "areas": [],
+      "labels": [],
+      "assignees": [],
+      "created_at": "2026-08-10T04:32:19Z",
+      "updated_at": "2026-08-10T04:53:37Z",
+      "closed_at": "2026-08-10T04:53:35Z"
+    },
+    {
+      "number": 1181,
+      "title": "Stage 2 C11 aggregate bridge increment 4: Text record fields",
+      "url": "https://github.com/kofun-lang/kofun/issues/1181",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "M",
+      "kind": "implementation",
+      "area": "c-backend",
+      "areas": [
+        "c-backend",
+        "stdlib"
+      ],
+      "labels": [
+        "P2",
+        "area:c-backend",
+        "area:stdlib",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-10T06:14:01Z",
+      "updated_at": "2026-08-10T07:02:18Z",
+      "closed_at": "2026-08-10T07:02:16Z"
+    },
+    {
+      "number": 1183,
+      "title": "Stage 2 C11 aggregate bridge increment 5: List[Int] record fields — the carrier and the layout spec disagree",
+      "url": "https://github.com/kofun-lang/kofun/issues/1183",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P2",
+      "size": "M",
+      "kind": "implementation",
+      "area": "c-backend",
+      "areas": [
+        "c-backend",
+        "stdlib"
+      ],
+      "labels": [
+        "P2",
+        "area:c-backend",
+        "area:stdlib",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-10T07:04:42Z",
+      "updated_at": "2026-08-10T23:28:54Z",
+      "closed_at": "2026-08-10T23:28:54Z"
+    },
+    {
+      "number": 1189,
+      "title": "Call arguments v1 slice 3a: lower wider and ownership-bearing carrier temporaries",
+      "url": "https://github.com/kofun-lang/kofun/issues/1189",
+      "state": "closed",
+      "state_reason": "completed",
+      "role": "curated",
+      "workflow": "closed",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "codegen",
+      "areas": [
+        "codegen",
+        "syntax"
+      ],
+      "labels": [
+        "P1",
+        "area:codegen",
+        "area:syntax",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-10T14:34:14Z",
+      "updated_at": "2026-08-10T23:21:15Z",
+      "closed_at": "2026-08-10T23:21:15Z"
+    },
+    {
+      "number": 1190,
+      "title": "Call arguments v1 slice 3b: lower pipeline subjects with exactly-once source-order evaluation",
+      "url": "https://github.com/kofun-lang/kofun/issues/1190",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "ready",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "codegen",
+      "areas": [
+        "codegen",
+        "syntax"
+      ],
+      "labels": [
+        "P1",
+        "area:codegen",
+        "area:syntax",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-10T14:34:16Z",
+      "updated_at": "2026-08-10T14:34:16Z",
+      "closed_at": null
+    },
+    {
+      "number": 1191,
+      "title": "Call arguments v1 slice 3c: lower the accepted trailing-lambda form and fix the lifted-lambda-body boundary",
+      "url": "https://github.com/kofun-lang/kofun/issues/1191",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "ready",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "codegen",
+      "areas": [
+        "codegen",
+        "syntax"
+      ],
+      "labels": [
+        "P1",
+        "area:codegen",
+        "area:syntax",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-10T14:34:18Z",
+      "updated_at": "2026-08-10T14:34:18Z",
+      "closed_at": null
+    },
+    {
+      "number": 1192,
+      "title": "Call arguments v1 slice 3d: direct-native and Wasm labelled-call lowering with backend differential evidence",
+      "url": "https://github.com/kofun-lang/kofun/issues/1192",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "blocked",
+      "priority": "P1",
+      "size": "M",
+      "kind": "implementation",
+      "area": "codegen",
+      "areas": [
+        "codegen",
+        "native-backend",
+        "syntax"
+      ],
+      "labels": [
+        "P1",
+        "area:codegen",
+        "area:native-backend",
+        "area:syntax",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-10T14:34:31Z",
+      "updated_at": "2026-08-10T14:34:31Z",
+      "closed_at": null
+    },
+    {
+      "number": 1193,
+      "title": "RFC-0002 stage 1: compiler authority model, attenuation facts, and E350-E356",
+      "url": "https://github.com/kofun-lang/kofun/issues/1193",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "needs-detail",
+      "priority": "P1",
+      "size": "L",
+      "kind": "implementation",
+      "area": "ownership",
+      "areas": [
+        "ownership",
+        "type-system"
+      ],
+      "labels": [
+        "P1",
+        "area:ownership",
+        "area:type-system",
+        "curated",
+        "kind:implementation",
+        "needs-detail",
+        "size:L"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-10T14:35:45Z",
+      "updated_at": "2026-08-10T14:35:45Z",
+      "closed_at": null
+    },
+    {
+      "number": 1194,
+      "title": "RFC-0002 stage 2: environment runtime and standard library with a deterministic test provider",
+      "url": "https://github.com/kofun-lang/kofun/issues/1194",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "blocked",
+      "priority": "P2",
+      "size": "L",
+      "kind": "implementation",
+      "area": "ownership",
+      "areas": [
+        "ownership",
+        "stdlib"
+      ],
+      "labels": [
+        "P2",
+        "area:ownership",
+        "area:stdlib",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:L"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-10T14:35:47Z",
+      "updated_at": "2026-08-10T14:35:47Z",
+      "closed_at": null
+    },
+    {
+      "number": 1195,
+      "title": "RFC-0002 stage 3: package audit metadata schema and generated capability docs",
+      "url": "https://github.com/kofun-lang/kofun/issues/1195",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "blocked",
+      "priority": "P3",
+      "size": "M",
+      "kind": "implementation",
+      "area": "docs_tools",
+      "areas": [
+        "docs_tools",
+        "tooling"
+      ],
+      "labels": [
+        "P3",
+        "area:docs_tools",
+        "area:tooling",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-10T14:35:48Z",
+      "updated_at": "2026-08-10T14:35:48Z",
+      "closed_at": null
+    },
+    {
+      "number": 1196,
+      "title": "RFC-0002 stage 4: trusted adapter entitlement ABI and default FFI rejection",
+      "url": "https://github.com/kofun-lang/kofun/issues/1196",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "blocked",
+      "priority": "P3",
+      "size": "M",
+      "kind": "implementation",
+      "area": "interop",
+      "areas": [
+        "interop",
+        "ownership"
+      ],
+      "labels": [
+        "P3",
+        "area:interop",
+        "area:ownership",
+        "blocked",
+        "curated",
+        "kind:implementation",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-10T14:35:54Z",
+      "updated_at": "2026-08-10T14:35:54Z",
+      "closed_at": null
+    },
+    {
+      "number": 1197,
+      "title": "Stage 2: read a bounded List[Int] record field back as a List[Int] value",
+      "url": "https://github.com/kofun-lang/kofun/issues/1197",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "ready",
+      "priority": "P2",
+      "size": "S",
+      "kind": "implementation",
+      "area": "c-backend",
+      "areas": [
+        "c-backend",
+        "stdlib"
+      ],
+      "labels": [
+        "P2",
+        "area:c-backend",
+        "area:stdlib",
+        "curated",
+        "kind:implementation",
+        "ready",
+        "size:S"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-10T15:14:42Z",
+      "updated_at": "2026-08-10T15:14:42Z",
+      "closed_at": null
+    },
+    {
+      "number": 1202,
+      "title": "verify: reuse one Stage 2 compiler and one self-host profile scan",
+      "url": "https://github.com/kofun-lang/kofun/issues/1202",
+      "state": "open",
+      "state_reason": null,
+      "role": "curated",
+      "workflow": "ready",
+      "priority": "P1",
+      "size": "M",
+      "kind": "maintenance",
+      "area": "build-system",
+      "areas": [
+        "build-system",
+        "quality"
+      ],
+      "labels": [
+        "P1",
+        "area:build-system",
+        "area:quality",
+        "curated",
+        "kind:maintenance",
+        "ready",
+        "size:M"
+      ],
+      "assignees": [],
+      "created_at": "2026-08-11T02:04:51Z",
+      "updated_at": "2026-08-11T02:05:23Z",
+      "closed_at": null
     }
   ]
 }

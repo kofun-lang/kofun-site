@@ -1,4 +1,9 @@
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
+import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 import {
   PLAYGROUND_EXAMPLES,
@@ -7,18 +12,42 @@ import {
 import { tokenizeKofunForHighlight } from "../app/kofun-highlight.ts";
 
 const expectedOutput = new Map([
-  ["pipeline", "56"],
+  ["lists", "4\n13"],
   ["branches", "good"],
-  ["science", "0.375\n1.5625"],
-  ["fold", "720"],
+  ["numbers", "-4\n1"],
+  ["text", "Hello, Kofun"],
 ]);
 
-for (const example of PLAYGROUND_EXAMPLES) {
-  const result = runKofun(example.source);
-  assert.equal(result.error, undefined, `${example.id}: ${result.error?.message}`);
-  assert.equal(result.output, expectedOutput.get(example.id), example.id);
-  assert.ok(result.tokenCount > 0, `${example.id}: token count`);
-  assert.ok(result.steps > 0, `${example.id}: step count`);
+const temporaryDirectory = await mkdtemp(path.join(tmpdir(), "kofun-site-playground-"));
+try {
+  for (const example of PLAYGROUND_EXAMPLES) {
+    const expected = expectedOutput.get(example.id);
+    const result = runKofun(example.source);
+    assert.equal(result.error, undefined, `${example.id}: ${result.error?.message}`);
+    assert.equal(result.output, expected, example.id);
+    assert.ok(result.tokenCount > 0, `${example.id}: token count`);
+    assert.ok(result.steps > 0, `${example.id}: step count`);
+
+    const sourcePath = path.join(temporaryDirectory, `${example.id}.kofun`);
+    await writeFile(sourcePath, `${example.source}\n`);
+    const cli = spawnSync(
+      fileURLToPath(new URL("../kofun/bin/kofun", import.meta.url)),
+      ["run", sourcePath],
+      {
+        cwd: fileURLToPath(new URL("../kofun/", import.meta.url)),
+        encoding: "utf8",
+        timeout: 30_000,
+      },
+    );
+    assert.equal(
+      cli.status,
+      0,
+      `${example.id}: repository CLI failed\n${cli.stderr}`,
+    );
+    assert.equal(cli.stdout.trimEnd(), expected, `${example.id}: CLI output`);
+  }
+} finally {
+  await rm(temporaryDirectory, { recursive: true, force: true });
 }
 
 const mutable = runKofun(`fn main() {

@@ -15,6 +15,7 @@ const required = [
   "docs/scientific-computing/index.html",
   "docs/language-vision/index.html",
   "docs/contributing/index.html",
+  "docs/issue-readiness/index.html",
   "docs/rfc-process/index.html",
   "docs/release-evidence/index.html",
   "kofun-mark.svg",
@@ -28,6 +29,17 @@ for (const path of required) {
     `missing Pages export: ${path}`,
   );
 }
+
+const home = await readFile(new URL("index.html", output), "utf8");
+const docsHome = await readFile(new URL("docs/index.html", output), "utf8");
+const version = (
+  await readFile(new URL("../kofun/VERSION", import.meta.url), "utf8")
+).trim();
+assert.match(home, new RegExp(`Kofun ${version.replaceAll(".", "\\.")}`));
+assert.match(home, />3-gen fixed point</);
+assert.doesNotMatch(home, /hero-art|typed HIR v1/);
+assert.match(docsHome, /has reached its three-generation/);
+assert.doesNotMatch(docsHome, /fixed point remains open/);
 
 for (const [slug, source] of [
   ["one-day-tutorial", "ONE_DAY_TUTORIAL.md"],

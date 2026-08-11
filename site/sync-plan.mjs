@@ -963,17 +963,18 @@ export async function fetchAllIssues(options = {}) {
   if (token) headers.Authorization = `Bearer ${token}`;
 
   const items = [];
-  let page = 1;
-  for (;;) {
-    const url =
+  let pages = 0;
+  let url =
       `https://api.github.com/repos/${repository}/issues?` +
       new URLSearchParams({
         state: "all",
         sort: "created",
         direction: "asc",
         per_page: "100",
-        page: String(page),
+        page: "1",
       });
+  for (;;) {
+    pages += 1;
     const response = await fetchImpl(url, { headers });
     if (!response.ok) {
       const remaining = response.headers?.get?.("x-ratelimit-remaining");
@@ -982,18 +983,34 @@ export async function fetchAllIssues(options = {}) {
           ? " (rate limit exhausted; provide GITHUB_TOKEN)"
           : "";
       throw new Error(
-        `GitHub API ${response.status} ${response.statusText} on page ${page}${suffix}`,
+        `GitHub API ${response.status} ${response.statusText} on page ${pages}${suffix}`,
       );
     }
     const batch = await response.json();
     if (!Array.isArray(batch)) {
-      throw new Error(`GitHub API returned a non-array on page ${page}`);
+      throw new Error(`GitHub API returned a non-array on page ${pages}`);
     }
     items.push(...batch);
+    const link = response.headers?.get?.("link") ?? "";
+    const next = link.match(/<([^>]+)>;\s*rel="next"/i)?.[1] ?? null;
+    if (next) {
+      const nextUrl = new URL(next, url);
+      if (nextUrl.origin !== "https://api.github.com") {
+        throw new Error(`GitHub API returned an unsafe next-page URL: ${next}`);
+      }
+      url = nextUrl.href;
+      continue;
+    }
     if (batch.length < 100) break;
-    page += 1;
+
+    // GitHub now requires the cursor-bearing URL from Link for large data
+    // sets. Keep a numeric fallback for compatible test doubles and older API
+    // implementations that omit Link while returning a full page.
+    const fallback = new URL(url);
+    fallback.searchParams.set("page", String(pages + 1));
+    url = fallback.href;
   }
-  return { items, pages: page };
+  return { items, pages };
 }
 
 export function parseArgs(argv) {
