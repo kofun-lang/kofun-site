@@ -30,7 +30,7 @@
     "graphify:update": "sh scripts/graphify.sh update"
   },
   "dependencies": {
-    "next": "^16.2.11",
+    "next": "^16.3.8",
     "react": "19.2.7",
     "react-dom": "19.2.7",
     "react-markdown": "^10.1.0",
