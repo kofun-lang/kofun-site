@@ -1,6 +1,6 @@
 {
   "name": "kofun-language-site",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -30,7 +30,7 @@
     "graphify:update": "sh scripts/graphify.sh update"
   },
   "dependencies": {
-    "next": "^16.2.11",
+    "next": "^16.4.3",
     "react": "19.2.7",
     "react-dom": "19.2.7",
     "react-markdown": "^10.1.0",
@@ -39,16 +39,18 @@
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "1.20.2",
+    "@opennextjs/cloudflare": "1.20.13",
     "@types/node": "24.10.1",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "typescript": "5.9.3"
   },
   "overrides": {
-    "brace-expansion@>=4.0.0 <5.0.9": "5.0.9",
+    "brace-expansion@>=4.0.0 <5.0.12": "5.0.12",
+    "glob@>=10.2.0 <10.5.0": "10.5.0",
     "nanoid": "3.3.18",
     "postcss": "8.5.26",
-    "sharp": "0.35.3"
+    "sharp": "0.35.5",
+    "undici": "7.30.1"
   }
 }
